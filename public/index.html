@@ -1,0 +1,215 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Calculadora de tributos pelas notas fiscais</title>
+  <link rel="stylesheet" href="/styles.css">
+  <link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 32 32'%3E%3Crect width='32' height='32' rx='6' fill='%2314213D'/%3E%3Ctext x='16' y='22' font-size='16' text-anchor='middle' fill='white' font-family='Georgia'%3ER$%3C/text%3E%3C/svg%3E">
+</head>
+<body>
+  <main>
+    <header class="topo">
+      <h1>Quanto de imposto sua empresa vai pagar pelas notas que emitiu</h1>
+      <p class="lead">Envie as notas fiscais (PDF ou XML) ou digite os valores. Os números saem das regras oficiais: a Lei Complementar 123 para o DAS do Simples Nacional e as calculadoras da Receita Federal para a CBS, o IBS e o Imposto Seletivo da Reforma Tributária.</p>
+      <p class="privacidade">Tudo roda no seu computador. Nenhuma nota é enviada para a internet.</p>
+    </header>
+
+    <nav class="regimes" aria-label="Regime de tributação">
+      <p class="rotulo-regime" id="rotulo-regime">Qual é o regime da sua empresa?</p>
+      <div class="opcoes-regime" role="radiogroup" aria-labelledby="rotulo-regime">
+        <label class="opcao-regime">
+          <input type="radio" name="regime" value="simples" checked>
+          <strong>Simples Nacional</strong>
+          <span>ME e EPP que pagam o DAS todo mês</span>
+        </label>
+        <label class="opcao-regime">
+          <input type="radio" name="regime" value="regular">
+          <strong>Lucro Presumido ou Lucro Real</strong>
+          <span>Regime regular: CBS, IBS e Imposto Seletivo nota a nota</span>
+        </label>
+        <label class="opcao-regime">
+          <input type="radio" name="regime" value="consultas">
+          <strong>Consultar tabelas oficiais</strong>
+          <span>Classificações, alíquotas de referência, NCM e NBS</span>
+        </label>
+      </div>
+    </nav>
+
+    <!-- ── Simples Nacional ─────────────────────────────────────────────── -->
+    <div id="painel-simples" class="painel">
+      <section class="passo" aria-labelledby="t-notas">
+        <h2 id="t-notas"><span class="num" aria-hidden="true">1</span> Suas notas fiscais</h2>
+        <label class="soltar" id="soltar" tabindex="0" role="button" aria-describedby="dica-soltar">
+          <input type="file" id="arquivos" multiple accept=".pdf,.xml,application/pdf,text/xml,application/xml" hidden>
+          <strong>Arraste aqui os PDFs ou XMLs das notas</strong>
+          <span id="dica-soltar">ou clique para escolher. Aceita DANFSe (NFS-e), XML de NFS-e e XML de NF-e/NFC-e.</span>
+        </label>
+        <p class="status" id="status-upload" role="status" aria-live="polite"></p>
+
+        <details class="manual" id="manual">
+          <summary>Prefiro digitar os valores</summary>
+          <form id="form-manual" class="form-manual">
+            <label>Mês
+              <input type="month" name="competencia" required pattern="\d{4}-\d{2}" placeholder="AAAA-MM">
+            </label>
+            <label>Valor total no mês (R$)
+              <input type="text" name="valor" inputmode="decimal" placeholder="10.000,00" required>
+            </label>
+            <label class="largo">O que foi vendido ou prestado
+              <select name="atividade" required></select>
+            </label>
+            <label class="check"><input type="checkbox" name="issRetido"> O cliente reteve o ISS</label>
+            <button type="submit" class="secundario">Adicionar</button>
+          </form>
+        </details>
+
+        <div id="lista-notas" hidden>
+          <div class="tabela-rolagem">
+            <table class="notas">
+              <caption class="sr">Notas incluídas no cálculo</caption>
+              <thead>
+                <tr><th scope="col">Nota</th><th scope="col">Mês</th><th scope="col">Serviço ou produto</th><th scope="col" class="num-col">Valor</th><th scope="col">Tipo de atividade no Simples</th><th scope="col"><span class="sr">Remover</span></th></tr>
+              </thead>
+              <tbody id="corpo-notas"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="passo" aria-labelledby="t-empresa" id="passo-empresa" hidden>
+        <h2 id="t-empresa"><span class="num" aria-hidden="true">2</span> Dados da empresa</h2>
+        <p class="ajuda">A alíquota do Simples depende do quanto a empresa faturou nos 12 meses anteriores (RBT12). Esse número está no extrato do PGDAS-D ou com o seu contador.</p>
+        <div id="meses-empresa" class="meses-empresa"></div>
+        <label class="check">
+          <input type="checkbox" id="simular" checked>
+          Mostrar também como fica com a Reforma Tributária (regras de 2027, com CBS e IBS)
+        </label>
+        <button id="calcular" class="primario" type="button">Calcular o imposto</button>
+      </section>
+
+      <section class="passo" aria-labelledby="t-resultado" id="passo-resultado" hidden>
+        <h2 id="t-resultado"><span class="num" aria-hidden="true">3</span> Resultado</h2>
+        <div id="resultado" aria-live="polite"></div>
+      </section>
+    </div>
+
+    <!-- ── Regime Regular ───────────────────────────────────────────────── -->
+    <div id="painel-regular" class="painel" hidden>
+      <section class="passo" aria-labelledby="r-t-notas">
+        <h2 id="r-t-notas"><span class="num" aria-hidden="true">1</span> Suas notas fiscais</h2>
+        <p class="ajuda">No regime regular a CBS e o IBS são calculados nota a nota, sobre cada item. A classificação tributária (cClassTrib) define reduções, isenções e regimes específicos.</p>
+        <label class="soltar" id="r-soltar" tabindex="0" role="button" aria-describedby="r-dica-soltar">
+          <input type="file" id="r-arquivos" multiple accept=".pdf,.xml,application/pdf,text/xml,application/xml" hidden>
+          <strong>Arraste aqui os XMLs ou PDFs das notas</strong>
+          <span id="r-dica-soltar">ou clique para escolher. O XML traz NCM/NBS, classificação e valores de cada item; do DANFSe (PDF) lemos o que está impresso.</span>
+        </label>
+        <p class="status" id="r-status-upload" role="status" aria-live="polite"></p>
+
+        <details class="manual">
+          <summary>Prefiro digitar uma operação</summary>
+          <form id="r-form-manual" class="form-manual">
+            <label>Data da operação
+              <input type="date" name="data" required>
+            </label>
+            <label>Documento
+              <select name="tpDoc">
+                <option value="55">NF-e (mercadorias)</option>
+                <option value="65">NFC-e (venda ao consumidor)</option>
+                <option value="91">NFS-e (serviços)</option>
+              </select>
+            </label>
+            <fieldset class="natureza">
+              <legend>O que foi vendido</legend>
+              <label class="check"><input type="radio" name="natureza" value="bem" checked> Mercadoria (NCM)</label>
+              <label class="check"><input type="radio" name="natureza" value="servico"> Serviço (NBS)</label>
+            </fieldset>
+            <label>Código NCM ou NBS
+              <input type="text" name="codigo" inputmode="numeric" placeholder="10063021 ou 101011100">
+            </label>
+            <label class="largo">Classificação tributária (cClassTrib)
+              <input type="text" name="cClassTrib" list="r-classificacoes" inputmode="numeric" maxlength="6" placeholder="000001 (tributação integral)">
+              <datalist id="r-classificacoes"></datalist>
+            </label>
+            <label>Base de cálculo (R$)
+              <input type="text" name="valor" inputmode="decimal" placeholder="10.000,00" required>
+            </label>
+            <label>Descrição (opcional)
+              <input type="text" name="descricao" maxlength="120">
+            </label>
+            <button type="submit" class="secundario">Adicionar</button>
+          </form>
+        </details>
+
+        <div id="r-lista" hidden>
+          <div class="tabela-rolagem">
+            <table class="notas cartoes">
+              <caption class="sr">Operações que serão calculadas</caption>
+              <thead>
+                <tr><th scope="col">Nota</th><th scope="col">Data</th><th scope="col">Local do IBS</th><th scope="col">Itens e classificação</th><th scope="col"><span class="sr">Remover</span></th></tr>
+              </thead>
+              <tbody id="r-corpo"></tbody>
+            </table>
+          </div>
+        </div>
+      </section>
+
+      <section class="passo" aria-labelledby="r-t-revisao" id="r-passo-revisao" hidden>
+        <h2 id="r-t-revisao"><span class="num" aria-hidden="true">2</span> Confira antes de calcular</h2>
+        <p class="ajuda">Confira a data, o município onde o IBS é devido e a classificação de cada item. Quando a nota não traz a classificação, usamos 000001 (tributação integral).</p>
+        <p class="nota-2026" id="r-aviso-2026" hidden>Em 2026 a CBS e o IBS estão em fase de teste: as alíquotas (0,9% e 0,1%) vêm da tabela oficial e o valor é compensado com PIS/Cofins.</p>
+        <fieldset class="aliquotas" id="r-aliquotas" hidden>
+          <legend>Alíquotas para as operações de 2027 em diante</legend>
+          <p class="dica">A partir de 2027 a calculadora oficial exige as alíquotas vigentes (o Senado fixa a de referência e cada estado e município fixa a sua). Na documentação da Receita o exemplo de 2027 usa CBS 8,8%, IBS estadual 0,05% e IBS municipal 0,05%. Confirme os valores vigentes.</p>
+          <label>CBS (%)<input type="text" id="r-aliq-cbs" inputmode="decimal" placeholder="8,8"></label>
+          <label>IBS estadual (%)<input type="text" id="r-aliq-ibsEstadual" inputmode="decimal" placeholder="0,05"></label>
+          <label>IBS municipal (%)<input type="text" id="r-aliq-ibsMunicipal" inputmode="decimal" placeholder="0,05"></label>
+        </fieldset>
+        <button id="r-calcular" class="primario" type="button">Calcular CBS, IBS e Imposto Seletivo</button>
+      </section>
+
+      <section class="passo" aria-labelledby="r-t-resultado" id="r-passo-resultado" hidden>
+        <h2 id="r-t-resultado"><span class="num" aria-hidden="true">3</span> Resultado</h2>
+        <div id="r-resultado" aria-live="polite"></div>
+      </section>
+    </div>
+
+    <!-- ── Consultas ────────────────────────────────────────────────────── -->
+    <div id="painel-consultas" class="painel" hidden>
+      <section class="passo" aria-labelledby="c-t-class">
+        <h2 id="c-t-class">Classificação tributária (cClassTrib)</h2>
+        <form id="c-form-class" class="form-manual">
+          <label>Vigente em <input type="date" name="data" required></label>
+          <label class="largo">Buscar por código ou palavra <input type="search" name="busca" placeholder="educação, cesta básica, 200028…"></label>
+          <button type="submit" class="secundario">Consultar</button>
+        </form>
+        <div id="c-saida-class" aria-live="polite"></div>
+      </section>
+      <section class="passo" aria-labelledby="c-t-aliq">
+        <h2 id="c-t-aliq">Alíquotas de referência</h2>
+        <form id="c-form-aliq" class="form-manual">
+          <label>Data <input type="date" name="data" required></label>
+          <label>Código IBGE do município <input type="text" name="municipio" inputmode="numeric" placeholder="4113700"></label>
+          <button type="submit" class="secundario">Consultar</button>
+        </form>
+        <div id="c-saida-aliq" aria-live="polite"></div>
+      </section>
+      <section class="passo" aria-labelledby="c-t-nom">
+        <h2 id="c-t-nom">NCM ou NBS</h2>
+        <form id="c-form-nomenclatura" class="form-manual">
+          <label>Código <input type="text" name="codigo" inputmode="numeric" required placeholder="10063021 ou 101011100"></label>
+          <label>Vigente em <input type="date" name="data" required></label>
+          <button type="submit" class="secundario">Consultar</button>
+        </form>
+        <div id="c-saida-nomenclatura" aria-live="polite"></div>
+      </section>
+    </div>
+
+    <footer class="rodape">
+      <p>DAS do Simples: LC 123/2006, art. 18 e Anexos I a V (LC 155/2016), e Anexos da LC 214/2025 a partir de 2027. CBS, IBS e IS: portes fiéis das calculadoras oficiais da Receita Federal, <a href="https://github.com/ReceitaFederal/calculadora-rtc-simples-nacional" rel="noopener">calculadora-rtc-simples-nacional</a> e <a href="https://github.com/ReceitaFederal/calculadora-rtc-regime-regular" rel="noopener">calculadora-rtc-regime-regular</a>, com a base de dados oficial <span id="versao-base">—</span>.</p>
+      <p><a href="/api.html">API para desenvolvedores</a> · Valores estimados para conferência. A apuração oficial é feita no PGDAS-D e nos sistemas da Receita.</p>
+    </footer>
+  </main>
+  <script type="module" src="/app.js"></script>
+</body>
+</html>

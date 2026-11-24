@@ -1,0 +1,33 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>API — Calculadora de tributos</title>
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <main>
+    <header class="topo">
+      <p><a href="/">← Voltar para a calculadora</a></p>
+      <h1>API da calculadora</h1>
+      <p class="lead">As mesmas contas da tela, para usar em outro sistema. As rotas <code>/api/calculadora/…</code> seguem o contrato das APIs oficiais da Receita Federal: um cliente feito para elas funciona trocando só o endereço.</p>
+    </header>
+
+    <section class="passo">
+      <h2>Como chamar</h2>
+      <p>URL base: <code id="base"></code>. Corpo e resposta em JSON. O documento OpenAPI completo está em <a href="/api/openapi.json"><code>/api/openapi.json</code></a> (importe no Postman, Insomnia ou Swagger Editor).</p>
+      <p id="token-info" class="ajuda"></p>
+      <pre class="json" id="exemplo-curl"></pre>
+    </section>
+
+    <section class="passo">
+      <h2>Rotas</h2>
+      <p class="ajuda">Cada rota traz uma linha <code>curl</code> com os exemplos do documento: quando há exemplo completo ela roda como está. Sem exemplo, o corpo vem de um arquivo (<code>--data-binary @corpo.json</code>) e os valores a preencher aparecem entre <code>&lt; &gt;</code> ou <code>{ }</code>.</p>
+      <label class="largo">Filtrar <input type="search" id="filtro" placeholder="regime-geral, dados-abertos, simples…"></label>
+      <div id="rotas" aria-live="polite"></div>
+    </section>
+  </main>
+  <script type="module" src="/js/api-doc.js"></script>
+</body>
+</html>

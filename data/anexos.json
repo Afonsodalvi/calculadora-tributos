@@ -1,0 +1,3142 @@
+{
+ "fonte": "LC 123/2006 art. 18 e Anexos I a V (redação LC 155/2016, 2018-2026) e Anexos XVIII a XXII da LC 214/2025 (redação LC 227/2026), conferidos com Res. CGSN 140/2018 e 190/2026. Percentuais de repartição em % da alíquota efetiva.",
+ "limites": [
+  180000,
+  360000,
+  720000,
+  1800000,
+  3600000,
+  4800000
+ ],
+ "sublimite": 3600000,
+ "limite": 4800000,
+ "periodos": [
+  {
+   "id": "lc123-lc155-2018-2026",
+   "inicio": "2018-01",
+   "fim": "2026-12",
+   "fonte": "LC 123/2006, Anexo I, redação da LC 155/2016 (vigência 01/01/2018)",
+   "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp123.htm",
+   "tributos": [
+    "IRPJ",
+    "CSLL",
+    "COFINS",
+    "PIS",
+    "CPP",
+    "ICMS",
+    "IPI",
+    "ISS"
+   ],
+   "anexos": {
+    "I": {
+     "nome": "Comércio",
+     "faixas": [
+      {
+       "aliquota": "4",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "COFINS": "12.74",
+        "PIS": "2.76",
+        "CPP": "41.5",
+        "ICMS": "34"
+       }
+      },
+      {
+       "aliquota": "7.3",
+       "deduzir": "5940",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "COFINS": "12.74",
+        "PIS": "2.76",
+        "CPP": "41.5",
+        "ICMS": "34"
+       }
+      },
+      {
+       "aliquota": "9.5",
+       "deduzir": "13860",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "COFINS": "12.74",
+        "PIS": "2.76",
+        "CPP": "42",
+        "ICMS": "33.5"
+       }
+      },
+      {
+       "aliquota": "10.7",
+       "deduzir": "22500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "COFINS": "12.74",
+        "PIS": "2.76",
+        "CPP": "42",
+        "ICMS": "33.5"
+       }
+      },
+      {
+       "aliquota": "14.3",
+       "deduzir": "87300",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "COFINS": "12.74",
+        "PIS": "2.76",
+        "CPP": "42",
+        "ICMS": "33.5"
+       }
+      },
+      {
+       "aliquota": "19",
+       "deduzir": "378000",
+       "reparticao": {
+        "IRPJ": "13.5",
+        "CSLL": "10",
+        "COFINS": "28.27",
+        "PIS": "6.13",
+        "CPP": "42.1"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "14.3",
+        "deduzir": "87300",
+        "percentuais": {
+         "ICMS": "33.5"
+        }
+       }
+      }
+     ]
+    },
+    "II": {
+     "nome": "Indústria",
+     "faixas": [
+      {
+       "aliquota": "4.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "COFINS": "11.51",
+        "PIS": "2.49",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "32"
+       }
+      },
+      {
+       "aliquota": "7.8",
+       "deduzir": "5940",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "COFINS": "11.51",
+        "PIS": "2.49",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "32"
+       }
+      },
+      {
+       "aliquota": "10",
+       "deduzir": "13860",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "COFINS": "11.51",
+        "PIS": "2.49",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "32"
+       }
+      },
+      {
+       "aliquota": "11.2",
+       "deduzir": "22500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "COFINS": "11.51",
+        "PIS": "2.49",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "32"
+       }
+      },
+      {
+       "aliquota": "14.7",
+       "deduzir": "85500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "COFINS": "11.51",
+        "PIS": "2.49",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "32"
+       }
+      },
+      {
+       "aliquota": "30",
+       "deduzir": "720000",
+       "reparticao": {
+        "IRPJ": "8.5",
+        "CSLL": "7.5",
+        "COFINS": "20.96",
+        "PIS": "4.54",
+        "CPP": "23.5",
+        "IPI": "35"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "14.7",
+        "deduzir": "85500",
+        "percentuais": {
+         "ICMS": "32"
+        }
+       }
+      }
+     ]
+    },
+    "III": {
+     "nome": "Receitas de locação de bens móveis e de prestação de serviços não relacionados no § 5º-C do art. 18",
+     "faixas": [
+      {
+       "aliquota": "6",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "COFINS": "12.82",
+        "PIS": "2.78",
+        "CPP": "43.4",
+        "ISS": "33.5"
+       }
+      },
+      {
+       "aliquota": "11.2",
+       "deduzir": "9360",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "COFINS": "14.05",
+        "PIS": "3.05",
+        "CPP": "43.4",
+        "ISS": "32"
+       }
+      },
+      {
+       "aliquota": "13.5",
+       "deduzir": "17640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "COFINS": "13.64",
+        "PIS": "2.96",
+        "CPP": "43.4",
+        "ISS": "32.5"
+       }
+      },
+      {
+       "aliquota": "16",
+       "deduzir": "35640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "COFINS": "13.64",
+        "PIS": "2.96",
+        "CPP": "43.4",
+        "ISS": "32.5"
+       }
+      },
+      {
+       "aliquota": "21",
+       "deduzir": "125640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "COFINS": "12.82",
+        "PIS": "2.78",
+        "CPP": "43.4",
+        "ISS": "33.5"
+       },
+       "tetoIss": {
+        "iss": "5",
+        "excedente": {
+         "IRPJ": "6.02",
+         "CSLL": "5.26",
+         "COFINS": "19.28",
+         "PIS": "4.18",
+         "CPP": "65.26"
+        }
+       }
+      },
+      {
+       "aliquota": "33",
+       "deduzir": "648000",
+       "reparticao": {
+        "IRPJ": "35",
+        "CSLL": "15",
+        "COFINS": "16.03",
+        "PIS": "3.47",
+        "CPP": "30.5"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "21",
+        "deduzir": "125640",
+        "percentuais": {
+         "ISS": "33.5"
+        }
+       }
+      }
+     ]
+    },
+    "IV": {
+     "nome": "Receitas decorrentes da prestação de serviços relacionados no § 5º-C do art. 18 (CPP fora do DAS)",
+     "faixas": [
+      {
+       "aliquota": "4.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "18.8",
+        "CSLL": "15.2",
+        "COFINS": "17.67",
+        "PIS": "3.83",
+        "ISS": "44.5"
+       }
+      },
+      {
+       "aliquota": "9",
+       "deduzir": "8100",
+       "reparticao": {
+        "IRPJ": "19.8",
+        "CSLL": "15.2",
+        "COFINS": "20.55",
+        "PIS": "4.45",
+        "ISS": "40"
+       }
+      },
+      {
+       "aliquota": "10.2",
+       "deduzir": "12420",
+       "reparticao": {
+        "IRPJ": "20.8",
+        "CSLL": "15.2",
+        "COFINS": "19.73",
+        "PIS": "4.27",
+        "ISS": "40"
+       }
+      },
+      {
+       "aliquota": "14",
+       "deduzir": "39780",
+       "reparticao": {
+        "IRPJ": "17.8",
+        "CSLL": "19.2",
+        "COFINS": "18.9",
+        "PIS": "4.1",
+        "ISS": "40"
+       }
+      },
+      {
+       "aliquota": "22",
+       "deduzir": "183780",
+       "reparticao": {
+        "IRPJ": "18.8",
+        "CSLL": "19.2",
+        "COFINS": "18.08",
+        "PIS": "3.92",
+        "ISS": "40"
+       },
+       "tetoIss": {
+        "iss": "5",
+        "excedente": {
+         "IRPJ": "31.33",
+         "CSLL": "32",
+         "COFINS": "30.13",
+         "PIS": "6.54"
+        }
+       }
+      },
+      {
+       "aliquota": "33",
+       "deduzir": "828000",
+       "reparticao": {
+        "IRPJ": "53.5",
+        "CSLL": "21.5",
+        "COFINS": "20.55",
+        "PIS": "4.45"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "22",
+        "deduzir": "183780",
+        "percentuais": {
+         "ISS": "40"
+        }
+       }
+      }
+     ]
+    },
+    "V": {
+     "nome": "Receitas decorrentes da prestação de serviços relacionados no § 5º-I do art. 18",
+     "faixas": [
+      {
+       "aliquota": "15.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "25",
+        "CSLL": "15",
+        "COFINS": "14.1",
+        "PIS": "3.05",
+        "CPP": "28.85",
+        "ISS": "14"
+       }
+      },
+      {
+       "aliquota": "18",
+       "deduzir": "4500",
+       "reparticao": {
+        "IRPJ": "23",
+        "CSLL": "15",
+        "COFINS": "14.1",
+        "PIS": "3.05",
+        "CPP": "27.85",
+        "ISS": "17"
+       }
+      },
+      {
+       "aliquota": "19.5",
+       "deduzir": "9900",
+       "reparticao": {
+        "IRPJ": "24",
+        "CSLL": "15",
+        "COFINS": "14.92",
+        "PIS": "3.23",
+        "CPP": "23.85",
+        "ISS": "19"
+       }
+      },
+      {
+       "aliquota": "20.5",
+       "deduzir": "17100",
+       "reparticao": {
+        "IRPJ": "21",
+        "CSLL": "15",
+        "COFINS": "15.74",
+        "PIS": "3.41",
+        "CPP": "23.85",
+        "ISS": "21"
+       }
+      },
+      {
+       "aliquota": "23",
+       "deduzir": "62100",
+       "reparticao": {
+        "IRPJ": "23",
+        "CSLL": "12.5",
+        "COFINS": "14.1",
+        "PIS": "3.05",
+        "CPP": "23.85",
+        "ISS": "23.5"
+       }
+      },
+      {
+       "aliquota": "30.5",
+       "deduzir": "540000",
+       "reparticao": {
+        "IRPJ": "35",
+        "CSLL": "15.5",
+        "COFINS": "16.44",
+        "PIS": "3.56",
+        "CPP": "29.5"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "23",
+        "deduzir": "62100",
+        "percentuais": {
+         "ISS": "23.5"
+        }
+       },
+       "redistribuicaoIss": {
+        "IRPJ": "30.07",
+        "CSLL": "16.34",
+        "COFINS": "18.43",
+        "PIS": "3.99",
+        "CPP": "31.17"
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "lc214-2027-2028",
+   "inicio": "2027-01",
+   "fim": "2028-12",
+   "fonte": "LC 214/2025, Anexo XVIII (redação do Anexo I da LC 123/2006 dada pelo art. 519), texto compilado do Planalto",
+   "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm",
+   "tributos": [
+    "IRPJ",
+    "CSLL",
+    "CBS",
+    "CPP",
+    "ICMS",
+    "IBS",
+    "IPI",
+    "ISS"
+   ],
+   "anexos": {
+    "I": {
+     "nome": "Comércio",
+     "faixas": [
+      {
+       "aliquota": "4",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.33",
+        "CPP": "41.5",
+        "ICMS": "34",
+        "IBS": "0.17"
+       }
+      },
+      {
+       "aliquota": "7.3",
+       "deduzir": "5940",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.33",
+        "CPP": "41.5",
+        "ICMS": "34",
+        "IBS": "0.17"
+       }
+      },
+      {
+       "aliquota": "9.5",
+       "deduzir": "13860",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.33",
+        "CPP": "42",
+        "ICMS": "33.5",
+        "IBS": "0.17"
+       }
+      },
+      {
+       "aliquota": "10.7",
+       "deduzir": "22500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.33",
+        "CPP": "42",
+        "ICMS": "33.5",
+        "IBS": "0.17"
+       }
+      },
+      {
+       "aliquota": "14.3",
+       "deduzir": "87300",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.33",
+        "CPP": "42",
+        "ICMS": "33.5",
+        "IBS": "0.17"
+       }
+      },
+      {
+       "aliquota": "18.9",
+       "deduzir": "378000",
+       "reparticao": {
+        "IRPJ": "13.58",
+        "CSLL": "10.06",
+        "CBS": "34.02",
+        "CPP": "42.34"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "14.3",
+        "deduzir": "87300",
+        "percentuais": {
+         "ICMS": "33.5",
+         "IBS": "0.17"
+        }
+       }
+      }
+     ]
+    },
+    "II": {
+     "nome": "Indústria",
+     "faixas": [
+      {
+       "aliquota": "4.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "13.85",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "32",
+        "IBS": "0.15"
+       }
+      },
+      {
+       "aliquota": "7.8",
+       "deduzir": "5940",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "13.85",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "32",
+        "IBS": "0.15"
+       }
+      },
+      {
+       "aliquota": "10",
+       "deduzir": "13860",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "13.85",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "32",
+        "IBS": "0.15"
+       }
+      },
+      {
+       "aliquota": "11.2",
+       "deduzir": "22500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "13.85",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "32",
+        "IBS": "0.15"
+       }
+      },
+      {
+       "aliquota": "14.7",
+       "deduzir": "85500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "13.85",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "32",
+        "IBS": "0.15"
+       }
+      },
+      {
+       "aliquota": "29.9",
+       "deduzir": "720000",
+       "reparticao": {
+        "IRPJ": "8.53",
+        "CSLL": "7.53",
+        "CBS": "25.22",
+        "CPP": "23.59",
+        "IPI": "35.13"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "14.7",
+        "deduzir": "85500",
+        "percentuais": {
+         "ICMS": "32",
+         "IBS": "0.15"
+        }
+       }
+      }
+     ]
+    },
+    "III": {
+     "nome": "Receitas de locação de bens móveis e de prestação de serviços não relacionados no § 5º-C do art. 18",
+     "faixas": [
+      {
+       "aliquota": "6",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "15.43",
+        "CPP": "43.4",
+        "ISS": "33.5",
+        "IBS": "0.17"
+       }
+      },
+      {
+       "aliquota": "11.2",
+       "deduzir": "9360",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "16.91",
+        "CPP": "43.4",
+        "ISS": "32",
+        "IBS": "0.19"
+       }
+      },
+      {
+       "aliquota": "13.5",
+       "deduzir": "17640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "16.41",
+        "CPP": "43.4",
+        "ISS": "32.5",
+        "IBS": "0.19"
+       }
+      },
+      {
+       "aliquota": "16",
+       "deduzir": "35640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "16.41",
+        "CPP": "43.4",
+        "ISS": "32.5",
+        "IBS": "0.19"
+       }
+      },
+      {
+       "aliquota": "21",
+       "deduzir": "125640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "15.43",
+        "CPP": "43.4",
+        "ISS": "33.5",
+        "IBS": "0.17"
+       },
+       "tetoIss": {
+        "iss": "5",
+        "excedente": {
+         "IRPJ": "6.02",
+         "CSLL": "5.26",
+         "CBS": "23.2",
+         "CPP": "65.26",
+         "IBS": "0.26"
+        }
+       }
+      },
+      {
+       "aliquota": "32.9",
+       "deduzir": "648000",
+       "reparticao": {
+        "IRPJ": "35.09",
+        "CSLL": "15.04",
+        "CBS": "19.29",
+        "CPP": "30.58"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "21",
+        "deduzir": "125640",
+        "percentuais": {
+         "ISS": "33.5",
+         "IBS": "0.17"
+        }
+       }
+      }
+     ]
+    },
+    "IV": {
+     "nome": "Receitas decorrentes da prestação de serviços relacionados no § 5º-C do art. 18 (CPP fora do DAS)",
+     "faixas": [
+      {
+       "aliquota": "4.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "18.8",
+        "CSLL": "15.2",
+        "CBS": "21.26",
+        "ISS": "44.5",
+        "IBS": "0.24"
+       }
+      },
+      {
+       "aliquota": "9",
+       "deduzir": "8100",
+       "reparticao": {
+        "IRPJ": "19.8",
+        "CSLL": "15.2",
+        "CBS": "24.73",
+        "ISS": "40",
+        "IBS": "0.27"
+       }
+      },
+      {
+       "aliquota": "10.2",
+       "deduzir": "12420",
+       "reparticao": {
+        "IRPJ": "20.8",
+        "CSLL": "15.2",
+        "CBS": "23.74",
+        "ISS": "40",
+        "IBS": "0.26"
+       }
+      },
+      {
+       "aliquota": "14",
+       "deduzir": "39780",
+       "reparticao": {
+        "IRPJ": "17.8",
+        "CSLL": "19.2",
+        "CBS": "22.75",
+        "ISS": "40",
+        "IBS": "0.25"
+       }
+      },
+      {
+       "aliquota": "22",
+       "deduzir": "183780",
+       "reparticao": {
+        "IRPJ": "18.8",
+        "CSLL": "19.2",
+        "CBS": "21.76",
+        "ISS": "40",
+        "IBS": "0.24"
+       },
+       "tetoIss": {
+        "iss": "5",
+        "excedente": {
+         "IRPJ": "31.33",
+         "CSLL": "32",
+         "CBS": "36.27",
+         "IBS": "0.4"
+        }
+       }
+      },
+      {
+       "aliquota": "32.9",
+       "deduzir": "828000",
+       "reparticao": {
+        "IRPJ": "53.71",
+        "CSLL": "21.59",
+        "CBS": "24.7"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "22",
+        "deduzir": "183780",
+        "percentuais": {
+         "ISS": "40",
+         "IBS": "0.24"
+        }
+       }
+      }
+     ]
+    },
+    "V": {
+     "nome": "Receitas decorrentes da prestação de serviços relacionados no § 5º-I do art. 18",
+     "faixas": [
+      {
+       "aliquota": "15.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "25",
+        "CSLL": "15",
+        "CBS": "16.96",
+        "CPP": "28.85",
+        "ISS": "14",
+        "IBS": "0.19"
+       }
+      },
+      {
+       "aliquota": "18",
+       "deduzir": "4500",
+       "reparticao": {
+        "IRPJ": "23",
+        "CSLL": "15",
+        "CBS": "16.96",
+        "CPP": "27.85",
+        "ISS": "17",
+        "IBS": "0.19"
+       }
+      },
+      {
+       "aliquota": "19.5",
+       "deduzir": "9900",
+       "reparticao": {
+        "IRPJ": "24",
+        "CSLL": "15",
+        "CBS": "17.95",
+        "CPP": "23.85",
+        "ISS": "19",
+        "IBS": "0.2"
+       }
+      },
+      {
+       "aliquota": "20.5",
+       "deduzir": "17100",
+       "reparticao": {
+        "IRPJ": "21",
+        "CSLL": "15",
+        "CBS": "18.94",
+        "CPP": "23.85",
+        "ISS": "21",
+        "IBS": "0.21"
+       }
+      },
+      {
+       "aliquota": "23",
+       "deduzir": "62100",
+       "reparticao": {
+        "IRPJ": "23",
+        "CSLL": "12.5",
+        "CBS": "16.96",
+        "CPP": "23.85",
+        "ISS": "23.5",
+        "IBS": "0.19"
+       }
+      },
+      {
+       "aliquota": "30.4",
+       "deduzir": "540000",
+       "reparticao": {
+        "IRPJ": "35.1",
+        "CSLL": "15.54",
+        "CBS": "19.78",
+        "CPP": "29.58"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "23",
+        "deduzir": "62100",
+        "percentuais": {
+         "ISS": "23.5",
+         "IBS": "0.19"
+        }
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "lc214-2029",
+   "inicio": "2029-01",
+   "fim": "2029-12",
+   "fonte": "LC 214/2025, Anexo XVIII (redação do Anexo I da LC 123/2006 dada pelo art. 519), texto compilado do Planalto",
+   "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm",
+   "tributos": [
+    "IRPJ",
+    "CSLL",
+    "CBS",
+    "CPP",
+    "ICMS",
+    "IBS",
+    "IPI",
+    "ISS"
+   ],
+   "anexos": {
+    "I": {
+     "nome": "Comércio",
+     "faixas": [
+      {
+       "aliquota": "4",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "41.5",
+        "ICMS": "30.6",
+        "IBS": "3.4"
+       }
+      },
+      {
+       "aliquota": "7.3",
+       "deduzir": "5940",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "41.5",
+        "ICMS": "30.6",
+        "IBS": "3.4"
+       }
+      },
+      {
+       "aliquota": "9.5",
+       "deduzir": "13860",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "42",
+        "ICMS": "30.15",
+        "IBS": "3.35"
+       }
+      },
+      {
+       "aliquota": "10.7",
+       "deduzir": "22500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "42",
+        "ICMS": "30.15",
+        "IBS": "3.35"
+       }
+      },
+      {
+       "aliquota": "14.3",
+       "deduzir": "87300",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "42",
+        "ICMS": "30.15",
+        "IBS": "3.35"
+       }
+      },
+      {
+       "aliquota": "19",
+       "deduzir": "378000",
+       "reparticao": {
+        "IRPJ": "13.5",
+        "CSLL": "10",
+        "CBS": "34.4",
+        "CPP": "42.1"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "14.3",
+        "deduzir": "87300",
+        "percentuais": {
+         "ICMS": "30.15",
+         "IBS": "3.35"
+        }
+       }
+      }
+     ]
+    },
+    "II": {
+     "nome": "Indústria",
+     "faixas": [
+      {
+       "aliquota": "4.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "28.8",
+        "IBS": "3.2"
+       }
+      },
+      {
+       "aliquota": "7.8",
+       "deduzir": "5940",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "28.8",
+        "IBS": "3.2"
+       }
+      },
+      {
+       "aliquota": "10",
+       "deduzir": "13860",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "28.8",
+        "IBS": "3.2"
+       }
+      },
+      {
+       "aliquota": "11.2",
+       "deduzir": "22500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "28.8",
+        "IBS": "3.2"
+       }
+      },
+      {
+       "aliquota": "14.7",
+       "deduzir": "85500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "28.8",
+        "IBS": "3.2"
+       }
+      },
+      {
+       "aliquota": "30",
+       "deduzir": "720000",
+       "reparticao": {
+        "IRPJ": "8.5",
+        "CSLL": "7.5",
+        "CBS": "25.5",
+        "CPP": "23.5",
+        "IPI": "35"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "14.7",
+        "deduzir": "85500",
+        "percentuais": {
+         "ICMS": "28.8",
+         "IBS": "3.2"
+        }
+       }
+      }
+     ]
+    },
+    "III": {
+     "nome": "Receitas de locação de bens móveis e de prestação de serviços não relacionados no § 5º-C do art. 18",
+     "faixas": [
+      {
+       "aliquota": "6",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "15.6",
+        "CPP": "43.4",
+        "ISS": "30.15",
+        "IBS": "3.35"
+       }
+      },
+      {
+       "aliquota": "11.2",
+       "deduzir": "9360",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "17.1",
+        "CPP": "43.4",
+        "ISS": "28.8",
+        "IBS": "3.2"
+       }
+      },
+      {
+       "aliquota": "13.5",
+       "deduzir": "17640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "16.6",
+        "CPP": "43.4",
+        "ISS": "29.25",
+        "IBS": "3.25"
+       }
+      },
+      {
+       "aliquota": "16",
+       "deduzir": "35640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "16.6",
+        "CPP": "43.4",
+        "ISS": "29.25",
+        "IBS": "3.25"
+       }
+      },
+      {
+       "aliquota": "21",
+       "deduzir": "125640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "15.6",
+        "CPP": "43.4",
+        "ISS": "30.15",
+        "IBS": "3.35"
+       },
+       "tetoIss": {
+        "iss": "4.5",
+        "excedente": {
+         "IRPJ": "5.73",
+         "CSLL": "5.01",
+         "CBS": "22.33",
+         "CPP": "62.13",
+         "IBS": "4.8"
+        }
+       }
+      },
+      {
+       "aliquota": "33",
+       "deduzir": "648000",
+       "reparticao": {
+        "IRPJ": "35",
+        "CSLL": "15",
+        "CBS": "19.5",
+        "CPP": "30.5"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "21",
+        "deduzir": "125640",
+        "percentuais": {
+         "ISS": "30.15",
+         "IBS": "3.35"
+        }
+       }
+      }
+     ]
+    },
+    "IV": {
+     "nome": "Receitas decorrentes da prestação de serviços relacionados no § 5º-C do art. 18 (CPP fora do DAS)",
+     "faixas": [
+      {
+       "aliquota": "4.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "18.8",
+        "CSLL": "15.2",
+        "CBS": "21.5",
+        "ISS": "40.05",
+        "IBS": "4.45"
+       }
+      },
+      {
+       "aliquota": "9",
+       "deduzir": "8100",
+       "reparticao": {
+        "IRPJ": "19.8",
+        "CSLL": "15.2",
+        "CBS": "25",
+        "ISS": "36",
+        "IBS": "4"
+       }
+      },
+      {
+       "aliquota": "10.2",
+       "deduzir": "12420",
+       "reparticao": {
+        "IRPJ": "20.8",
+        "CSLL": "15.2",
+        "CBS": "24",
+        "ISS": "36",
+        "IBS": "4"
+       }
+      },
+      {
+       "aliquota": "14",
+       "deduzir": "39780",
+       "reparticao": {
+        "IRPJ": "17.8",
+        "CSLL": "19.2",
+        "CBS": "23",
+        "ISS": "36",
+        "IBS": "4"
+       }
+      },
+      {
+       "aliquota": "22",
+       "deduzir": "183780",
+       "reparticao": {
+        "IRPJ": "18.8",
+        "CSLL": "19.2",
+        "CBS": "22",
+        "ISS": "36",
+        "IBS": "4"
+       },
+       "tetoIss": {
+        "iss": "4.5",
+        "excedente": {
+         "IRPJ": "29.38",
+         "CSLL": "30",
+         "CBS": "34.38",
+         "IBS": "6.25"
+        }
+       }
+      },
+      {
+       "aliquota": "33",
+       "deduzir": "828000",
+       "reparticao": {
+        "IRPJ": "53.5",
+        "CSLL": "21.5",
+        "CBS": "25"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "22",
+        "deduzir": "183780",
+        "percentuais": {
+         "ISS": "36",
+         "IBS": "4"
+        }
+       }
+      }
+     ]
+    },
+    "V": {
+     "nome": "Receitas decorrentes da prestação de serviços relacionados no § 5º-I do art. 18",
+     "faixas": [
+      {
+       "aliquota": "15.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "25",
+        "CSLL": "15",
+        "CBS": "17.15",
+        "CPP": "28.85",
+        "ISS": "12.6",
+        "IBS": "1.4"
+       }
+      },
+      {
+       "aliquota": "18",
+       "deduzir": "4500",
+       "reparticao": {
+        "IRPJ": "23",
+        "CSLL": "15",
+        "CBS": "17.15",
+        "CPP": "27.85",
+        "ISS": "15.3",
+        "IBS": "1.7"
+       }
+      },
+      {
+       "aliquota": "19.5",
+       "deduzir": "9900",
+       "reparticao": {
+        "IRPJ": "24",
+        "CSLL": "15",
+        "CBS": "18.15",
+        "CPP": "23.85",
+        "ISS": "17.1",
+        "IBS": "1.9"
+       }
+      },
+      {
+       "aliquota": "20.5",
+       "deduzir": "17100",
+       "reparticao": {
+        "IRPJ": "21",
+        "CSLL": "15",
+        "CBS": "19.15",
+        "CPP": "23.85",
+        "ISS": "18.9",
+        "IBS": "2.1"
+       }
+      },
+      {
+       "aliquota": "23",
+       "deduzir": "62100",
+       "reparticao": {
+        "IRPJ": "23",
+        "CSLL": "12.5",
+        "CBS": "17.15",
+        "CPP": "23.85",
+        "ISS": "21.15",
+        "IBS": "2.35"
+       }
+      },
+      {
+       "aliquota": "30.5",
+       "deduzir": "540000",
+       "reparticao": {
+        "IRPJ": "35",
+        "CSLL": "15.5",
+        "CBS": "20",
+        "CPP": "29.5"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "23",
+        "deduzir": "62100",
+        "percentuais": {
+         "ISS": "21.15",
+         "IBS": "2.35"
+        }
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "lc214-2030",
+   "inicio": "2030-01",
+   "fim": "2030-12",
+   "fonte": "LC 214/2025, Anexo XVIII (redação do Anexo I da LC 123/2006 dada pelo art. 519), texto compilado do Planalto",
+   "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm",
+   "tributos": [
+    "IRPJ",
+    "CSLL",
+    "CBS",
+    "CPP",
+    "ICMS",
+    "IBS",
+    "IPI",
+    "ISS"
+   ],
+   "anexos": {
+    "I": {
+     "nome": "Comércio",
+     "faixas": [
+      {
+       "aliquota": "4",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "41.5",
+        "ICMS": "27.2",
+        "IBS": "6.8"
+       }
+      },
+      {
+       "aliquota": "7.3",
+       "deduzir": "5940",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "41.5",
+        "ICMS": "27.2",
+        "IBS": "6.8"
+       }
+      },
+      {
+       "aliquota": "9.5",
+       "deduzir": "13860",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "42",
+        "ICMS": "26.8",
+        "IBS": "6.7"
+       }
+      },
+      {
+       "aliquota": "10.7",
+       "deduzir": "22500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "42",
+        "ICMS": "26.8",
+        "IBS": "6.7"
+       }
+      },
+      {
+       "aliquota": "14.3",
+       "deduzir": "87300",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "42",
+        "ICMS": "26.8",
+        "IBS": "6.7"
+       }
+      },
+      {
+       "aliquota": "19",
+       "deduzir": "378000",
+       "reparticao": {
+        "IRPJ": "13.5",
+        "CSLL": "10",
+        "CBS": "34.4",
+        "CPP": "42.1"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "14.3",
+        "deduzir": "87300",
+        "percentuais": {
+         "ICMS": "26.8",
+         "IBS": "6.7"
+        }
+       }
+      }
+     ]
+    },
+    "II": {
+     "nome": "Indústria",
+     "faixas": [
+      {
+       "aliquota": "4.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "25.6",
+        "IBS": "6.4"
+       }
+      },
+      {
+       "aliquota": "7.8",
+       "deduzir": "5940",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "25.6",
+        "IBS": "6.4"
+       }
+      },
+      {
+       "aliquota": "10",
+       "deduzir": "13860",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "25.6",
+        "IBS": "6.4"
+       }
+      },
+      {
+       "aliquota": "11.2",
+       "deduzir": "22500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "25.6",
+        "IBS": "6.4"
+       }
+      },
+      {
+       "aliquota": "14.7",
+       "deduzir": "85500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "25.6",
+        "IBS": "6.4"
+       }
+      },
+      {
+       "aliquota": "30",
+       "deduzir": "720000",
+       "reparticao": {
+        "IRPJ": "8.5",
+        "CSLL": "7.5",
+        "CBS": "25.5",
+        "CPP": "23.5",
+        "IPI": "35"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "14.7",
+        "deduzir": "85500",
+        "percentuais": {
+         "ICMS": "25.6",
+         "IBS": "6.4"
+        }
+       }
+      }
+     ]
+    },
+    "III": {
+     "nome": "Receitas de locação de bens móveis e de prestação de serviços não relacionados no § 5º-C do art. 18",
+     "faixas": [
+      {
+       "aliquota": "6",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "15.6",
+        "CPP": "43.4",
+        "ISS": "26.8",
+        "IBS": "6.7"
+       }
+      },
+      {
+       "aliquota": "11.2",
+       "deduzir": "9360",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "17.1",
+        "CPP": "43.4",
+        "ISS": "25.6",
+        "IBS": "6.4"
+       }
+      },
+      {
+       "aliquota": "13.5",
+       "deduzir": "17640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "16.6",
+        "CPP": "43.4",
+        "ISS": "26",
+        "IBS": "6.5"
+       }
+      },
+      {
+       "aliquota": "16",
+       "deduzir": "35640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "16.6",
+        "CPP": "43.4",
+        "ISS": "26",
+        "IBS": "6.5"
+       }
+      },
+      {
+       "aliquota": "21",
+       "deduzir": "125640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "15.6",
+        "CPP": "43.4",
+        "ISS": "26.8",
+        "IBS": "6.7"
+       },
+       "tetoIss": {
+        "iss": "4",
+        "excedente": {
+         "IRPJ": "5.46",
+         "CSLL": "4.78",
+         "CBS": "21.31",
+         "CPP": "59.29",
+         "IBS": "9.15"
+        }
+       }
+      },
+      {
+       "aliquota": "33",
+       "deduzir": "648000",
+       "reparticao": {
+        "IRPJ": "35",
+        "CSLL": "15",
+        "CBS": "19.5",
+        "CPP": "30.5"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "21",
+        "deduzir": "125640",
+        "percentuais": {
+         "ISS": "26.8",
+         "IBS": "6.7"
+        }
+       }
+      }
+     ]
+    },
+    "IV": {
+     "nome": "Receitas decorrentes da prestação de serviços relacionados no § 5º-C do art. 18 (CPP fora do DAS)",
+     "faixas": [
+      {
+       "aliquota": "4.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "18.8",
+        "CSLL": "15.2",
+        "CBS": "21.5",
+        "ISS": "35.6",
+        "IBS": "8.9"
+       }
+      },
+      {
+       "aliquota": "9",
+       "deduzir": "8100",
+       "reparticao": {
+        "IRPJ": "19.8",
+        "CSLL": "15.2",
+        "CBS": "25",
+        "ISS": "32",
+        "IBS": "8"
+       }
+      },
+      {
+       "aliquota": "10.2",
+       "deduzir": "12420",
+       "reparticao": {
+        "IRPJ": "20.8",
+        "CSLL": "15.2",
+        "CBS": "24",
+        "ISS": "32",
+        "IBS": "8"
+       }
+      },
+      {
+       "aliquota": "14",
+       "deduzir": "39780",
+       "reparticao": {
+        "IRPJ": "17.8",
+        "CSLL": "19.2",
+        "CBS": "23",
+        "ISS": "32",
+        "IBS": "8"
+       }
+      },
+      {
+       "aliquota": "22",
+       "deduzir": "183780",
+       "reparticao": {
+        "IRPJ": "18.8",
+        "CSLL": "19.2",
+        "CBS": "22",
+        "ISS": "32",
+        "IBS": "8"
+       },
+       "tetoIss": {
+        "iss": "4",
+        "excedente": {
+         "IRPJ": "27.65",
+         "CSLL": "28.24",
+         "CBS": "32.35",
+         "IBS": "11.76"
+        }
+       }
+      },
+      {
+       "aliquota": "33",
+       "deduzir": "828000",
+       "reparticao": {
+        "IRPJ": "53.5",
+        "CSLL": "21.5",
+        "CBS": "25"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "22",
+        "deduzir": "183780",
+        "percentuais": {
+         "ISS": "32",
+         "IBS": "8"
+        }
+       }
+      }
+     ]
+    },
+    "V": {
+     "nome": "Receitas decorrentes da prestação de serviços relacionados no § 5º-I do art. 18",
+     "faixas": [
+      {
+       "aliquota": "15.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "25",
+        "CSLL": "15",
+        "CBS": "17.15",
+        "CPP": "28.85",
+        "ISS": "11.2",
+        "IBS": "2.8"
+       }
+      },
+      {
+       "aliquota": "18",
+       "deduzir": "4500",
+       "reparticao": {
+        "IRPJ": "23",
+        "CSLL": "15",
+        "CBS": "17.15",
+        "CPP": "27.85",
+        "ISS": "13.6",
+        "IBS": "3.4"
+       }
+      },
+      {
+       "aliquota": "19.5",
+       "deduzir": "9900",
+       "reparticao": {
+        "IRPJ": "24",
+        "CSLL": "15",
+        "CBS": "18.15",
+        "CPP": "23.85",
+        "ISS": "15.2",
+        "IBS": "3.8"
+       }
+      },
+      {
+       "aliquota": "20.5",
+       "deduzir": "17100",
+       "reparticao": {
+        "IRPJ": "21",
+        "CSLL": "15",
+        "CBS": "19.15",
+        "CPP": "23.85",
+        "ISS": "16.8",
+        "IBS": "4.2"
+       }
+      },
+      {
+       "aliquota": "23",
+       "deduzir": "62100",
+       "reparticao": {
+        "IRPJ": "23",
+        "CSLL": "12.5",
+        "CBS": "17.15",
+        "CPP": "23.85",
+        "ISS": "18.8",
+        "IBS": "4.7"
+       }
+      },
+      {
+       "aliquota": "30.5",
+       "deduzir": "540000",
+       "reparticao": {
+        "IRPJ": "35",
+        "CSLL": "15.5",
+        "CBS": "20",
+        "CPP": "29.5"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "23",
+        "deduzir": "62100",
+        "percentuais": {
+         "ISS": "18.8",
+         "IBS": "4.7"
+        }
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "lc214-2031",
+   "inicio": "2031-01",
+   "fim": "2031-12",
+   "fonte": "LC 214/2025, Anexo XVIII (redação do Anexo I da LC 123/2006 dada pelo art. 519), texto compilado do Planalto",
+   "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm",
+   "tributos": [
+    "IRPJ",
+    "CSLL",
+    "CBS",
+    "CPP",
+    "ICMS",
+    "IBS",
+    "IPI",
+    "ISS"
+   ],
+   "anexos": {
+    "I": {
+     "nome": "Comércio",
+     "faixas": [
+      {
+       "aliquota": "4",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "41.5",
+        "ICMS": "23.8",
+        "IBS": "10.2"
+       }
+      },
+      {
+       "aliquota": "7.3",
+       "deduzir": "5940",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "41.5",
+        "ICMS": "23.8",
+        "IBS": "10.2"
+       }
+      },
+      {
+       "aliquota": "9.5",
+       "deduzir": "13860",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "42",
+        "ICMS": "23.45",
+        "IBS": "10.05"
+       }
+      },
+      {
+       "aliquota": "10.7",
+       "deduzir": "22500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "42",
+        "ICMS": "23.45",
+        "IBS": "10.05"
+       }
+      },
+      {
+       "aliquota": "14.3",
+       "deduzir": "87300",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "42",
+        "ICMS": "23.45",
+        "IBS": "10.05"
+       }
+      },
+      {
+       "aliquota": "19",
+       "deduzir": "378000",
+       "reparticao": {
+        "IRPJ": "13.5",
+        "CSLL": "10",
+        "CBS": "34.4",
+        "CPP": "42.1"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "14.3",
+        "deduzir": "87300",
+        "percentuais": {
+         "ICMS": "23.45",
+         "IBS": "10.05"
+        }
+       }
+      }
+     ]
+    },
+    "II": {
+     "nome": "Indústria",
+     "faixas": [
+      {
+       "aliquota": "4.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "22.4",
+        "IBS": "9.6"
+       }
+      },
+      {
+       "aliquota": "7.8",
+       "deduzir": "5940",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "22.4",
+        "IBS": "9.6"
+       }
+      },
+      {
+       "aliquota": "10",
+       "deduzir": "13860",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "22.4",
+        "IBS": "9.6"
+       }
+      },
+      {
+       "aliquota": "11.2",
+       "deduzir": "22500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "22.4",
+        "IBS": "9.6"
+       }
+      },
+      {
+       "aliquota": "14.7",
+       "deduzir": "85500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "22.4",
+        "IBS": "9.6"
+       }
+      },
+      {
+       "aliquota": "30",
+       "deduzir": "720000",
+       "reparticao": {
+        "IRPJ": "8.5",
+        "CSLL": "7.5",
+        "CBS": "25.5",
+        "CPP": "23.5",
+        "IPI": "35"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "14.7",
+        "deduzir": "85500",
+        "percentuais": {
+         "ICMS": "22.4",
+         "IBS": "9.6"
+        }
+       }
+      }
+     ]
+    },
+    "III": {
+     "nome": "Receitas de locação de bens móveis e de prestação de serviços não relacionados no § 5º-C do art. 18",
+     "faixas": [
+      {
+       "aliquota": "6",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "15.6",
+        "CPP": "43.4",
+        "ISS": "23.45",
+        "IBS": "10.05"
+       }
+      },
+      {
+       "aliquota": "11.2",
+       "deduzir": "9360",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "17.1",
+        "CPP": "43.4",
+        "ISS": "22.4",
+        "IBS": "9.6"
+       }
+      },
+      {
+       "aliquota": "13.5",
+       "deduzir": "17640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "16.6",
+        "CPP": "43.4",
+        "ISS": "22.75",
+        "IBS": "9.75"
+       }
+      },
+      {
+       "aliquota": "16",
+       "deduzir": "35640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "16.6",
+        "CPP": "43.4",
+        "ISS": "22.75",
+        "IBS": "9.75"
+       }
+      },
+      {
+       "aliquota": "21",
+       "deduzir": "125640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "15.6",
+        "CPP": "43.4",
+        "ISS": "23.45",
+        "IBS": "10.05"
+       },
+       "tetoIss": {
+        "iss": "3.5",
+        "excedente": {
+         "IRPJ": "5.23",
+         "CSLL": "4.57",
+         "CBS": "20.38",
+         "CPP": "56.69",
+         "IBS": "13.13"
+        }
+       }
+      },
+      {
+       "aliquota": "33",
+       "deduzir": "648000",
+       "reparticao": {
+        "IRPJ": "35",
+        "CSLL": "15",
+        "CBS": "19.5",
+        "CPP": "30.5"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "21",
+        "deduzir": "125640",
+        "percentuais": {
+         "ISS": "23.45",
+         "IBS": "10.05"
+        }
+       }
+      }
+     ]
+    },
+    "IV": {
+     "nome": "Receitas decorrentes da prestação de serviços relacionados no § 5º-C do art. 18 (CPP fora do DAS)",
+     "faixas": [
+      {
+       "aliquota": "4.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "18.8",
+        "CSLL": "15.2",
+        "CBS": "21.5",
+        "ISS": "31.15",
+        "IBS": "13.35"
+       }
+      },
+      {
+       "aliquota": "9",
+       "deduzir": "8100",
+       "reparticao": {
+        "IRPJ": "19.8",
+        "CSLL": "15.2",
+        "CBS": "25",
+        "ISS": "28",
+        "IBS": "12"
+       }
+      },
+      {
+       "aliquota": "10.2",
+       "deduzir": "12420",
+       "reparticao": {
+        "IRPJ": "20.8",
+        "CSLL": "15.2",
+        "CBS": "24",
+        "ISS": "28",
+        "IBS": "12"
+       }
+      },
+      {
+       "aliquota": "14",
+       "deduzir": "39780",
+       "reparticao": {
+        "IRPJ": "17.8",
+        "CSLL": "19.2",
+        "CBS": "23",
+        "ISS": "28",
+        "IBS": "12"
+       }
+      },
+      {
+       "aliquota": "22",
+       "deduzir": "183780",
+       "reparticao": {
+        "IRPJ": "18.8",
+        "CSLL": "19.2",
+        "CBS": "22",
+        "ISS": "28",
+        "IBS": "12"
+       },
+       "tetoIss": {
+        "iss": "3.5",
+        "excedente": {
+         "IRPJ": "26.11",
+         "CSLL": "26.67",
+         "CBS": "30.56",
+         "IBS": "16.67"
+        }
+       }
+      },
+      {
+       "aliquota": "33",
+       "deduzir": "828000",
+       "reparticao": {
+        "IRPJ": "53.5",
+        "CSLL": "21.5",
+        "CBS": "25"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "22",
+        "deduzir": "183780",
+        "percentuais": {
+         "ISS": "28",
+         "IBS": "12"
+        }
+       }
+      }
+     ]
+    },
+    "V": {
+     "nome": "Receitas decorrentes da prestação de serviços relacionados no § 5º-I do art. 18",
+     "faixas": [
+      {
+       "aliquota": "15.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "25",
+        "CSLL": "15",
+        "CBS": "17.15",
+        "CPP": "28.85",
+        "ISS": "9.8",
+        "IBS": "4.2"
+       }
+      },
+      {
+       "aliquota": "18",
+       "deduzir": "4500",
+       "reparticao": {
+        "IRPJ": "23",
+        "CSLL": "15",
+        "CBS": "17.15",
+        "CPP": "27.85",
+        "ISS": "11.9",
+        "IBS": "5.1"
+       }
+      },
+      {
+       "aliquota": "19.5",
+       "deduzir": "9900",
+       "reparticao": {
+        "IRPJ": "24",
+        "CSLL": "15",
+        "CBS": "18.15",
+        "CPP": "23.85",
+        "ISS": "13.3",
+        "IBS": "5.7"
+       }
+      },
+      {
+       "aliquota": "20.5",
+       "deduzir": "17100",
+       "reparticao": {
+        "IRPJ": "21",
+        "CSLL": "15",
+        "CBS": "19.15",
+        "CPP": "23.85",
+        "ISS": "14.7",
+        "IBS": "6.3"
+       }
+      },
+      {
+       "aliquota": "23",
+       "deduzir": "62100",
+       "reparticao": {
+        "IRPJ": "23",
+        "CSLL": "12.5",
+        "CBS": "17.15",
+        "CPP": "23.85",
+        "ISS": "16.45",
+        "IBS": "7.05"
+       }
+      },
+      {
+       "aliquota": "30.5",
+       "deduzir": "540000",
+       "reparticao": {
+        "IRPJ": "35",
+        "CSLL": "15.5",
+        "CBS": "20",
+        "CPP": "29.5"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "23",
+        "deduzir": "62100",
+        "percentuais": {
+         "ISS": "16.45",
+         "IBS": "7.05"
+        }
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "lc214-2032",
+   "inicio": "2032-01",
+   "fim": "2032-12",
+   "fonte": "LC 214/2025, Anexo XVIII (redação do Anexo I da LC 123/2006 dada pelo art. 519), texto compilado do Planalto",
+   "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm",
+   "tributos": [
+    "IRPJ",
+    "CSLL",
+    "CBS",
+    "CPP",
+    "ICMS",
+    "IBS",
+    "IPI",
+    "ISS"
+   ],
+   "anexos": {
+    "I": {
+     "nome": "Comércio",
+     "faixas": [
+      {
+       "aliquota": "4",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "41.5",
+        "ICMS": "20.4",
+        "IBS": "13.6"
+       }
+      },
+      {
+       "aliquota": "7.3",
+       "deduzir": "5940",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "41.5",
+        "ICMS": "20.4",
+        "IBS": "13.6"
+       }
+      },
+      {
+       "aliquota": "9.5",
+       "deduzir": "13860",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "42",
+        "ICMS": "20.1",
+        "IBS": "13.4"
+       }
+      },
+      {
+       "aliquota": "10.7",
+       "deduzir": "22500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "42",
+        "ICMS": "20.1",
+        "IBS": "13.4"
+       }
+      },
+      {
+       "aliquota": "14.3",
+       "deduzir": "87300",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "42",
+        "ICMS": "20.1",
+        "IBS": "13.4"
+       }
+      },
+      {
+       "aliquota": "19",
+       "deduzir": "378000",
+       "reparticao": {
+        "IRPJ": "13.5",
+        "CSLL": "10",
+        "CBS": "34.4",
+        "CPP": "42.1"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "14.3",
+        "deduzir": "87300",
+        "percentuais": {
+         "ICMS": "20.1",
+         "IBS": "13.4"
+        }
+       }
+      }
+     ]
+    },
+    "II": {
+     "nome": "Indústria",
+     "faixas": [
+      {
+       "aliquota": "4.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "19.2",
+        "IBS": "12.8"
+       }
+      },
+      {
+       "aliquota": "7.8",
+       "deduzir": "5940",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "19.2",
+        "IBS": "12.8"
+       }
+      },
+      {
+       "aliquota": "10",
+       "deduzir": "13860",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "19.2",
+        "IBS": "12.8"
+       }
+      },
+      {
+       "aliquota": "11.2",
+       "deduzir": "22500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "19.2",
+        "IBS": "12.8"
+       }
+      },
+      {
+       "aliquota": "14.7",
+       "deduzir": "85500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "ICMS": "19.2",
+        "IBS": "12.8"
+       }
+      },
+      {
+       "aliquota": "30",
+       "deduzir": "720000",
+       "reparticao": {
+        "IRPJ": "8.5",
+        "CSLL": "7.5",
+        "CBS": "25.5",
+        "CPP": "23.5",
+        "IPI": "35"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "14.7",
+        "deduzir": "85500",
+        "percentuais": {
+         "ICMS": "19.2",
+         "IBS": "12.8"
+        }
+       }
+      }
+     ]
+    },
+    "III": {
+     "nome": "Receitas de locação de bens móveis e de prestação de serviços não relacionados no § 5º-C do art. 18",
+     "faixas": [
+      {
+       "aliquota": "6",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "15.6",
+        "CPP": "43.4",
+        "ISS": "20.1",
+        "IBS": "13.4"
+       }
+      },
+      {
+       "aliquota": "11.2",
+       "deduzir": "9360",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "17.1",
+        "CPP": "43.4",
+        "ISS": "19.2",
+        "IBS": "12.8"
+       }
+      },
+      {
+       "aliquota": "13.5",
+       "deduzir": "17640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "16.6",
+        "CPP": "43.4",
+        "ISS": "19.5",
+        "IBS": "13"
+       }
+      },
+      {
+       "aliquota": "16",
+       "deduzir": "35640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "16.6",
+        "CPP": "43.4",
+        "ISS": "19.5",
+        "IBS": "13"
+       }
+      },
+      {
+       "aliquota": "21",
+       "deduzir": "125640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "15.6",
+        "CPP": "43.4",
+        "ISS": "20.1",
+        "IBS": "13.4"
+       },
+       "tetoIss": {
+        "iss": "3",
+        "excedente": {
+         "IRPJ": "5.01",
+         "CSLL": "4.38",
+         "CBS": "19.52",
+         "CPP": "54.32",
+         "IBS": "16.77"
+        }
+       }
+      },
+      {
+       "aliquota": "33",
+       "deduzir": "648000",
+       "reparticao": {
+        "IRPJ": "35",
+        "CSLL": "15",
+        "CBS": "19.5",
+        "CPP": "30.5"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "21",
+        "deduzir": "125640",
+        "percentuais": {
+         "ISS": "20.1",
+         "IBS": "13.4"
+        }
+       }
+      }
+     ]
+    },
+    "IV": {
+     "nome": "Receitas decorrentes da prestação de serviços relacionados no § 5º-C do art. 18 (CPP fora do DAS)",
+     "faixas": [
+      {
+       "aliquota": "4.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "18.8",
+        "CSLL": "15.2",
+        "CBS": "21.5",
+        "ISS": "26.7",
+        "IBS": "17.8"
+       }
+      },
+      {
+       "aliquota": "9",
+       "deduzir": "8100",
+       "reparticao": {
+        "IRPJ": "19.8",
+        "CSLL": "15.2",
+        "CBS": "25",
+        "ISS": "24",
+        "IBS": "16"
+       }
+      },
+      {
+       "aliquota": "10.2",
+       "deduzir": "12420",
+       "reparticao": {
+        "IRPJ": "20.8",
+        "CSLL": "15.2",
+        "CBS": "24",
+        "ISS": "24",
+        "IBS": "16"
+       }
+      },
+      {
+       "aliquota": "14",
+       "deduzir": "39780",
+       "reparticao": {
+        "IRPJ": "17.8",
+        "CSLL": "19.2",
+        "CBS": "23",
+        "ISS": "24",
+        "IBS": "16"
+       }
+      },
+      {
+       "aliquota": "22",
+       "deduzir": "183780",
+       "reparticao": {
+        "IRPJ": "18.8",
+        "CSLL": "19.2",
+        "CBS": "22",
+        "ISS": "24",
+        "IBS": "16"
+       },
+       "tetoIss": {
+        "iss": "3",
+        "excedente": {
+         "IRPJ": "24.74",
+         "CSLL": "25.26",
+         "CBS": "28.95",
+         "IBS": "21.05"
+        }
+       }
+      },
+      {
+       "aliquota": "33",
+       "deduzir": "828000",
+       "reparticao": {
+        "IRPJ": "53.5",
+        "CSLL": "21.5",
+        "CBS": "25"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "22",
+        "deduzir": "183780",
+        "percentuais": {
+         "ISS": "24",
+         "IBS": "16"
+        }
+       }
+      }
+     ]
+    },
+    "V": {
+     "nome": "Receitas decorrentes da prestação de serviços relacionados no § 5º-I do art. 18",
+     "faixas": [
+      {
+       "aliquota": "15.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "25",
+        "CSLL": "15",
+        "CBS": "17.15",
+        "CPP": "28.85",
+        "ISS": "8.4",
+        "IBS": "5.6"
+       }
+      },
+      {
+       "aliquota": "18",
+       "deduzir": "4500",
+       "reparticao": {
+        "IRPJ": "23",
+        "CSLL": "15",
+        "CBS": "17.15",
+        "CPP": "27.85",
+        "ISS": "10.2",
+        "IBS": "6.8"
+       }
+      },
+      {
+       "aliquota": "19.5",
+       "deduzir": "9900",
+       "reparticao": {
+        "IRPJ": "24",
+        "CSLL": "15",
+        "CBS": "18.15",
+        "CPP": "23.85",
+        "ISS": "11.4",
+        "IBS": "7.6"
+       }
+      },
+      {
+       "aliquota": "20.5",
+       "deduzir": "17100",
+       "reparticao": {
+        "IRPJ": "21",
+        "CSLL": "15",
+        "CBS": "19.15",
+        "CPP": "23.85",
+        "ISS": "12.6",
+        "IBS": "8.4"
+       }
+      },
+      {
+       "aliquota": "23",
+       "deduzir": "62100",
+       "reparticao": {
+        "IRPJ": "23",
+        "CSLL": "12.5",
+        "CBS": "17.15",
+        "CPP": "23.85",
+        "ISS": "14.1",
+        "IBS": "9.4"
+       }
+      },
+      {
+       "aliquota": "30.5",
+       "deduzir": "540000",
+       "reparticao": {
+        "IRPJ": "35",
+        "CSLL": "15.5",
+        "CBS": "20",
+        "CPP": "29.5"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "23",
+        "deduzir": "62100",
+        "percentuais": {
+         "ISS": "14.1",
+         "IBS": "9.4"
+        }
+       }
+      }
+     ]
+    }
+   }
+  },
+  {
+   "id": "lc214-2033-em-diante",
+   "inicio": "2033-01",
+   "fim": null,
+   "fonte": "LC 214/2025, Anexo XVIII (redação do Anexo I da LC 123/2006 dada pelo art. 519), texto compilado do Planalto",
+   "url": "https://www.planalto.gov.br/ccivil_03/leis/lcp/lcp214.htm",
+   "tributos": [
+    "IRPJ",
+    "CSLL",
+    "CBS",
+    "CPP",
+    "IBS",
+    "IPI"
+   ],
+   "anexos": {
+    "I": {
+     "nome": "Comércio",
+     "faixas": [
+      {
+       "aliquota": "4",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "41.5",
+        "IBS": "34"
+       }
+      },
+      {
+       "aliquota": "7.3",
+       "deduzir": "5940",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "41.5",
+        "IBS": "34"
+       }
+      },
+      {
+       "aliquota": "9.5",
+       "deduzir": "13860",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "42",
+        "IBS": "33.5"
+       }
+      },
+      {
+       "aliquota": "10.7",
+       "deduzir": "22500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "42",
+        "IBS": "33.5"
+       }
+      },
+      {
+       "aliquota": "14.3",
+       "deduzir": "87300",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "15.5",
+        "CPP": "42",
+        "IBS": "33.5"
+       }
+      },
+      {
+       "aliquota": "19",
+       "deduzir": "378000",
+       "reparticao": {
+        "IRPJ": "13.5",
+        "CSLL": "10",
+        "CBS": "34.4",
+        "CPP": "42.1"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "14.3",
+        "deduzir": "87300",
+        "percentuais": {
+         "IBS": "33.5"
+        }
+       }
+      }
+     ]
+    },
+    "II": {
+     "nome": "Indústria",
+     "faixas": [
+      {
+       "aliquota": "4.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "IBS": "32"
+       }
+      },
+      {
+       "aliquota": "7.8",
+       "deduzir": "5940",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "IBS": "32"
+       }
+      },
+      {
+       "aliquota": "10",
+       "deduzir": "13860",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "IBS": "32"
+       }
+      },
+      {
+       "aliquota": "11.2",
+       "deduzir": "22500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "IBS": "32"
+       }
+      },
+      {
+       "aliquota": "14.7",
+       "deduzir": "85500",
+       "reparticao": {
+        "IRPJ": "5.5",
+        "CSLL": "3.5",
+        "CBS": "14",
+        "CPP": "37.5",
+        "IPI": "7.5",
+        "IBS": "32"
+       }
+      },
+      {
+       "aliquota": "30",
+       "deduzir": "720000",
+       "reparticao": {
+        "IRPJ": "8.5",
+        "CSLL": "7.5",
+        "CBS": "25.5",
+        "CPP": "23.5",
+        "IPI": "35"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "14.7",
+        "deduzir": "85500",
+        "percentuais": {
+         "IBS": "32"
+        }
+       }
+      }
+     ]
+    },
+    "III": {
+     "nome": "Receitas de locação de bens móveis e de prestação de serviços não relacionados no § 5º-C do art. 18",
+     "faixas": [
+      {
+       "aliquota": "6",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "15.6",
+        "CPP": "43.4",
+        "IBS": "33.5"
+       }
+      },
+      {
+       "aliquota": "11.2",
+       "deduzir": "9360",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "17.1",
+        "CPP": "43.4",
+        "IBS": "32"
+       }
+      },
+      {
+       "aliquota": "13.5",
+       "deduzir": "17640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "16.6",
+        "CPP": "43.4",
+        "IBS": "32.5"
+       }
+      },
+      {
+       "aliquota": "16",
+       "deduzir": "35640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "16.6",
+        "CPP": "43.4",
+        "IBS": "32.5"
+       }
+      },
+      {
+       "aliquota": "21",
+       "deduzir": "125640",
+       "reparticao": {
+        "IRPJ": "4",
+        "CSLL": "3.5",
+        "CBS": "15.6",
+        "CPP": "43.4",
+        "IBS": "33.5"
+       }
+      },
+      {
+       "aliquota": "33",
+       "deduzir": "648000",
+       "reparticao": {
+        "IRPJ": "35",
+        "CSLL": "15",
+        "CBS": "19.5",
+        "CPP": "30.5"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "21",
+        "deduzir": "125640",
+        "percentuais": {
+         "IBS": "33.5"
+        }
+       }
+      }
+     ]
+    },
+    "IV": {
+     "nome": "Receitas decorrentes da prestação de serviços relacionados no § 5º-C do art. 18 (CPP fora do DAS)",
+     "faixas": [
+      {
+       "aliquota": "4.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "18.8",
+        "CSLL": "15.2",
+        "CBS": "21.5",
+        "IBS": "44.5"
+       }
+      },
+      {
+       "aliquota": "9",
+       "deduzir": "8100",
+       "reparticao": {
+        "IRPJ": "19.8",
+        "CSLL": "15.2",
+        "CBS": "25",
+        "IBS": "40"
+       }
+      },
+      {
+       "aliquota": "10.2",
+       "deduzir": "12420",
+       "reparticao": {
+        "IRPJ": "20.8",
+        "CSLL": "15.2",
+        "CBS": "24",
+        "IBS": "40"
+       }
+      },
+      {
+       "aliquota": "14",
+       "deduzir": "39780",
+       "reparticao": {
+        "IRPJ": "17.8",
+        "CSLL": "19.2",
+        "CBS": "23",
+        "IBS": "40"
+       }
+      },
+      {
+       "aliquota": "22",
+       "deduzir": "183780",
+       "reparticao": {
+        "IRPJ": "18.8",
+        "CSLL": "19.2",
+        "CBS": "22",
+        "IBS": "40"
+       }
+      },
+      {
+       "aliquota": "33",
+       "deduzir": "828000",
+       "reparticao": {
+        "IRPJ": "53.5",
+        "CSLL": "21.5",
+        "CBS": "25"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "22",
+        "deduzir": "183780",
+        "percentuais": {
+         "IBS": "40"
+        }
+       }
+      }
+     ]
+    },
+    "V": {
+     "nome": "Receitas decorrentes da prestação de serviços relacionados no § 5º-I do art. 18",
+     "faixas": [
+      {
+       "aliquota": "15.5",
+       "deduzir": "0",
+       "reparticao": {
+        "IRPJ": "25",
+        "CSLL": "15",
+        "CBS": "17.15",
+        "CPP": "28.85",
+        "IBS": "14"
+       }
+      },
+      {
+       "aliquota": "18",
+       "deduzir": "4500",
+       "reparticao": {
+        "IRPJ": "23",
+        "CSLL": "15",
+        "CBS": "17.15",
+        "CPP": "27.85",
+        "IBS": "17"
+       }
+      },
+      {
+       "aliquota": "19.5",
+       "deduzir": "9900",
+       "reparticao": {
+        "IRPJ": "24",
+        "CSLL": "15",
+        "CBS": "18.15",
+        "CPP": "23.85",
+        "IBS": "19"
+       }
+      },
+      {
+       "aliquota": "20.5",
+       "deduzir": "17100",
+       "reparticao": {
+        "IRPJ": "21",
+        "CSLL": "15",
+        "CBS": "19.15",
+        "CPP": "23.85",
+        "IBS": "21"
+       }
+      },
+      {
+       "aliquota": "23",
+       "deduzir": "62100",
+       "reparticao": {
+        "IRPJ": "23",
+        "CSLL": "12.5",
+        "CBS": "17.15",
+        "CPP": "23.85",
+        "IBS": "23.5"
+       }
+      },
+      {
+       "aliquota": "30.5",
+       "deduzir": "540000",
+       "reparticao": {
+        "IRPJ": "35",
+        "CSLL": "15.5",
+        "CBS": "20",
+        "CPP": "29.5"
+       },
+       "subnacionaisPela5aFaixa": {
+        "aliquota": "23",
+        "deduzir": "62100",
+        "percentuais": {
+         "IBS": "23.5"
+        }
+       }
+      }
+     ]
+    }
+   }
+  }
+ ]
+}

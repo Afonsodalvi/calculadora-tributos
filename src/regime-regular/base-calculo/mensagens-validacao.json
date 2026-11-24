@@ -1,0 +1,277 @@
+{
+ "": {
+  "NotNull": "must not be null",
+  "NotBlank": "must not be blank",
+  "NotEmpty": "must not be empty",
+  "Positive": "must be greater than 0",
+  "PositiveOrZero": "must be greater than or equal to 0",
+  "Min": "must be greater than or equal to {value}",
+  "Max": "must be less than or equal to {value}",
+  "Size": "size must be between {min} and {max}",
+  "Digits": "numeric value out of bounds (<{integer} digits>.<{fraction} digits> expected)"
+ },
+ "ar": {
+  "NotNull": "لا يمكن أن يكون منعدم",
+  "NotBlank": "لا يمكن أن تكون فارغة",
+  "NotEmpty": "لا يمكن أن تكون فارغة",
+  "Min": "يجب أن تكون أكبر من أو مساوية ل {value}",
+  "Max": "يجب أن تكون أقل أو مساوية ل {value}",
+  "Size": "يجب أن يكون الحجم بين {min} و{max}",
+  "Digits": "القيمة الرقمية خارج الحدود (<{integer} أرقام>. <{fraction} أرقام> متوقعة)"
+ },
+ "az": {
+  "NotNull": "null olmamalıdır",
+  "NotBlank": "boş olmamalıdır",
+  "NotEmpty": "boş olmamalıdır",
+  "Positive": "0-dan böyük olmalıdır",
+  "PositiveOrZero": "0-dan böyük bərabər olmalıdır",
+  "Min": "{value}-${value != 0 && value % 1000000 != 0 && value % 1000000000 != 0 && (value % 100 == 0 || value % 100 == 20 || value % 100 == 50 || value % 100 == 70 || value % 100 == 80 || value % 10 == 1 || value % 10 == 2 || value % 10 == 3 || value % 10 == 4 || value % 10 == 5 || value % 10 == 7 || value % 10 == 8) ? 'dən' : 'dan'} böyük bərabər olmalıdır",
+  "Max": "{value}-${value != 0 && value % 1000000 != 0 && value % 1000000000 != 0 && (value % 100 == 0 || value % 100 == 20 || value % 100 == 50 || value % 100 == 70 || value % 100 == 80 || value % 10 == 1 || value % 10 == 2 || value % 10 == 3 || value % 10 == 4 || value % 10 == 5 || value % 10 == 7 || value % 10 == 8) ? 'dən' : 'dan'} kiçik bərabər olmalıdır",
+  "Size": "ölçü {min} və {max} arasında olmalıdır",
+  "Digits": "tam hissəsi {integer}, kəsr hissəsi {fraction} rəqəmdən çox olmamalıdır"
+ },
+ "cs": {
+  "NotNull": "nesmí mít hodnotu Null",
+  "NotBlank": "nesmí být prázdná",
+  "NotEmpty": "nesmí být prázdná",
+  "Positive": "musí být větší než 0",
+  "PositiveOrZero": "musí být větší než nebo rovna hodnotě 0",
+  "Min": "musí být větší nebo rovna hodnotě {value}",
+  "Max": "musí být menší nebo rovna hodnotě {value}",
+  "Size": "velikost musí ležet v rozsahu {min} až {max}",
+  "Digits": "číselná hodnota mimo rozsah (očekáváno: <{integer} číslic>.<{fraction} číslic>)"
+ },
+ "da": {
+  "NotNull": "må ikke være null",
+  "NotBlank": "må ikke være blank",
+  "NotEmpty": "må ikke være tom",
+  "Positive": "skal være større end 0",
+  "PositiveOrZero": "skal være større end eller lig med 0",
+  "Min": "skal være større end eller lig med {value}",
+  "Max": "skal være mindre end eller lig med {value}",
+  "Size": "størrelse skal være mellem {min} og {max}",
+  "Digits": "tal værdierne er udenfor det gyldige område (<{integer} digits>.<{fraction} digits> forventet)"
+ },
+ "de": {
+  "NotNull": "darf nicht null sein",
+  "NotBlank": "darf nicht leer sein",
+  "NotEmpty": "darf nicht leer sein",
+  "Positive": "muss größer als 0 sein",
+  "PositiveOrZero": "muss größer-gleich 0 sein",
+  "Min": "muss größer-gleich {value} sein",
+  "Max": "muss kleiner-gleich {value} sein",
+  "Size": "Größe muss zwischen {min} und {max} sein",
+  "Digits": "numerischer Wert außerhalb des gültigen Bereichs (<{integer} digits>.<{fraction} digits> erwartet)"
+ },
+ "en": {},
+ "es": {
+  "NotNull": "no debe ser nulo",
+  "NotBlank": "no debe estar vacío",
+  "NotEmpty": "no debe estar vacío",
+  "Positive": "debe ser mayor que 0",
+  "PositiveOrZero": "debe ser mayor que o igual a 0",
+  "Min": "debe ser mayor que o igual a {value}",
+  "Max": "debe ser menor que o igual a {value}",
+  "Size": "el tamaño debe estar entre {min} y {max}",
+  "Digits": "valor numérico fuera de límites (se esperaba <{integer} dígitos>.<{fraction} dígitos>)"
+ },
+ "fa": {
+  "NotNull": "مقدار نباید خالی باشد",
+  "NotBlank": "مقدار نباید خالی باشد",
+  "NotEmpty": "مقدار نباید خالی باشد",
+  "Positive": "باید بزرگتر از صفر باشد",
+  "PositiveOrZero": "باید بزرگتر و یا مساوی صفر باشد",
+  "Min": "باید بزرگتر و یا مساوی {value} باشد",
+  "Max": "باید کوچکتر و یا مساوی {value} باشد",
+  "Size": "سایز باید بین {min} و {max} باشد",
+  "Digits": "عدد درست نمیباشد (باید {integer} رقم صحیح و {fraction} رقم اعشار باشد)"
+ },
+ "fr": {
+  "NotNull": "ne doit pas être nul",
+  "NotBlank": "ne doit pas être vide",
+  "NotEmpty": "ne doit pas être vide",
+  "Positive": "doit être supérieur à 0",
+  "PositiveOrZero": "doit être supérieur ou égal à 0",
+  "Min": "doit être supérieur ou égal à {value}",
+  "Max": "doit être inférieur ou égal à {value}",
+  "Size": "la taille doit être comprise entre {min} et {max}",
+  "Digits": "valeur numérique hors limites (<{integer} chiffres>.<{fraction} chiffres> attendu)"
+ },
+ "hu": {
+  "NotNull": "nem lehet null",
+  "NotBlank": "nem lehet üres",
+  "NotEmpty": "nem lehet üres",
+  "Positive": "nagyobbnak kell lennie, mint 0",
+  "PositiveOrZero": "nagyobbnak vagy egyenlőnek kell lennie, mint 0",
+  "Min": "nagyobbnak, vagy egyenlőnek kell lennie, mint {value}",
+  "Max": "kisebbnek, vagy egyenlőnek kell lennie, mint {value}",
+  "Size": "a méretnek a(z) {min} és {max} értékek között kell lennie",
+  "Digits": "a numerikus érték a korlátokon kívül esik (<{integer} számjegy>.<{fraction} számjegy> számot várt a rendszer)"
+ },
+ "it": {
+  "NotNull": "non deve essere null",
+  "NotBlank": "non deve essere spazio",
+  "NotEmpty": "non deve essere vuoto",
+  "Positive": "deve essere superiore a 0",
+  "PositiveOrZero": "deve essere superiore o uguale a 0",
+  "Min": "deve essere superiore o uguale a {value}",
+  "Max": "deve essere inferiore o uguale a {value}",
+  "Size": "la dimensione deve essere compresa tra {min} e {max}",
+  "Digits": "valore numerico fuori dai limiti (previsto <{integer} digits>.<{fraction} digits>)"
+ },
+ "ja": {
+  "NotNull": "null は許可されていません",
+  "NotBlank": "空白は許可されていません",
+  "NotEmpty": "空要素は許可されていません",
+  "Positive": "0 より大きな値にしてください",
+  "PositiveOrZero": "0 以上の値にしてください",
+  "Min": "{value} 以上の値にしてください",
+  "Max": "{value} 以下の値にしてください",
+  "Size": "{min} から {max} の間のサイズにしてください",
+  "Digits": "値は次の範囲にしてください (<整数 {integer} 桁>.<小数点以下 {fraction} 桁>)"
+ },
+ "ko": {
+  "NotNull": "널이어서는 안됩니다",
+  "NotBlank": "공백일 수 없습니다",
+  "NotEmpty": "비어 있을 수 없습니다",
+  "Positive": "0보다 커야 합니다",
+  "PositiveOrZero": "0 이상이어야 합니다",
+  "Min": "{value} 이상이어야 합니다",
+  "Max": "{value} 이하여야 합니다",
+  "Size": "크기가 {min}에서 {max} 사이여야 합니다",
+  "Digits": "숫자 값이 한계를 초과합니다(<{integer} 자리>.<{fraction} 자리> 예상)"
+ },
+ "mn_MN": {
+  "NotNull": "null байж болохгүй",
+  "NotBlank": "Хоосон байж болохгүй",
+  "NotEmpty": "Хоосон байж болохгүй",
+  "Min": "{value}-аас их буюу тэнцүү байх ёстой",
+  "Max": "{value}-аас бага буюу тэнцүү байх ёстой",
+  "Size": "Хэмжээ {min}-с {max} хооронд байна",
+  "Digits": "Тоон хязгаараас хэтэрсэн байна (<{integer} digits>.<{fraction} digits> хооронд байна)"
+ },
+ "nl": {
+  "NotNull": "mag niet null zijn",
+  "NotBlank": "mag niet onbeschreven zijn",
+  "NotEmpty": "mag niet leeg zijn",
+  "Positive": "moet groter dan 0 zijn",
+  "PositiveOrZero": "moet groter of gelijk zijn aan 0",
+  "Min": "moet groter of gelijk aan {value} zijn",
+  "Max": "moet kleiner of gelijk aan {value} zijn",
+  "Size": "grootte moet tussen {min} en {max} liggen",
+  "Digits": "numerieke waarde ligt buiten het toegestane bereik (<{integer} cijfers>,<{fraction} cijfers> verwacht)"
+ },
+ "pl": {
+  "NotNull": "nie może mieć wartości null",
+  "NotBlank": "nie może być odstępem",
+  "NotEmpty": "nie może być puste",
+  "Positive": "musi być większe od 0",
+  "PositiveOrZero": "musi być równe lub większe od 0",
+  "Min": "musi być równe lub większe od {value}",
+  "Max": "musi być równe lub mniejsze od {value}",
+  "Size": "wielkość musi należeć do zakresu od {min} do {max}",
+  "Digits": "wartość liczbowa spoza zakresu (oczekiwano <liczba cyfr: {integer}>,<liczba cyfr: {fraction}>)"
+ },
+ "pt": {
+  "NotNull": "não deve ser nulo",
+  "NotBlank": "não deve estar em branco",
+  "NotEmpty": "não deve estar vazio",
+  "Positive": "deve ser maior que 0",
+  "PositiveOrZero": "deve ser maior ou igual a 0",
+  "Min": "deve ser maior que ou igual a {value}",
+  "Max": "deve ser menor que ou igual a {value}",
+  "Size": "tamanho deve ser entre {min} e {max}",
+  "Digits": "valor númerico fora do limite (<{integer} dígito>.<{fraction} dígitos> esperar)"
+ },
+ "pt_BR": {
+  "Min": "deve ser maior que ou igual à {value}",
+  "Max": "deve ser menor que ou igual à {value}"
+ },
+ "pt_PT": {
+  "Size": "tamanho deve estar entre {min} e {max}"
+ },
+ "ro": {
+  "NotNull": "nu trebuie să fie null",
+  "NotBlank": "nu trebuie să fie blanc",
+  "NotEmpty": "nu trebuie să fie gol",
+  "Positive": "trebuie să fie mai mare decât 0",
+  "PositiveOrZero": "trebuie să fie mai mare sau egal decât 0",
+  "Min": "trebuie să fie mai mare sau egal decât {value}",
+  "Max": "trebuie să fie mai mic sau egal decât {value}",
+  "Size": "dimensiunea trebuie să fie între {min} şi {max}",
+  "Digits": "valoare numerică în afara limitelor (<{integer} digiţi>.<{fraction} digiţi> aşteptat)"
+ },
+ "ru": {
+  "NotNull": "не должно равняться null",
+  "NotBlank": "не должно быть пустым",
+  "NotEmpty": "не должно быть пустым",
+  "Positive": "должно быть больше 0",
+  "PositiveOrZero": "должно быть больше или равно 0",
+  "Min": "должно быть не меньше {value}",
+  "Max": "должно быть не больше {value}",
+  "Size": "размер должен находиться в диапазоне от {min} до {max}",
+  "Digits": "число вне допустимого диапазона (ожидалось <{integer} разрядов>.<{fraction} разрядов>)"
+ },
+ "sk": {
+  "NotNull": "nemôže byť null",
+  "NotBlank": "nemôže byť prázdne",
+  "NotEmpty": "nemôže byť prázdne",
+  "Min": "musí byť väčšie alebo rovné {value}",
+  "Max": "musí byť menšie alebo rovné {value}",
+  "Size": "veľkosť musí byť medzi {min} a {max}",
+  "Digits": "číselná hodnota je mimo rozsahu (očakávané <{integer} číslic>.<{fraction} číslic>)"
+ },
+ "tr": {
+  "NotNull": "boş değer olamaz",
+  "NotBlank": "boş değer olamaz",
+  "NotEmpty": "boş değer olamaz",
+  "Min": "'{value}' değerinden büyük yada eşit olmalı",
+  "Max": "'{value}' değerinden küçük yada eşit olmalı",
+  "Size": "boyut '{min}' ile '{max}' arasında olmalı",
+  "Digits": "sınırların dışında sayısal değer (beklenen <{integer} basamak>.<{fraction} basamak>)"
+ },
+ "uk": {
+  "NotNull": "не може бути відсутнім, має бути задано",
+  "NotBlank": "не може бути пустим",
+  "NotEmpty": "не може бути порожнім",
+  "Positive": "має бути більше 0",
+  "PositiveOrZero": "має бути більше або рівне 0",
+  "Min": "має бути більше або рівне {value}",
+  "Max": "має бути менше або рівне {value}",
+  "Size": "розмір має бути між {min} та {max}",
+  "Digits": "числове значення поза межами (очікувано <{integer} цифр>.<{fraction} цифр>)"
+ },
+ "zh": {
+  "NotNull": "不得为 null",
+  "NotBlank": "不得为空白",
+  "NotEmpty": "不得为空",
+  "Positive": "必须大于 0",
+  "PositiveOrZero": "必须大于或等于 0",
+  "Min": "必须大于或等于 {value}",
+  "Max": "必须小于或等于 {value}",
+  "Size": "大小必须在 {min} 和 {max} 之间",
+  "Digits": "数字值超出了边界（期望 <{integer} digits>.<{fraction} digits>）"
+ },
+ "zh_CN": {
+  "NotNull": "不能为null",
+  "NotBlank": "不能为空",
+  "NotEmpty": "不能为空",
+  "Positive": "必须是正数",
+  "PositiveOrZero": "必须是正数或零",
+  "Min": "最小不能小于{value}",
+  "Max": "最大不能超过{value}",
+  "Size": "个数必须在{min}和{max}之间",
+  "Digits": "数字的值超出了允许范围(只允许在{integer}位整数和{fraction}位小数范围内)"
+ },
+ "zh_TW": {
+  "NotNull": "不得是空值",
+  "NotBlank": "不得空白",
+  "NotEmpty": "不得是空的",
+  "Positive": "必須大於 0",
+  "PositiveOrZero": "必須大於或等於 0",
+  "Min": "必須大於或等於 {value}",
+  "Max": "必須小於或等於 {value}",
+  "Size": "大小必須在 {min} 和 {max} 之間",
+  "Digits": "數值超出範圍（預期為 <{integer} digits>.<{fraction} digits>）"
+ }
+}

@@ -1,0 +1,3 @@
+node_modules/
+test/fixtures/private/
+test/regime-regular/diferencial/divergencias.json

@@ -1,0 +1,1635 @@
+{
+ "$comment": [
+  "Catalogo de erros da calculadora-rtc-regime-regular v1.7.2, gerado a partir de",
+  "api/exceptionhandler/enumeration/ProblemType.java e CodigoValidacao.java (strings copiadas verbatim).",
+  "problemType: na ORDEM de declaracao do enum (ProblemType.from e fromCodigo devolvem o PRIMEIRO que casa).",
+  "code=null: ProblemType sem codigo de observabilidade (no ItemCollector vira CAL-999 com o title do proprio ProblemType).",
+  "title = ProblemType.titulo (title do ProblemDetail/ErroDetalhe e \"titulo\" de GET /calculadora/observabilidade/erros).",
+  "detail = ProblemType.descricao / CodigoValidacao.descricao (\"descricao\" de GET .../erros). NAO e o detail do ProblemDetail, que e ex.getMessage().",
+  "httpStatusApi = status devolvido pelo ApiExceptionHandler (endpoints classicos). No endpoint de observabilidade os erros de item vao em 200 (objetos[].erros) e os globais em 422 (ErrosCalculoException).",
+  "mensagens = constantes String da excecao (templates java.util.Formatter: %s/%d; ver errors-config.md secao 3).",
+  "TributoSituacaoTributariaNaoEncontradoException: o template tem \"s% n\" -> o construtor lanca IllegalFormatFlagsException(\"Flags = ' '\"): na pratica vira ERRO_SISTEMA/500 (CAL-999 na observabilidade).",
+  "ERRO_NEGOCIO (NegocioException, abstrata) e ERRO_SISTEMA (Exception) nunca casam por classe exata, exceto ERRO_SISTEMA como fallback de ProblemType.from."
+ ],
+ "ordemProblemType": [
+  "CAMPO_INVALIDO",
+  "NCM_E_NBS_SIMULTANEAS",
+  "NCM_NAO_ENCONTRADO",
+  "NBS_NAO_ENCONTRADO",
+  "SITUACAO_TRIBUTARIA_NAO_ENCONTRADA",
+  "CLASSIFICACAO_TRIBUTARIA_NAO_ENCONTRADA",
+  "CLASSIFICACAO_TRIBUTARIA_NAO_VINCULADA_SITUACAO_TRIBUTARIA",
+  "ERRO_NOMENCLATURA",
+  "TRATAMENTO_CLASSIFICACAO_NAO_ENCONTRADO",
+  "GRUPO_TRIBUTACAO_REGULAR_NAO_INFORMADO",
+  "INCOMPATIBILIDADE_SUSPENSAO",
+  "NCM_NAO_VINCULADA",
+  "NBS_NAO_VINCULADA",
+  "IMPOSTO_SELETIVO_NAO_INFORMADO",
+  "IMPOSTO_SELETIVO_INFORMADO_INDEVIDAMENTE",
+  "NCM_COMPLETO_NAO_INFORMADO",
+  "NBS_COMPLETO_NAO_INFORMADO",
+  "MUNICIPIO_NAO_PERTENCE_UF",
+  "MUNICIPIO_NAO_ENCONTRADO",
+  "UF_NAO_ENCONTRADA",
+  "DATA_FATO_GERADOR_NAO_INFORMADA",
+  "GRUPO_TRIBUTACAO_REGULAR_INFORMADO_INDEVIDAMENTE",
+  "ERRO_GENERICO_VALIDACAO",
+  "BASE_CALCULO_NAO_INFORMADA",
+  "BASE_CALCULO_INCONSISTENTE",
+  "BASE_CALCULO_MENOR_BASE_CALCULO_IMPOSTO_SELETIVO",
+  "TIPO_DOCUMENTO_FISCAL_NAO_ENCONTRADO",
+  "CLASSIFICACAO_TRIBUTARIA_NAO_VINCULADA_TIPO_DOCUMENTO",
+  "NOMENCLATURA_INCOMPATIVEL_TIPO_DOCUMENTO",
+  "NOMENCLATURA_NAO_PERMITIDA_TIPO_DOCUMENTO",
+  "IMPOSTO_SELETIVO_NAO_ADMITIDO_TIPO_DOCUMENTO",
+  "NOMENCLATURA_OBRIGATORIA_NAO_INFORMADA",
+  "BASE_CALCULO_COMPONENTES_INCONSISTENTE",
+  "ALIQUOTA_IMPOSTO_SELETIVO_NAO_INFORMADA",
+  "ALIQUOTAS_NOMINAIS_INFORMADAS_INDEVIDAMENTE",
+  "ALIQUOTAS_NOMINAIS_NAO_INFORMADAS",
+  "TIPO_DFE_NAO_TRATADO",
+  "ALIQUOTA_NAO_ENCONTRADA",
+  "ALIQUOTA_PADRAO_NAO_ENCONTRADA",
+  "ALIQUOTA_REFERENCIA_NAO_ENCONTRADA",
+  "ALIQUOTA_AD_REM_NAO_ENCONTRADA",
+  "ALIQUOTA_NEGATIVA",
+  "TIPO_ALIQUOTA_DESCONHECIDO",
+  "ERRO_FALTA_IMPLEMENTACAO",
+  "ERRO_AVALIADOR_EXPRESSAO",
+  "TRATAMENTO_TRIBUTARIO_NAO_ENCONTRADO",
+  "PERCENTUAL_REDUCAO_NAO_ENCONTRADO",
+  "FUNDAMENTACAO_NAO_ENCONTRADA",
+  "TRIBUTO_SITUACAO_TRIBUTARIA_NAO_ENCONTRADO",
+  "ERRO_INTERNO_SISTEMA",
+  "FORMA_APLICACAO_NAO_DEFINIDA",
+  "ERRO_XML",
+  "ERRO_NEGOCIO",
+  "METHOD_ARGUMENT_TYPE_MISMATCH",
+  "SIGLA_DFE_NAO_ENCONTRADA",
+  "PLATAFORMA_DOWNLOAD_NAO_ENCONTRADA",
+  "ERRO_SISTEMA"
+ ],
+ "problemType": {
+  "CAMPO_INVALIDO": {
+   "code": "REG-024",
+   "title": "Campo inválido",
+   "detail": "O valor informado para o campo não é válido conforme as regras de negócio.",
+   "path": "campo-invalido",
+   "campoDefault": null,
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "CampoInvalidoException",
+   "superclasse": "NegocioException",
+   "httpStatusApi": 400,
+   "mensagens": {}
+  },
+  "NCM_E_NBS_SIMULTANEAS": {
+   "code": "REG-001",
+   "title": "NCM e NBS informadas simultaneamente",
+   "detail": "Apenas uma nomenclatura (NCM ou NBS) deve ser informada por item. A presença simultânea impede a classificação.",
+   "path": "ncm-nbs-simultaneas",
+   "campoDefault": null,
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "NcmNbsSimultaneasException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "Não é permitido informar NCM e NBS simultaneamente para um item"
+   }
+  },
+  "NCM_NAO_ENCONTRADO": {
+   "code": "REG-002",
+   "title": "NCM não encontrada",
+   "detail": "O código NCM informado não foi localizado na base de nomenclaturas vigente para a data do fato gerador.",
+   "path": "ncm-nao-encontrada",
+   "campoDefault": "ncm",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "NcmNaoEncontradaException",
+   "superclasse": "EntidadeNaoEncontradaException",
+   "httpStatusApi": 404,
+   "mensagens": {
+    "MESSAGE": "NCM de código %s não encontrada para a data %s"
+   }
+  },
+  "NBS_NAO_ENCONTRADO": {
+   "code": "REG-003",
+   "title": "NBS não encontrada",
+   "detail": "O código NBS informado não foi localizado na base de nomenclaturas vigente para a data do fato gerador.",
+   "path": "nbs-nao-encontrada",
+   "campoDefault": "nbs",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "NbsNaoEncontradaException",
+   "superclasse": "EntidadeNaoEncontradaException",
+   "httpStatusApi": 404,
+   "mensagens": {
+    "MESSAGE": "NBS de código %s não encontrada para a data %s"
+   }
+  },
+  "SITUACAO_TRIBUTARIA_NAO_ENCONTRADA": {
+   "code": "REG-004",
+   "title": "Situação tributária não encontrada",
+   "detail": "A situação tributária (CST) informada não existe na base de dados para o tributo e data do fato gerador.",
+   "path": "situacao-tributaria-nao-encontrada",
+   "campoDefault": "cst",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "SituacaoTributariaNaoEncontradaException",
+   "superclasse": "EntidadeNaoEncontradaException",
+   "httpStatusApi": 404,
+   "mensagens": {
+    "MESSAGE": "Situação tributária (CST) não encontrada para código %s e data %s (%s)"
+   }
+  },
+  "CLASSIFICACAO_TRIBUTARIA_NAO_ENCONTRADA": {
+   "code": "REG-005",
+   "title": "Classificação tributária não encontrada",
+   "detail": "A classificação tributária informada não foi localizada na base vigente para a data do fato gerador.",
+   "path": "classificacao-tributaria-nao-encontrada",
+   "campoDefault": "cClassTrib",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "ClassificacaoTributariaNaoEncontradaException",
+   "superclasse": "EntidadeNaoEncontradaException",
+   "httpStatusApi": 404,
+   "mensagens": {
+    "MESSAGE1": "Classificação tributária não encontrada para código %s e data %s (%s)",
+    "MESSAGE2": "Classificação tributária não encontrada para id %s"
+   }
+  },
+  "CLASSIFICACAO_TRIBUTARIA_NAO_VINCULADA_SITUACAO_TRIBUTARIA": {
+   "code": "REG-006",
+   "title": "Classificação tributária não vinculada à situação tributária",
+   "detail": "A classificação tributária informada não está vinculada à situação tributária selecionada.",
+   "path": "classificacao-tributaria-nao-vinculada-situacao-tributaria",
+   "campoDefault": "cClassTrib",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "ClassificacaoTributariaNaoVinculadaSituacaoTributariaException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "Classificação tributária (cClassTrib) de código %s não está vinculada à situação tributária (CST) de código %s (%s)"
+   }
+  },
+  "ERRO_NOMENCLATURA": {
+   "code": "REG-007",
+   "title": "Erro de nomenclatura",
+   "detail": "A nomenclatura informada apresenta inconsistência com as regras de classificação tributária vigentes.",
+   "path": "erro-nomenclatura",
+   "campoDefault": "ncm",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "NomenclaturaException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {}
+  },
+  "TRATAMENTO_CLASSIFICACAO_NAO_ENCONTRADO": {
+   "code": "REG-008",
+   "title": "Tratamento de classificação não encontrado",
+   "detail": "Não foi encontrado tratamento de classificação tributária para os parâmetros informados.",
+   "path": "tratamento-classificacao-nao-encontrado",
+   "campoDefault": "cClassTrib",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "TratamentoClassificacaoNaoEncontradoException",
+   "superclasse": "EntidadeNaoEncontradaException",
+   "httpStatusApi": 404,
+   "mensagens": {
+    "MESSAGE": "Tratamento tributário não encontrado para classificação tributária com id %s e data %s"
+   }
+  },
+  "GRUPO_TRIBUTACAO_REGULAR_NAO_INFORMADO": {
+   "code": "REG-009",
+   "title": "Grupo de tributação regular não informado",
+   "detail": "O grupo de tributação regular é obrigatório para a situação tributária selecionada e não foi informado.",
+   "path": "grupo-tributacao-regular-nao-informado",
+   "campoDefault": "tributacaoRegular",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "TributacaoRegularNaoInformadaException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "Dados da tributação regular devem ser informados para cClassTrib %s e CST %s"
+   }
+  },
+  "INCOMPATIBILIDADE_SUSPENSAO": {
+   "code": "REG-010",
+   "title": "Incompatibilidade com suspensão",
+   "detail": "A classificação tributária informada é incompatível com a situação de suspensão aplicada ao item.",
+   "path": "incompatibilidade-suspensao",
+   "campoDefault": "tributacaoRegular/cClassTrib",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "IncompatibilidadeSuspensaoException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "Classificação tributária (cClassTrib) %s e situação tributária (CST) %s incompatíveis com suspensão"
+   }
+  },
+  "NCM_NAO_VINCULADA": {
+   "code": "REG-011",
+   "title": "NCM não vinculada",
+   "detail": "O código NCM informado não está vinculado a nenhuma classificação tributária vigente.",
+   "path": "ncm-nao-vinculada",
+   "campoDefault": "ncm",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "NcmNaoVinculadaException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "NCM de código %s não vinculada à Classificação Tributária de código %s (%s)"
+   }
+  },
+  "NBS_NAO_VINCULADA": {
+   "code": "REG-012",
+   "title": "NBS não vinculada",
+   "detail": "O código NBS informado não está vinculado a nenhuma classificação tributária vigente.",
+   "path": "nbs-nao-vinculada",
+   "campoDefault": "nbs",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "NbsNaoVinculadaException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "NBS de código %s não vinculada à Classificação Tributária de código %s (%s)"
+   }
+  },
+  "IMPOSTO_SELETIVO_NAO_INFORMADO": {
+   "code": "REG-013",
+   "title": "Dados do Imposto Seletivo não informados",
+   "detail": "Os dados do Imposto Seletivo são obrigatórios para a classificação tributária selecionada e não foram informados.",
+   "path": "dados-imposto-seletivo-nao-informados",
+   "campoDefault": "impostoSeletivo",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "ImpostoSeletivoNaoInformadoException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "Dados do Imposto Seletivo devem ser informados para %s %s e data %s"
+   }
+  },
+  "IMPOSTO_SELETIVO_INFORMADO_INDEVIDAMENTE": {
+   "code": "REG-014",
+   "title": "Dados do Imposto Seletivo informados indevidamente",
+   "detail": "Os dados do Imposto Seletivo foram informados, mas a classificação tributária selecionada não prevê incidência.",
+   "path": "dados-imposto-seletivo-informados-indevidamente",
+   "campoDefault": "impostoSeletivo",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "ImpostoSeletivoInformadoIndevidamenteException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "Dados do Imposto Seletivo informados indevidamente para NCM %s e data %s"
+   }
+  },
+  "NCM_COMPLETO_NAO_INFORMADO": {
+   "code": "REG-015",
+   "title": "NCM completo não informado",
+   "detail": "O código NCM deve ser informado com todos os dígitos (completo) para a operação solicitada.",
+   "path": "ncm-completo-nao-informado",
+   "campoDefault": "ncm",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "NcmCompletoNaoInformadoException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "NCM completo não informado"
+   }
+  },
+  "NBS_COMPLETO_NAO_INFORMADO": {
+   "code": "REG-016",
+   "title": "NBS completo não informado",
+   "detail": "O código NBS deve ser informado com todos os dígitos (completo) para a operação solicitada.",
+   "path": "nbs-completo-nao-informado",
+   "campoDefault": "nbs",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "NbsCompletoNaoInformadoException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "NBS completo não informado"
+   }
+  },
+  "MUNICIPIO_NAO_PERTENCE_UF": {
+   "code": "REG-018",
+   "title": "Município não pertencente à UF",
+   "detail": "O município informado não pertence à UF indicada na operação.",
+   "path": "municipio-nao-pertencente-uf",
+   "campoDefault": null,
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "MunicipioNaoPertencenteException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "Município de código %d não pertence à UF de sigla %s"
+   }
+  },
+  "MUNICIPIO_NAO_ENCONTRADO": {
+   "code": "REG-019",
+   "title": "Município não encontrado",
+   "detail": "O código do município informado não foi localizado na base de dados.",
+   "path": "municipio-nao-encontrado",
+   "campoDefault": null,
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "MunicipioNaoEncontradoException",
+   "superclasse": "EntidadeNaoEncontradaException",
+   "httpStatusApi": 404,
+   "mensagens": {
+    "MESSAGE": "Município de código %d não encontrado"
+   }
+  },
+  "UF_NAO_ENCONTRADA": {
+   "code": "REG-020",
+   "title": "UF não encontrada",
+   "detail": "A UF informada para a operação não foi encontrada na base de dados.",
+   "path": "uf-nao-encontrada",
+   "campoDefault": null,
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "UfNaoEncontradaException",
+   "superclasse": "EntidadeNaoEncontradaException",
+   "httpStatusApi": 404,
+   "mensagens": {
+    "MESSAGE": "UF de sigla %s não encontrada"
+   }
+  },
+  "DATA_FATO_GERADOR_NAO_INFORMADA": {
+   "code": "REG-021",
+   "title": "Data do fato gerador não informada",
+   "detail": "A data do fato gerador é obrigatória e não foi informada na requisição.",
+   "path": "fato-gerador-nao-informada",
+   "campoDefault": null,
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "DataFatoGeradorNaoInformadaException",
+   "superclasse": "CampoInvalidoException",
+   "httpStatusApi": 400,
+   "mensagens": {}
+  },
+  "GRUPO_TRIBUTACAO_REGULAR_INFORMADO_INDEVIDAMENTE": {
+   "code": "REG-022",
+   "title": "Grupo de tributação regular informado indevidamente",
+   "detail": "O grupo de tributação regular foi informado, mas a situação tributária selecionada não o exige.",
+   "path": "grupo-tributacao-regular-informado-indevidamente",
+   "campoDefault": "tributacaoRegular",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "TributacaoRegularInformadaIndevidamenteException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "Dados da tributação regular informados indevidamente para cClassTrib %s e CST %s"
+   }
+  },
+  "ERRO_GENERICO_VALIDACAO": {
+   "code": "REG-023",
+   "title": "Erro genérico de validação",
+   "detail": "Erro de validação que não se enquadra em nenhuma categoria específica.",
+   "path": "erro-generico-validacao",
+   "campoDefault": null,
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "ErroGenericoValidacaoException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {}
+  },
+  "BASE_CALCULO_NAO_INFORMADA": {
+   "code": "REG-025",
+   "title": "Base de cálculo não informada",
+   "detail": "A base de cálculo de CBS e IBS é obrigatória quando o grupo do Imposto Seletivo não é informado.",
+   "path": "base-calculo-nao-informada",
+   "campoDefault": "baseCalculo",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "BaseCalculoNaoInformadaException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "A base de cálculo de CBS e IBS deve ser informada quando o grupo do Imposto Seletivo não é informado"
+   }
+  },
+  "BASE_CALCULO_INCONSISTENTE": {
+   "code": "REG-026",
+   "title": "Base de cálculo inconsistente",
+   "detail": "A base de cálculo de CBS e IBS informada difere da soma da base de cálculo do Imposto Seletivo com o Imposto Seletivo informado.",
+   "path": "base-calculo-inconsistente",
+   "campoDefault": "baseCalculo",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "BaseCalculoInconsistenteException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "A base de cálculo de CBS e IBS informada %s difere da soma da base de cálculo do Imposto Seletivo %s com o Imposto Seletivo informado %s"
+   }
+  },
+  "BASE_CALCULO_MENOR_BASE_CALCULO_IMPOSTO_SELETIVO": {
+   "code": "REG-027",
+   "title": "Base de cálculo menor que a base de cálculo do Imposto Seletivo",
+   "detail": "A base de cálculo de CBS e IBS informada é menor que a base de cálculo do Imposto Seletivo.",
+   "path": "base-calculo-menor-base-calculo-imposto-seletivo",
+   "campoDefault": "baseCalculo",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "BaseCalculoMenorBaseCalculoImpostoSeletivoException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "A base de cálculo de CBS e IBS informada %s é menor que a base de cálculo do Imposto Seletivo %s"
+   }
+  },
+  "TIPO_DOCUMENTO_FISCAL_NAO_ENCONTRADO": {
+   "code": "REG-028",
+   "title": "Tipo de documento fiscal não encontrado",
+   "detail": "O tipo de documento fiscal (tpDoc) informado na operação não existe ou está fora de vigência na data do fato gerador.",
+   "path": "tipo-documento-fiscal-nao-encontrado",
+   "campoDefault": "tpDoc",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "TipoDfeNaoEncontradoException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "Tipo de documento fiscal (tpDoc) de código %d não encontrado ou fora de vigência na data %s"
+   }
+  },
+  "CLASSIFICACAO_TRIBUTARIA_NAO_VINCULADA_TIPO_DOCUMENTO": {
+   "code": "REG-029",
+   "title": "Classificação tributária não vinculada ao tipo de documento",
+   "detail": "A classificação tributária informada não possui vínculo vigente com o tipo de documento fiscal (tpDoc) da operação.",
+   "path": "classificacao-tributaria-nao-vinculada-tipo-documento",
+   "campoDefault": "cClassTrib",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "ClassificacaoTributariaNaoVinculadaTipoDfeException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "Classificação Tributária de código %s não vinculada ao tipo de documento fiscal (tpDoc) %d (%s)"
+   }
+  },
+  "NOMENCLATURA_INCOMPATIVEL_TIPO_DOCUMENTO": {
+   "code": "REG-030",
+   "title": "Nomenclatura incompatível com o tipo de documento",
+   "detail": "A nomenclatura informada (NCM ou NBS) não é aceita para a classificação tributária no tipo de documento fiscal (tpDoc) da operação.",
+   "path": "nomenclatura-incompativel-tipo-documento",
+   "campoDefault": null,
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "NomenclaturaIncompativelTipoDfeException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "%s não permitida para a Classificação Tributária de código %s no tipo de documento %s"
+   }
+  },
+  "NOMENCLATURA_NAO_PERMITIDA_TIPO_DOCUMENTO": {
+   "code": "REG-031",
+   "title": "Nomenclatura não permitida para o tipo de documento",
+   "detail": "O tipo de documento fiscal (tpDoc) da operação não admite o preenchimento de NCM ou NBS.",
+   "path": "nomenclatura-nao-permitida-tipo-documento",
+   "campoDefault": null,
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "NomenclaturaNaoPermitidaTipoDfeException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "NCM/NBS não permitido para a Classificação Tributária de código %s no tipo de documento %s"
+   }
+  },
+  "IMPOSTO_SELETIVO_NAO_ADMITIDO_TIPO_DOCUMENTO": {
+   "code": "REG-032",
+   "title": "Imposto Seletivo não admitido pelo tipo de documento",
+   "detail": "O NCM/NBS informado é tributado pelo Imposto Seletivo, mas o tipo de documento fiscal (tpDoc) da operação não admite Imposto Seletivo.",
+   "path": "imposto-seletivo-nao-admitido-tipo-documento",
+   "campoDefault": "impostoSeletivo",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "ImpostoSeletivoNaoAdmitidoTipoDfeException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "O tipo de documento fiscal (tpDoc) %d não admite Imposto Seletivo, exigido para %s de código %s"
+   }
+  },
+  "NOMENCLATURA_OBRIGATORIA_NAO_INFORMADA": {
+   "code": "REG-033",
+   "title": "Nomenclatura obrigatória não informada",
+   "detail": "A classificação tributária possui anexo com NCM e NBS aplicáveis e exige o preenchimento de um deles, completo, para o tipo de documento fiscal (tpDoc) da operação.",
+   "path": "nomenclatura-obrigatoria-nao-informada",
+   "campoDefault": null,
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "NomenclaturaObrigatoriaNaoInformadaException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "A Classificação Tributária de código %s exige NCM ou NBS completo para o tipo de documento %s"
+   }
+  },
+  "BASE_CALCULO_COMPONENTES_INCONSISTENTE": {
+   "code": "REG-034",
+   "title": "Base de cálculo inconsistente",
+   "detail": "A base de cálculo declarada no item diverge da base calculada a partir dos componentes informados",
+   "path": "base-calculo-inconsistente",
+   "campoDefault": "baseCalculo",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "BaseCalculoComponentesInconsistenteException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "A base de cálculo declarada (%s) diverge da base calculada a partir dos componentes informados (%s)",
+    "CODIGO_ERRO": "REG-034"
+   }
+  },
+  "ALIQUOTA_IMPOSTO_SELETIVO_NAO_INFORMADA": {
+   "code": "REG-035",
+   "title": "Alíquota do Imposto Seletivo não informada",
+   "detail": "A NCM/NBS possui incidência do Imposto Seletivo, mas a alíquota ainda não foi definida em lei e não foi informada pelo usuário.",
+   "path": "aliquota-imposto-seletivo-nao-informada",
+   "campoDefault": "aliquotasNominais/impostoSeletivo",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "AliquotaImpostoSeletivoNaoInformadaException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "A alíquota do Imposto Seletivo deve ser informada em aliquotasNominais.impostoSeletivo para %s %s e data %s, pois ainda não foi definida em lei"
+   }
+  },
+  "ALIQUOTAS_NOMINAIS_INFORMADAS_INDEVIDAMENTE": {
+   "code": "REG-036",
+   "title": "Alíquotas nominais informadas indevidamente",
+   "detail": "As alíquotas nominais não podem ser informadas para fato gerador anterior a 01/01/2027, pois a calculadora resolve as alíquotas vigentes.",
+   "path": "aliquotas-nominais-informadas-indevidamente",
+   "campoDefault": "aliquotasNominais",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "AliquotasNominaisInformadasIndevidamenteException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "As alíquotas nominais não podem ser informadas para operações com fato gerador anterior a 01/01/2027, pois a calculadora resolve as alíquotas vigentes"
+   }
+  },
+  "ALIQUOTAS_NOMINAIS_NAO_INFORMADAS": {
+   "code": "REG-037",
+   "title": "Alíquotas nominais não informadas",
+   "detail": "As alíquotas nominais (cbs, ibsEstadual e ibsMunicipal) devem ser informadas para fato gerador a partir de 01/01/2027.",
+   "path": "aliquotas-nominais-nao-informadas",
+   "campoDefault": "aliquotasNominais",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "AliquotasNominaisNaoInformadasException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "As alíquotas nominais (os três campos cbs, ibsEstadual e ibsMunicipal) devem ser informadas para operações com fato gerador a partir de 01/01/2027"
+   }
+  },
+  "TIPO_DFE_NAO_TRATADO": {
+   "code": "REG-038",
+   "title": "Tipo de documento fiscal não tratado",
+   "detail": "O tipo de documento fiscal (tpDoc) informado na operação não possui tratamento implementado na calculadora.",
+   "path": "tipo-dfe-nao-tratado",
+   "campoDefault": "tpDoc",
+   "estado": "INCONSISTENCIA_ENTRADA",
+   "exception": "TipoDfeNaoTratadoException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "Tipo de documento fiscal (tpDoc) de código %d (%s) não possui tratamento implementado na calculadora"
+   }
+  },
+  "ALIQUOTA_NAO_ENCONTRADA": {
+   "code": "CAL-001",
+   "title": "Alíquota não encontrada",
+   "detail": "Não foi possível localizar a alíquota aplicável para os parâmetros tributários informados.",
+   "path": "aliquota-nao-encontrada",
+   "campoDefault": null,
+   "estado": "FALHA_TECNICA",
+   "exception": "AliquotaNaoEncontradaException",
+   "superclasse": "EntidadeNaoEncontradaException",
+   "httpStatusApi": 404,
+   "mensagens": {
+    "MESSAGE": "Alíquota de referencia ou padrão não encontrada para o tributo com id %s, UF %s, município %s e data %s"
+   }
+  },
+  "ALIQUOTA_PADRAO_NAO_ENCONTRADA": {
+   "code": "CAL-002",
+   "title": "Alíquota padrão não encontrada",
+   "detail": "A alíquota padrão (de referência) não foi encontrada na base para o tributo e período informados.",
+   "path": "aliquota-padrao-nao-encontrada",
+   "campoDefault": null,
+   "estado": "FALHA_TECNICA",
+   "exception": "AliquotaPadraoNaoEncontradaException",
+   "superclasse": "EntidadeNaoEncontradaException",
+   "httpStatusApi": 404,
+   "mensagens": {
+    "DEFAULT_MESSAGE": "Alíquota padrão não encontrada"
+   }
+  },
+  "ALIQUOTA_REFERENCIA_NAO_ENCONTRADA": {
+   "code": "CAL-003",
+   "title": "Alíquota de referência não encontrada",
+   "detail": "A alíquota de referência necessária para o cálculo não está disponível na base de dados.",
+   "path": "aliquota-referencia-nao-encontrada",
+   "campoDefault": null,
+   "estado": "FALHA_TECNICA",
+   "exception": "AliquotaReferenciaNaoEncontradaException",
+   "superclasse": "EntidadeNaoEncontradaException",
+   "httpStatusApi": 404,
+   "mensagens": {
+    "DEFAULT_MESSAGE": "Alíquota de referência não encontrada",
+    "MESSAGE": "Alíquota de referência não encontrada para o tributo com id %s e data %s"
+   }
+  },
+  "ALIQUOTA_AD_REM_NAO_ENCONTRADA": {
+   "code": "CAL-004",
+   "title": "Alíquota ad rem não encontrada",
+   "detail": "A alíquota ad rem (valor fixo por unidade) não foi localizada para o produto e período informados.",
+   "path": "aliquota-ad-rem-nao-encontrada",
+   "campoDefault": null,
+   "estado": "FALHA_TECNICA",
+   "exception": "AliquotaAdRemNaoEncontradaException",
+   "superclasse": "EntidadeNaoEncontradaException",
+   "httpStatusApi": 404,
+   "mensagens": {
+    "MESSAGE": "Alíquota ad rem não encontrada para NCM %s e data %s (idTributo: %s)"
+   }
+  },
+  "ALIQUOTA_NEGATIVA": {
+   "code": "CAL-005",
+   "title": "Alíquota negativa",
+   "detail": "O cálculo resultou em uma alíquota negativa, o que indica inconsistência nos parâmetros tributários.",
+   "path": "aliquota-negativa",
+   "campoDefault": null,
+   "estado": "FALHA_TECNICA",
+   "exception": "AliquotaNegativaException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "DEFAULT_MESSAGE": "Alíquota não pode ter valor negativo",
+    "MESSAGE_REFERENCIA": "Alíquota de referência não pode ter valor negativo",
+    "MESSAGE_PADRAO": "Alíquota padrão não pode ter valor negativo",
+    "MESSAGE_APLICAVEL": "Alíquota aplicável resultante não pode ter valor negativo"
+   }
+  },
+  "TIPO_ALIQUOTA_DESCONHECIDO": {
+   "code": "CAL-006",
+   "title": "Tipo de alíquota desconhecido",
+   "detail": "O tipo de alíquota retornado pela base de dados não é reconhecido pelo sistema.",
+   "path": "tipo-aliquota-desconhecido",
+   "campoDefault": null,
+   "estado": "FALHA_TECNICA",
+   "exception": "TipoAliquotaDesconhecidoException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "Tipo de alíquota (%s) desconhecido para cClassTrib %s e CST %s"
+   }
+  },
+  "ERRO_FALTA_IMPLEMENTACAO": {
+   "code": "CAL-007",
+   "title": "Classificação tributária em desenvolvimento",
+   "detail": "A classificação tributária informada ainda não possui implementação completa no sistema.",
+   "path": "erro-falta-implementacao",
+   "campoDefault": "cClassTrib",
+   "estado": "NAO_IMPLEMENTADO",
+   "exception": "ErroFaltaImplementacaoException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "A classificação tributária %s ainda não possui tratamento tributário implementado na Calculadora. Essa funcionalidade está prevista no roadmap e será disponibilizada em versão futura."
+   }
+  },
+  "ERRO_AVALIADOR_EXPRESSAO": {
+   "code": "CAL-008",
+   "title": "Erro no avaliador de expressão aritmética",
+   "detail": "Ocorreu um erro ao avaliar a expressão aritmética utilizada no cálculo do tributo.",
+   "path": "erro-avaliador-expressao",
+   "campoDefault": null,
+   "estado": "FALHA_TECNICA",
+   "exception": "ErroAvaliadorExpressaoAritmeticaException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "Erro na avaliação de expressão aritmética (%s)"
+   }
+  },
+  "TRATAMENTO_TRIBUTARIO_NAO_ENCONTRADO": {
+   "code": "CAL-009",
+   "title": "Tratamento tributário não encontrado",
+   "detail": "O tratamento tributário aplicável não foi localizado para a combinação de parâmetros informada.",
+   "path": "tratamento-tributario-nao-encontrado",
+   "campoDefault": null,
+   "estado": "FALHA_TECNICA",
+   "exception": "TratamentoTributarioNaoEncontradoException",
+   "superclasse": "EntidadeNaoEncontradaException",
+   "httpStatusApi": 404,
+   "mensagens": {
+    "MESSAGE": "Tratamento tributário com id %s não encontrado"
+   }
+  },
+  "PERCENTUAL_REDUCAO_NAO_ENCONTRADO": {
+   "code": "CAL-010",
+   "title": "Percentual de redução não encontrado",
+   "detail": "O percentual de redução de alíquota previsto para a classificação não foi encontrado na base.",
+   "path": "percentual-reducao-nao-encontrado",
+   "campoDefault": null,
+   "estado": "FALHA_TECNICA",
+   "exception": "PercentualReducaoNaoEncontradoException",
+   "superclasse": "EntidadeNaoEncontradaException",
+   "httpStatusApi": 404,
+   "mensagens": {
+    "MESSAGE": "Percentual de redução não encontrado para classificação tributária com id %s e data %s"
+   }
+  },
+  "FUNDAMENTACAO_NAO_ENCONTRADA": {
+   "code": "CAL-011",
+   "title": "Fundamentação não encontrada",
+   "detail": "A fundamentação legal para a classificação tributária não foi localizada na base de dados.",
+   "path": "fundamentacao-nao-encontrada",
+   "campoDefault": null,
+   "estado": "FALHA_TECNICA",
+   "exception": "FundamentacaoClassificacaoNaoEncontradaException",
+   "superclasse": "EntidadeNaoEncontradaException",
+   "httpStatusApi": 404,
+   "mensagens": {
+    "MESSAGE": "Fundamentação legal não encontrada para classificação tributária de id %s e data %s"
+   }
+  },
+  "TRIBUTO_SITUACAO_TRIBUTARIA_NAO_ENCONTRADO": {
+   "code": "CAL-012",
+   "title": "Tributo/situação tributária não encontrado",
+   "detail": "A combinação de tributo e situação tributária informada não foi localizada na base.",
+   "path": "tributo-situacao-tributaria-nao-encontrado",
+   "campoDefault": null,
+   "estado": "FALHA_TECNICA",
+   "exception": "TributoSituacaoTributariaNaoEncontradoException",
+   "superclasse": "EntidadeNaoEncontradaException",
+   "httpStatusApi": 500,
+   "mensagens": {
+    "MESSAGE": "Tributo com id s% não encontrado para situação tributária com id %s e data %s"
+   }
+  },
+  "ERRO_INTERNO_SISTEMA": {
+   "code": "CAL-999",
+   "title": "Erro interno do sistema",
+   "detail": "Erro interno inesperado durante o processamento do cálculo. Contate o suporte se o problema persistir.",
+   "path": "erro-interno-de-sistema",
+   "campoDefault": null,
+   "estado": "FALHA_TECNICA",
+   "exception": "ErroInternoSistemaException",
+   "superclasse": "RuntimeException",
+   "httpStatusApi": 500,
+   "mensagens": {}
+  },
+  "FORMA_APLICACAO_NAO_DEFINIDA": {
+   "code": null,
+   "title": "Forma de Aplicação de Percentual não definida",
+   "detail": null,
+   "path": "forma-aplicacao-percentual-nao-definida",
+   "campoDefault": null,
+   "estado": null,
+   "exception": "FormaAplicacaoNaoDefinidaException",
+   "superclasse": "ErroInternoSistemaException",
+   "httpStatusApi": 500,
+   "mensagens": {
+    "MESSAGE": "Forma de aplicação da alíquota própria não definida"
+   }
+  },
+  "ERRO_XML": {
+   "code": null,
+   "title": "Erro de validação de XML",
+   "detail": null,
+   "path": "erro-xml",
+   "campoDefault": null,
+   "estado": null,
+   "exception": "ErroXmlException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "Erro na validação do XML: %s"
+   }
+  },
+  "ERRO_NEGOCIO": {
+   "code": null,
+   "title": "Violação de regra de negócio",
+   "detail": null,
+   "path": "erro-negocio",
+   "campoDefault": null,
+   "estado": null,
+   "exception": "NegocioException",
+   "superclasse": "RuntimeException",
+   "httpStatusApi": null,
+   "mensagens": {}
+  },
+  "METHOD_ARGUMENT_TYPE_MISMATCH": {
+   "code": null,
+   "title": "Tipo de argumento inválido",
+   "detail": null,
+   "path": "tipo-argumento-invalido",
+   "campoDefault": null,
+   "estado": null,
+   "exception": "MethodArgumentTypeMismatchException",
+   "superclasse": null,
+   "httpStatusApi": 400,
+   "mensagens": null
+  },
+  "SIGLA_DFE_NAO_ENCONTRADA": {
+   "code": null,
+   "title": "Sigla DFe não reconhecida",
+   "detail": null,
+   "path": "sigla-dfe-nao-reconhecida",
+   "campoDefault": null,
+   "estado": null,
+   "exception": "SiglaDFeNaoEncontradaException",
+   "superclasse": "ValidacaoException",
+   "httpStatusApi": 422,
+   "mensagens": {
+    "MESSAGE": "Sigla DFe inválida: %s"
+   }
+  },
+  "PLATAFORMA_DOWNLOAD_NAO_ENCONTRADA": {
+   "code": null,
+   "title": "Plataforma de download não encontrada",
+   "detail": null,
+   "path": "plataforma-download-nao-encontrada",
+   "campoDefault": null,
+   "estado": null,
+   "exception": "PlataformaDownloadNaoEncontradaException",
+   "superclasse": "RuntimeException",
+   "httpStatusApi": 404,
+   "mensagens": {
+    "MESSAGE": "Plataforma de download '%s' não encontrada. Plataformas disponíveis: %s"
+   }
+  },
+  "ERRO_SISTEMA": {
+   "code": null,
+   "title": "Erro de sistema não previsto",
+   "detail": null,
+   "path": "erro-de-sistema-nao-previsto",
+   "campoDefault": null,
+   "estado": null,
+   "exception": "Exception",
+   "superclasse": null,
+   "httpStatusApi": 500,
+   "mensagens": null
+  }
+ },
+ "codigoValidacao": {
+  "NOT_NULL": {
+   "code": "VAL-001",
+   "title": "Campo obrigatório não informado",
+   "detail": "O campo marcado como obrigatório não foi preenchido na requisição.",
+   "annotation": "NotNull"
+  },
+  "NOT_BLANK": {
+   "code": "VAL-002",
+   "title": "Campo obrigatório em branco",
+   "detail": "O campo não pode estar em branco ou conter apenas espaços.",
+   "annotation": "NotBlank"
+  },
+  "NOT_EMPTY": {
+   "code": "VAL-003",
+   "title": "Lista ou campo não pode estar vazio",
+   "detail": "O campo ou lista informado não pode estar vazio.",
+   "annotation": "NotEmpty"
+  },
+  "SIZE": {
+   "code": "VAL-004",
+   "title": "Tamanho fora do intervalo permitido",
+   "detail": "O valor informado não atende aos limites de tamanho mínimo e/ou máximo definidos.",
+   "annotation": "Size"
+  },
+  "MIN": {
+   "code": "VAL-005",
+   "title": "Valor abaixo do mínimo permitido",
+   "detail": "O valor informado é inferior ao mínimo aceito para o campo.",
+   "annotation": "Min"
+  },
+  "MAX": {
+   "code": "VAL-006",
+   "title": "Valor acima do máximo permitido",
+   "detail": "O valor informado é superior ao máximo aceito para o campo.",
+   "annotation": "Max"
+  },
+  "DECIMAL_MIN": {
+   "code": "VAL-007",
+   "title": "Valor decimal abaixo do mínimo permitido",
+   "detail": "O valor decimal informado é inferior ao mínimo aceito para o campo.",
+   "annotation": "DecimalMin"
+  },
+  "DECIMAL_MAX": {
+   "code": "VAL-008",
+   "title": "Valor decimal acima do máximo permitido",
+   "detail": "O valor decimal informado é superior ao máximo aceito para o campo.",
+   "annotation": "DecimalMax"
+  },
+  "PATTERN": {
+   "code": "VAL-009",
+   "title": "Formato inválido",
+   "detail": "O valor informado não atende ao padrão (formato) exigido para o campo.",
+   "annotation": "Pattern"
+  },
+  "DIGITS": {
+   "code": "VAL-010",
+   "title": "Quantidade de dígitos inválida",
+   "detail": "O valor informado não possui a quantidade de dígitos inteiros e/ou decimais esperada.",
+   "annotation": "Digits"
+  },
+  "EMAIL": {
+   "code": "VAL-011",
+   "title": "E-mail inválido",
+   "detail": "O endereço de e-mail informado não é válido.",
+   "annotation": "Email"
+  },
+  "POSITIVE": {
+   "code": "VAL-012",
+   "title": "Valor deve ser positivo",
+   "detail": "O valor informado deve ser um número positivo (maior que zero).",
+   "annotation": "Positive"
+  },
+  "POSITIVE_OR_ZERO": {
+   "code": "VAL-013",
+   "title": "Valor deve ser positivo ou zero",
+   "detail": "O valor informado deve ser um número positivo ou zero.",
+   "annotation": "PositiveOrZero"
+  },
+  "ASSERT_TRUE": {
+   "code": "VAL-014",
+   "title": "Condição não atendida",
+   "detail": "A condição de validação (assert true) não foi atendida pelo valor informado.",
+   "annotation": "AssertTrue"
+  },
+  "ASSERT_FALSE": {
+   "code": "VAL-015",
+   "title": "Condição atendida indevidamente",
+   "detail": "A condição de validação (assert false) foi atendida quando não deveria.",
+   "annotation": "AssertFalse"
+  },
+  "DESCONHECIDO": {
+   "code": "VAL-000",
+   "title": "Erro de validação não categorizado",
+   "detail": "O tipo de validação aplicado não possui uma categoria específica.",
+   "annotation": "_Desconhecido"
+  }
+ },
+ "indicePorCodigo": {
+  "CAL-001": "problemType.ALIQUOTA_NAO_ENCONTRADA",
+  "CAL-002": "problemType.ALIQUOTA_PADRAO_NAO_ENCONTRADA",
+  "CAL-003": "problemType.ALIQUOTA_REFERENCIA_NAO_ENCONTRADA",
+  "CAL-004": "problemType.ALIQUOTA_AD_REM_NAO_ENCONTRADA",
+  "CAL-005": "problemType.ALIQUOTA_NEGATIVA",
+  "CAL-006": "problemType.TIPO_ALIQUOTA_DESCONHECIDO",
+  "CAL-007": "problemType.ERRO_FALTA_IMPLEMENTACAO",
+  "CAL-008": "problemType.ERRO_AVALIADOR_EXPRESSAO",
+  "CAL-009": "problemType.TRATAMENTO_TRIBUTARIO_NAO_ENCONTRADO",
+  "CAL-010": "problemType.PERCENTUAL_REDUCAO_NAO_ENCONTRADO",
+  "CAL-011": "problemType.FUNDAMENTACAO_NAO_ENCONTRADA",
+  "CAL-012": "problemType.TRIBUTO_SITUACAO_TRIBUTARIA_NAO_ENCONTRADO",
+  "CAL-999": "problemType.ERRO_INTERNO_SISTEMA",
+  "REG-001": "problemType.NCM_E_NBS_SIMULTANEAS",
+  "REG-002": "problemType.NCM_NAO_ENCONTRADO",
+  "REG-003": "problemType.NBS_NAO_ENCONTRADO",
+  "REG-004": "problemType.SITUACAO_TRIBUTARIA_NAO_ENCONTRADA",
+  "REG-005": "problemType.CLASSIFICACAO_TRIBUTARIA_NAO_ENCONTRADA",
+  "REG-006": "problemType.CLASSIFICACAO_TRIBUTARIA_NAO_VINCULADA_SITUACAO_TRIBUTARIA",
+  "REG-007": "problemType.ERRO_NOMENCLATURA",
+  "REG-008": "problemType.TRATAMENTO_CLASSIFICACAO_NAO_ENCONTRADO",
+  "REG-009": "problemType.GRUPO_TRIBUTACAO_REGULAR_NAO_INFORMADO",
+  "REG-010": "problemType.INCOMPATIBILIDADE_SUSPENSAO",
+  "REG-011": "problemType.NCM_NAO_VINCULADA",
+  "REG-012": "problemType.NBS_NAO_VINCULADA",
+  "REG-013": "problemType.IMPOSTO_SELETIVO_NAO_INFORMADO",
+  "REG-014": "problemType.IMPOSTO_SELETIVO_INFORMADO_INDEVIDAMENTE",
+  "REG-015": "problemType.NCM_COMPLETO_NAO_INFORMADO",
+  "REG-016": "problemType.NBS_COMPLETO_NAO_INFORMADO",
+  "REG-018": "problemType.MUNICIPIO_NAO_PERTENCE_UF",
+  "REG-019": "problemType.MUNICIPIO_NAO_ENCONTRADO",
+  "REG-020": "problemType.UF_NAO_ENCONTRADA",
+  "REG-021": "problemType.DATA_FATO_GERADOR_NAO_INFORMADA",
+  "REG-022": "problemType.GRUPO_TRIBUTACAO_REGULAR_INFORMADO_INDEVIDAMENTE",
+  "REG-023": "problemType.ERRO_GENERICO_VALIDACAO",
+  "REG-024": "problemType.CAMPO_INVALIDO",
+  "REG-025": "problemType.BASE_CALCULO_NAO_INFORMADA",
+  "REG-026": "problemType.BASE_CALCULO_INCONSISTENTE",
+  "REG-027": "problemType.BASE_CALCULO_MENOR_BASE_CALCULO_IMPOSTO_SELETIVO",
+  "REG-028": "problemType.TIPO_DOCUMENTO_FISCAL_NAO_ENCONTRADO",
+  "REG-029": "problemType.CLASSIFICACAO_TRIBUTARIA_NAO_VINCULADA_TIPO_DOCUMENTO",
+  "REG-030": "problemType.NOMENCLATURA_INCOMPATIVEL_TIPO_DOCUMENTO",
+  "REG-031": "problemType.NOMENCLATURA_NAO_PERMITIDA_TIPO_DOCUMENTO",
+  "REG-032": "problemType.IMPOSTO_SELETIVO_NAO_ADMITIDO_TIPO_DOCUMENTO",
+  "REG-033": "problemType.NOMENCLATURA_OBRIGATORIA_NAO_INFORMADA",
+  "REG-034": "problemType.BASE_CALCULO_COMPONENTES_INCONSISTENTE",
+  "REG-035": "problemType.ALIQUOTA_IMPOSTO_SELETIVO_NAO_INFORMADA",
+  "REG-036": "problemType.ALIQUOTAS_NOMINAIS_INFORMADAS_INDEVIDAMENTE",
+  "REG-037": "problemType.ALIQUOTAS_NOMINAIS_NAO_INFORMADAS",
+  "REG-038": "problemType.TIPO_DFE_NAO_TRATADO",
+  "VAL-000": "codigoValidacao.DESCONHECIDO",
+  "VAL-001": "codigoValidacao.NOT_NULL",
+  "VAL-002": "codigoValidacao.NOT_BLANK",
+  "VAL-003": "codigoValidacao.NOT_EMPTY",
+  "VAL-004": "codigoValidacao.SIZE",
+  "VAL-005": "codigoValidacao.MIN",
+  "VAL-006": "codigoValidacao.MAX",
+  "VAL-007": "codigoValidacao.DECIMAL_MIN",
+  "VAL-008": "codigoValidacao.DECIMAL_MAX",
+  "VAL-009": "codigoValidacao.PATTERN",
+  "VAL-010": "codigoValidacao.DIGITS",
+  "VAL-011": "codigoValidacao.EMAIL",
+  "VAL-012": "codigoValidacao.POSITIVE",
+  "VAL-013": "codigoValidacao.POSITIVE_OR_ZERO",
+  "VAL-014": "codigoValidacao.ASSERT_TRUE",
+  "VAL-015": "codigoValidacao.ASSERT_FALSE"
+ },
+ "excecoesSemProblemType": [
+  "CaptchaException",
+  "EntidadeNaoEncontradaException",
+  "EstruturaInconsistenteException",
+  "FormaAplicacaoNaoTratadaException",
+  "IndicadorOperacaoNaoEncontradoException",
+  "ValidacaoException"
+ ],
+ "excecoes": {
+  "AliquotaAdRemNaoEncontradaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/AliquotaAdRemNaoEncontradaException.java",
+   "abstrata": false,
+   "superclasse": "EntidadeNaoEncontradaException",
+   "constantes": {
+    "MESSAGE": "Alíquota ad rem não encontrada para NCM %s e data %s (idTributo: %s)"
+   },
+   "problemType": "ALIQUOTA_AD_REM_NAO_ENCONTRADA",
+   "httpStatusApi": 404
+  },
+  "AliquotaImpostoSeletivoNaoInformadaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/AliquotaImpostoSeletivoNaoInformadaException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "A alíquota do Imposto Seletivo deve ser informada em aliquotasNominais.impostoSeletivo para %s %s e data %s, pois ainda não foi definida em lei"
+   },
+   "problemType": "ALIQUOTA_IMPOSTO_SELETIVO_NAO_INFORMADA",
+   "httpStatusApi": 422
+  },
+  "AliquotaNaoEncontradaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/AliquotaNaoEncontradaException.java",
+   "abstrata": false,
+   "superclasse": "EntidadeNaoEncontradaException",
+   "constantes": {
+    "MESSAGE": "Alíquota de referencia ou padrão não encontrada para o tributo com id %s, UF %s, município %s e data %s"
+   },
+   "problemType": "ALIQUOTA_NAO_ENCONTRADA",
+   "httpStatusApi": 404
+  },
+  "AliquotaNegativaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/AliquotaNegativaException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "DEFAULT_MESSAGE": "Alíquota não pode ter valor negativo",
+    "MESSAGE_REFERENCIA": "Alíquota de referência não pode ter valor negativo",
+    "MESSAGE_PADRAO": "Alíquota padrão não pode ter valor negativo",
+    "MESSAGE_APLICAVEL": "Alíquota aplicável resultante não pode ter valor negativo"
+   },
+   "problemType": "ALIQUOTA_NEGATIVA",
+   "httpStatusApi": 422
+  },
+  "AliquotaPadraoNaoEncontradaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/AliquotaPadraoNaoEncontradaException.java",
+   "abstrata": false,
+   "superclasse": "EntidadeNaoEncontradaException",
+   "constantes": {
+    "DEFAULT_MESSAGE": "Alíquota padrão não encontrada"
+   },
+   "problemType": "ALIQUOTA_PADRAO_NAO_ENCONTRADA",
+   "httpStatusApi": 404
+  },
+  "AliquotaReferenciaNaoEncontradaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/AliquotaReferenciaNaoEncontradaException.java",
+   "abstrata": false,
+   "superclasse": "EntidadeNaoEncontradaException",
+   "constantes": {
+    "DEFAULT_MESSAGE": "Alíquota de referência não encontrada",
+    "MESSAGE": "Alíquota de referência não encontrada para o tributo com id %s e data %s"
+   },
+   "problemType": "ALIQUOTA_REFERENCIA_NAO_ENCONTRADA",
+   "httpStatusApi": 404
+  },
+  "AliquotasNominaisInformadasIndevidamenteException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/AliquotasNominaisInformadasIndevidamenteException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "As alíquotas nominais não podem ser informadas para operações com fato gerador anterior a 01/01/2027, pois a calculadora resolve as alíquotas vigentes"
+   },
+   "problemType": "ALIQUOTAS_NOMINAIS_INFORMADAS_INDEVIDAMENTE",
+   "httpStatusApi": 422
+  },
+  "AliquotasNominaisNaoInformadasException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/AliquotasNominaisNaoInformadasException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "As alíquotas nominais (os três campos cbs, ibsEstadual e ibsMunicipal) devem ser informadas para operações com fato gerador a partir de 01/01/2027"
+   },
+   "problemType": "ALIQUOTAS_NOMINAIS_NAO_INFORMADAS",
+   "httpStatusApi": 422
+  },
+  "BaseCalculoComponentesInconsistenteException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/BaseCalculoComponentesInconsistenteException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "A base de cálculo declarada (%s) diverge da base calculada a partir dos componentes informados (%s)",
+    "CODIGO_ERRO": "REG-034"
+   },
+   "problemType": "BASE_CALCULO_COMPONENTES_INCONSISTENTE",
+   "httpStatusApi": 422
+  },
+  "BaseCalculoInconsistenteException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/BaseCalculoInconsistenteException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "A base de cálculo de CBS e IBS informada %s difere da soma da base de cálculo do Imposto Seletivo %s com o Imposto Seletivo informado %s"
+   },
+   "problemType": "BASE_CALCULO_INCONSISTENTE",
+   "httpStatusApi": 422
+  },
+  "BaseCalculoMenorBaseCalculoImpostoSeletivoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/BaseCalculoMenorBaseCalculoImpostoSeletivoException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "A base de cálculo de CBS e IBS informada %s é menor que a base de cálculo do Imposto Seletivo %s"
+   },
+   "problemType": "BASE_CALCULO_MENOR_BASE_CALCULO_IMPOSTO_SELETIVO",
+   "httpStatusApi": 422
+  },
+  "BaseCalculoNaoInformadaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/BaseCalculoNaoInformadaException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "A base de cálculo de CBS e IBS deve ser informada quando o grupo do Imposto Seletivo não é informado"
+   },
+   "problemType": "BASE_CALCULO_NAO_INFORMADA",
+   "httpStatusApi": 422
+  },
+  "CampoInvalidoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/CampoInvalidoException.java",
+   "abstrata": false,
+   "superclasse": "NegocioException",
+   "constantes": {},
+   "problemType": "CAMPO_INVALIDO",
+   "httpStatusApi": 400
+  },
+  "CaptchaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/CaptchaException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {},
+   "problemType": "ERRO_SISTEMA",
+   "httpStatusApi": 422
+  },
+  "ClassificacaoTributariaNaoEncontradaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/ClassificacaoTributariaNaoEncontradaException.java",
+   "abstrata": false,
+   "superclasse": "EntidadeNaoEncontradaException",
+   "constantes": {
+    "MESSAGE1": "Classificação tributária não encontrada para código %s e data %s (%s)",
+    "MESSAGE2": "Classificação tributária não encontrada para id %s"
+   },
+   "problemType": "CLASSIFICACAO_TRIBUTARIA_NAO_ENCONTRADA",
+   "httpStatusApi": 404
+  },
+  "ClassificacaoTributariaNaoVinculadaSituacaoTributariaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/ClassificacaoTributariaNaoVinculadaSituacaoTributariaException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "Classificação tributária (cClassTrib) de código %s não está vinculada à situação tributária (CST) de código %s (%s)"
+   },
+   "problemType": "CLASSIFICACAO_TRIBUTARIA_NAO_VINCULADA_SITUACAO_TRIBUTARIA",
+   "httpStatusApi": 422
+  },
+  "ClassificacaoTributariaNaoVinculadaTipoDfeException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/ClassificacaoTributariaNaoVinculadaTipoDfeException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "Classificação Tributária de código %s não vinculada ao tipo de documento fiscal (tpDoc) %d (%s)"
+   },
+   "problemType": "CLASSIFICACAO_TRIBUTARIA_NAO_VINCULADA_TIPO_DOCUMENTO",
+   "httpStatusApi": 422
+  },
+  "DataFatoGeradorNaoInformadaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/DataFatoGeradorNaoInformadaException.java",
+   "abstrata": false,
+   "superclasse": "CampoInvalidoException",
+   "constantes": {},
+   "problemType": "DATA_FATO_GERADOR_NAO_INFORMADA",
+   "httpStatusApi": 400
+  },
+  "EntidadeNaoEncontradaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/EntidadeNaoEncontradaException.java",
+   "abstrata": true,
+   "superclasse": "RuntimeException",
+   "constantes": {},
+   "problemType": null,
+   "httpStatusApi": null
+  },
+  "ErroAvaliadorExpressaoAritmeticaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/ErroAvaliadorExpressaoAritmeticaException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "Erro na avaliação de expressão aritmética (%s)"
+   },
+   "problemType": "ERRO_AVALIADOR_EXPRESSAO",
+   "httpStatusApi": 422
+  },
+  "ErroFaltaImplementacaoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/ErroFaltaImplementacaoException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "A classificação tributária %s ainda não possui tratamento tributário implementado na Calculadora. Essa funcionalidade está prevista no roadmap e será disponibilizada em versão futura."
+   },
+   "problemType": "ERRO_FALTA_IMPLEMENTACAO",
+   "httpStatusApi": 422
+  },
+  "ErroGenericoValidacaoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/ErroGenericoValidacaoException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {},
+   "problemType": "ERRO_GENERICO_VALIDACAO",
+   "httpStatusApi": 422
+  },
+  "ErroInternoSistemaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/ErroInternoSistemaException.java",
+   "abstrata": false,
+   "superclasse": "RuntimeException",
+   "constantes": {},
+   "problemType": "ERRO_INTERNO_SISTEMA",
+   "httpStatusApi": 500
+  },
+  "ErroXmlException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/ErroXmlException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "Erro na validação do XML: %s"
+   },
+   "problemType": "ERRO_XML",
+   "httpStatusApi": 422
+  },
+  "EstruturaInconsistenteException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/EstruturaInconsistenteException.java",
+   "abstrata": true,
+   "superclasse": "RuntimeException",
+   "constantes": {},
+   "problemType": null,
+   "httpStatusApi": null
+  },
+  "FormaAplicacaoNaoDefinidaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/FormaAplicacaoNaoDefinidaException.java",
+   "abstrata": false,
+   "superclasse": "ErroInternoSistemaException",
+   "constantes": {
+    "MESSAGE": "Forma de aplicação da alíquota própria não definida"
+   },
+   "problemType": "FORMA_APLICACAO_NAO_DEFINIDA",
+   "httpStatusApi": 500
+  },
+  "FormaAplicacaoNaoTratadaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/FormaAplicacaoNaoTratadaException.java",
+   "abstrata": false,
+   "superclasse": "ErroInternoSistemaException",
+   "constantes": {
+    "MESSAGE": "Forma de aplicação da alíquota própria não tratada"
+   },
+   "problemType": "ERRO_SISTEMA",
+   "httpStatusApi": 500
+  },
+  "FundamentacaoClassificacaoNaoEncontradaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/FundamentacaoClassificacaoNaoEncontradaException.java",
+   "abstrata": false,
+   "superclasse": "EntidadeNaoEncontradaException",
+   "constantes": {
+    "MESSAGE": "Fundamentação legal não encontrada para classificação tributária de id %s e data %s"
+   },
+   "problemType": "FUNDAMENTACAO_NAO_ENCONTRADA",
+   "httpStatusApi": 404
+  },
+  "ImpostoSeletivoInformadoIndevidamenteException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/ImpostoSeletivoInformadoIndevidamenteException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "Dados do Imposto Seletivo informados indevidamente para NCM %s e data %s"
+   },
+   "problemType": "IMPOSTO_SELETIVO_INFORMADO_INDEVIDAMENTE",
+   "httpStatusApi": 422
+  },
+  "ImpostoSeletivoNaoAdmitidoTipoDfeException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/ImpostoSeletivoNaoAdmitidoTipoDfeException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "O tipo de documento fiscal (tpDoc) %d não admite Imposto Seletivo, exigido para %s de código %s"
+   },
+   "problemType": "IMPOSTO_SELETIVO_NAO_ADMITIDO_TIPO_DOCUMENTO",
+   "httpStatusApi": 422
+  },
+  "ImpostoSeletivoNaoInformadoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/ImpostoSeletivoNaoInformadoException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "Dados do Imposto Seletivo devem ser informados para %s %s e data %s"
+   },
+   "problemType": "IMPOSTO_SELETIVO_NAO_INFORMADO",
+   "httpStatusApi": 422
+  },
+  "IncompatibilidadeSuspensaoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/IncompatibilidadeSuspensaoException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "Classificação tributária (cClassTrib) %s e situação tributária (CST) %s incompatíveis com suspensão"
+   },
+   "problemType": "INCOMPATIBILIDADE_SUSPENSAO",
+   "httpStatusApi": 422
+  },
+  "IndicadorOperacaoNaoEncontradoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/IndicadorOperacaoNaoEncontradoException.java",
+   "abstrata": false,
+   "superclasse": "EntidadeNaoEncontradaException",
+   "constantes": {
+    "MESSAGE": "Indicador de operação '%s' não encontrado para a data %s"
+   },
+   "problemType": "ERRO_SISTEMA",
+   "httpStatusApi": 404
+  },
+  "MunicipioNaoEncontradoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/MunicipioNaoEncontradoException.java",
+   "abstrata": false,
+   "superclasse": "EntidadeNaoEncontradaException",
+   "constantes": {
+    "MESSAGE": "Município de código %d não encontrado"
+   },
+   "problemType": "MUNICIPIO_NAO_ENCONTRADO",
+   "httpStatusApi": 404
+  },
+  "MunicipioNaoPertencenteException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/MunicipioNaoPertencenteException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "Município de código %d não pertence à UF de sigla %s"
+   },
+   "problemType": "MUNICIPIO_NAO_PERTENCE_UF",
+   "httpStatusApi": 422
+  },
+  "NbsCompletoNaoInformadoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/NbsCompletoNaoInformadoException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "NBS completo não informado"
+   },
+   "problemType": "NBS_COMPLETO_NAO_INFORMADO",
+   "httpStatusApi": 422
+  },
+  "NbsNaoEncontradaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/NbsNaoEncontradaException.java",
+   "abstrata": false,
+   "superclasse": "EntidadeNaoEncontradaException",
+   "constantes": {
+    "MESSAGE": "NBS de código %s não encontrada para a data %s"
+   },
+   "problemType": "NBS_NAO_ENCONTRADO",
+   "httpStatusApi": 404
+  },
+  "NbsNaoVinculadaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/NbsNaoVinculadaException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "NBS de código %s não vinculada à Classificação Tributária de código %s (%s)"
+   },
+   "problemType": "NBS_NAO_VINCULADA",
+   "httpStatusApi": 422
+  },
+  "NcmCompletoNaoInformadoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/NcmCompletoNaoInformadoException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "NCM completo não informado"
+   },
+   "problemType": "NCM_COMPLETO_NAO_INFORMADO",
+   "httpStatusApi": 422
+  },
+  "NcmNaoEncontradaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/NcmNaoEncontradaException.java",
+   "abstrata": false,
+   "superclasse": "EntidadeNaoEncontradaException",
+   "constantes": {
+    "MESSAGE": "NCM de código %s não encontrada para a data %s"
+   },
+   "problemType": "NCM_NAO_ENCONTRADO",
+   "httpStatusApi": 404
+  },
+  "NcmNaoVinculadaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/NcmNaoVinculadaException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "NCM de código %s não vinculada à Classificação Tributária de código %s (%s)"
+   },
+   "problemType": "NCM_NAO_VINCULADA",
+   "httpStatusApi": 422
+  },
+  "NcmNbsSimultaneasException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/NcmNbsSimultaneasException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "Não é permitido informar NCM e NBS simultaneamente para um item"
+   },
+   "problemType": "NCM_E_NBS_SIMULTANEAS",
+   "httpStatusApi": 422
+  },
+  "NegocioException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/NegocioException.java",
+   "abstrata": true,
+   "superclasse": "RuntimeException",
+   "constantes": {},
+   "problemType": "ERRO_NEGOCIO",
+   "httpStatusApi": null
+  },
+  "NomenclaturaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/NomenclaturaException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {},
+   "problemType": "ERRO_NOMENCLATURA",
+   "httpStatusApi": 422
+  },
+  "NomenclaturaIncompativelTipoDfeException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/NomenclaturaIncompativelTipoDfeException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "%s não permitida para a Classificação Tributária de código %s no tipo de documento %s"
+   },
+   "problemType": "NOMENCLATURA_INCOMPATIVEL_TIPO_DOCUMENTO",
+   "httpStatusApi": 422
+  },
+  "NomenclaturaNaoPermitidaTipoDfeException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/NomenclaturaNaoPermitidaTipoDfeException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "NCM/NBS não permitido para a Classificação Tributária de código %s no tipo de documento %s"
+   },
+   "problemType": "NOMENCLATURA_NAO_PERMITIDA_TIPO_DOCUMENTO",
+   "httpStatusApi": 422
+  },
+  "NomenclaturaObrigatoriaNaoInformadaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/NomenclaturaObrigatoriaNaoInformadaException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "A Classificação Tributária de código %s exige NCM ou NBS completo para o tipo de documento %s"
+   },
+   "problemType": "NOMENCLATURA_OBRIGATORIA_NAO_INFORMADA",
+   "httpStatusApi": 422
+  },
+  "PercentualReducaoNaoEncontradoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/PercentualReducaoNaoEncontradoException.java",
+   "abstrata": false,
+   "superclasse": "EntidadeNaoEncontradaException",
+   "constantes": {
+    "MESSAGE": "Percentual de redução não encontrado para classificação tributária com id %s e data %s"
+   },
+   "problemType": "PERCENTUAL_REDUCAO_NAO_ENCONTRADO",
+   "httpStatusApi": 404
+  },
+  "PlataformaDownloadNaoEncontradaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/PlataformaDownloadNaoEncontradaException.java",
+   "abstrata": false,
+   "superclasse": "RuntimeException",
+   "constantes": {
+    "MESSAGE": "Plataforma de download '%s' não encontrada. Plataformas disponíveis: %s"
+   },
+   "problemType": "PLATAFORMA_DOWNLOAD_NAO_ENCONTRADA",
+   "httpStatusApi": 404
+  },
+  "SiglaDFeNaoEncontradaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/SiglaDFeNaoEncontradaException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "Sigla DFe inválida: %s"
+   },
+   "problemType": "SIGLA_DFE_NAO_ENCONTRADA",
+   "httpStatusApi": 422
+  },
+  "SituacaoTributariaNaoEncontradaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/SituacaoTributariaNaoEncontradaException.java",
+   "abstrata": false,
+   "superclasse": "EntidadeNaoEncontradaException",
+   "constantes": {
+    "MESSAGE": "Situação tributária (CST) não encontrada para código %s e data %s (%s)"
+   },
+   "problemType": "SITUACAO_TRIBUTARIA_NAO_ENCONTRADA",
+   "httpStatusApi": 404
+  },
+  "TipoAliquotaDesconhecidoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/TipoAliquotaDesconhecidoException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "Tipo de alíquota (%s) desconhecido para cClassTrib %s e CST %s"
+   },
+   "problemType": "TIPO_ALIQUOTA_DESCONHECIDO",
+   "httpStatusApi": 422
+  },
+  "TipoDfeNaoEncontradoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/TipoDfeNaoEncontradoException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "Tipo de documento fiscal (tpDoc) de código %d não encontrado ou fora de vigência na data %s"
+   },
+   "problemType": "TIPO_DOCUMENTO_FISCAL_NAO_ENCONTRADO",
+   "httpStatusApi": 422
+  },
+  "TipoDfeNaoTratadoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/TipoDfeNaoTratadoException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "Tipo de documento fiscal (tpDoc) de código %d (%s) não possui tratamento implementado na calculadora"
+   },
+   "problemType": "TIPO_DFE_NAO_TRATADO",
+   "httpStatusApi": 422
+  },
+  "TratamentoClassificacaoNaoEncontradoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/TratamentoClassificacaoNaoEncontradoException.java",
+   "abstrata": false,
+   "superclasse": "EntidadeNaoEncontradaException",
+   "constantes": {
+    "MESSAGE": "Tratamento tributário não encontrado para classificação tributária com id %s e data %s"
+   },
+   "problemType": "TRATAMENTO_CLASSIFICACAO_NAO_ENCONTRADO",
+   "httpStatusApi": 404
+  },
+  "TratamentoTributarioNaoEncontradoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/TratamentoTributarioNaoEncontradoException.java",
+   "abstrata": false,
+   "superclasse": "EntidadeNaoEncontradaException",
+   "constantes": {
+    "MESSAGE": "Tratamento tributário com id %s não encontrado"
+   },
+   "problemType": "TRATAMENTO_TRIBUTARIO_NAO_ENCONTRADO",
+   "httpStatusApi": 404
+  },
+  "TributacaoRegularInformadaIndevidamenteException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/TributacaoRegularInformadaIndevidamenteException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "Dados da tributação regular informados indevidamente para cClassTrib %s e CST %s"
+   },
+   "problemType": "GRUPO_TRIBUTACAO_REGULAR_INFORMADO_INDEVIDAMENTE",
+   "httpStatusApi": 422
+  },
+  "TributacaoRegularNaoInformadaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/TributacaoRegularNaoInformadaException.java",
+   "abstrata": false,
+   "superclasse": "ValidacaoException",
+   "constantes": {
+    "MESSAGE": "Dados da tributação regular devem ser informados para cClassTrib %s e CST %s"
+   },
+   "problemType": "GRUPO_TRIBUTACAO_REGULAR_NAO_INFORMADO",
+   "httpStatusApi": 422
+  },
+  "TributoSituacaoTributariaNaoEncontradoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/TributoSituacaoTributariaNaoEncontradoException.java",
+   "abstrata": false,
+   "superclasse": "EntidadeNaoEncontradaException",
+   "constantes": {
+    "MESSAGE": "Tributo com id s% não encontrado para situação tributária com id %s e data %s"
+   },
+   "problemType": "TRIBUTO_SITUACAO_TRIBUTARIA_NAO_ENCONTRADO",
+   "httpStatusApi": 500
+  },
+  "UfNaoEncontradaException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/UfNaoEncontradaException.java",
+   "abstrata": false,
+   "superclasse": "EntidadeNaoEncontradaException",
+   "constantes": {
+    "MESSAGE": "UF de sigla %s não encontrada"
+   },
+   "problemType": "UF_NAO_ENCONTRADA",
+   "httpStatusApi": 404
+  },
+  "ValidacaoException": {
+   "arquivo": "src/main/java/br/gov/serpro/rtc/domain/service/exception/ValidacaoException.java",
+   "abstrata": true,
+   "superclasse": "RuntimeException",
+   "constantes": {},
+   "problemType": null,
+   "httpStatusApi": null
+  }
+ }
+}

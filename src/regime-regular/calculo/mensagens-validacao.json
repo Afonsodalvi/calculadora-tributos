@@ -1,0 +1,281 @@
+{
+ "": {
+  "NotNull": "must not be null",
+  "NotEmpty": "must not be empty",
+  "Size": "size must be between {min} and {max}",
+  "Min": "must be greater than or equal to {value}",
+  "Max": "must be less than or equal to {value}",
+  "PositiveOrZero": "must be greater than or equal to 0",
+  "Digits": "numeric value out of bounds (<{integer} digits>.<{fraction} digits> expected)",
+  "DecimalMax": "must be less than ${inclusive == true ? 'or equal to ' : ''}{value}",
+  "DecimalMin": "must be greater than ${inclusive == true ? 'or equal to ' : ''}{value}"
+ },
+ "ar": {
+  "NotNull": "لا يمكن أن يكون منعدم",
+  "NotEmpty": "لا يمكن أن تكون فارغة",
+  "Size": "يجب أن يكون الحجم بين {min} و{max}",
+  "Min": "يجب أن تكون أكبر من أو مساوية ل {value}",
+  "Max": "يجب أن تكون أقل أو مساوية ل {value}",
+  "Digits": "القيمة الرقمية خارج الحدود (<{integer} أرقام>. <{fraction} أرقام> متوقعة)",
+  "DecimalMax": "يجب أن تكون أقل من ${inclusive == true ? 'يواسي وأ ' : ''}{value}",
+  "DecimalMin": "يجب أن تكون أكبر من ${inclusive == true ? 'يواسي وأ ' : ''}{value}"
+ },
+ "az": {
+  "NotNull": "null olmamalıdır",
+  "NotEmpty": "boş olmamalıdır",
+  "Size": "ölçü {min} və {max} arasında olmalıdır",
+  "Min": "{value}-${value != 0 && value % 1000000 != 0 && value % 1000000000 != 0 && (value % 100 == 0 || value % 100 == 20 || value % 100 == 50 || value % 100 == 70 || value % 100 == 80 || value % 10 == 1 || value % 10 == 2 || value % 10 == 3 || value % 10 == 4 || value % 10 == 5 || value % 10 == 7 || value % 10 == 8) ? 'dən' : 'dan'} böyük bərabər olmalıdır",
+  "Max": "{value}-${value != 0 && value % 1000000 != 0 && value % 1000000000 != 0 && (value % 100 == 0 || value % 100 == 20 || value % 100 == 50 || value % 100 == 70 || value % 100 == 80 || value % 10 == 1 || value % 10 == 2 || value % 10 == 3 || value % 10 == 4 || value % 10 == 5 || value % 10 == 7 || value % 10 == 8) ? 'dən' : 'dan'} kiçik bərabər olmalıdır",
+  "PositiveOrZero": "0-dan böyük bərabər olmalıdır",
+  "Digits": "tam hissəsi {integer}, kəsr hissəsi {fraction} rəqəmdən çox olmamalıdır",
+  "DecimalMax": "{value} ədədindən kiçik${inclusive == true ? ' bərabər ' : ' '}olmalıdır",
+  "DecimalMin": "{value} ədədindən böyük${inclusive == true ? ' bərabər ' : ' '}olmalıdır"
+ },
+ "cs": {
+  "NotNull": "nesmí mít hodnotu Null",
+  "NotEmpty": "nesmí být prázdná",
+  "Size": "velikost musí ležet v rozsahu {min} až {max}",
+  "Min": "musí být větší nebo rovna hodnotě {value}",
+  "Max": "musí být menší nebo rovna hodnotě {value}",
+  "PositiveOrZero": "musí být větší než nebo rovna hodnotě 0",
+  "Digits": "číselná hodnota mimo rozsah (očekáváno: <{integer} číslic>.<{fraction} číslic>)",
+  "DecimalMax": "musí být menší než ${inclusive == true ? 'nebo rovna hodnotě ' : ''}{value}",
+  "DecimalMin": "musí být větší než ${inclusive == true ? 'nebo rovna hodnotě ' : ''}{value}"
+ },
+ "da": {
+  "NotNull": "må ikke være null",
+  "NotEmpty": "må ikke være tom",
+  "Size": "størrelse skal være mellem {min} og {max}",
+  "Min": "skal være større end eller lig med {value}",
+  "Max": "skal være mindre end eller lig med {value}",
+  "PositiveOrZero": "skal være større end eller lig med 0",
+  "Digits": "tal værdierne er udenfor det gyldige område (<{integer} digits>.<{fraction} digits> forventet)",
+  "DecimalMax": "skal være mindre end ${inclusive == true ? 'eller det samme som ' : ''}{value}",
+  "DecimalMin": "skal være større end ${inclusive == true ? 'eller det samme som ' : ''}{value}"
+ },
+ "de": {
+  "NotNull": "darf nicht null sein",
+  "NotEmpty": "darf nicht leer sein",
+  "Size": "Größe muss zwischen {min} und {max} sein",
+  "Min": "muss größer-gleich {value} sein",
+  "Max": "muss kleiner-gleich {value} sein",
+  "PositiveOrZero": "muss größer-gleich 0 sein",
+  "Digits": "numerischer Wert außerhalb des gültigen Bereichs (<{integer} digits>.<{fraction} digits> erwartet)",
+  "DecimalMax": "muss kleiner ${inclusive == true ? 'oder gleich ' : ''}{value} sein",
+  "DecimalMin": "muss größer ${inclusive == true ? 'oder gleich ' : ''}{value} sein"
+ },
+ "en": {},
+ "es": {
+  "NotNull": "no debe ser nulo",
+  "NotEmpty": "no debe estar vacío",
+  "Size": "el tamaño debe estar entre {min} y {max}",
+  "Min": "debe ser mayor que o igual a {value}",
+  "Max": "debe ser menor que o igual a {value}",
+  "PositiveOrZero": "debe ser mayor que o igual a 0",
+  "Digits": "valor numérico fuera de límites (se esperaba <{integer} dígitos>.<{fraction} dígitos>)",
+  "DecimalMax": "debe ser menor que ${inclusive == true ? 'o igual a ' : ''}{value}",
+  "DecimalMin": "debe ser mayor que ${inclusive == true ? 'o igual a ' : ''}{value}"
+ },
+ "fa": {
+  "NotNull": "مقدار نباید خالی باشد",
+  "NotEmpty": "مقدار نباید خالی باشد",
+  "Size": "سایز باید بین {min} و {max} باشد",
+  "Min": "باید بزرگتر و یا مساوی {value} باشد",
+  "Max": "باید کوچکتر و یا مساوی {value} باشد",
+  "PositiveOrZero": "باید بزرگتر و یا مساوی صفر باشد",
+  "Digits": "عدد درست نمیباشد (باید {integer} رقم صحیح و {fraction} رقم اعشار باشد)",
+  "DecimalMax": "باید کوچکتر ${inclusive == true ? 'و یا مساوی ' : 'از '}{value} باشد",
+  "DecimalMin": "باید بزرگتر ${inclusive == true ? 'و یا مساوی ' : 'از '}{value} باشد"
+ },
+ "fr": {
+  "NotNull": "ne doit pas être nul",
+  "NotEmpty": "ne doit pas être vide",
+  "Size": "la taille doit être comprise entre {min} et {max}",
+  "Min": "doit être supérieur ou égal à {value}",
+  "Max": "doit être inférieur ou égal à {value}",
+  "PositiveOrZero": "doit être supérieur ou égal à 0",
+  "Digits": "valeur numérique hors limites (<{integer} chiffres>.<{fraction} chiffres> attendu)",
+  "DecimalMax": "doit être inférieur${inclusive == true ? ' ou égal' : ''} à {value}",
+  "DecimalMin": "doit être supérieur${inclusive == true ? ' ou égal' : ''} à {value}"
+ },
+ "hu": {
+  "NotNull": "nem lehet null",
+  "NotEmpty": "nem lehet üres",
+  "Size": "a méretnek a(z) {min} és {max} értékek között kell lennie",
+  "Min": "nagyobbnak, vagy egyenlőnek kell lennie, mint {value}",
+  "Max": "kisebbnek, vagy egyenlőnek kell lennie, mint {value}",
+  "PositiveOrZero": "nagyobbnak vagy egyenlőnek kell lennie, mint 0",
+  "Digits": "a numerikus érték a korlátokon kívül esik (<{integer} számjegy>.<{fraction} számjegy> számot várt a rendszer)",
+  "DecimalMax": "kisebbnek ${inclusive == true ? 'or equal to ' : ''} kell lennie, mint {value}",
+  "DecimalMin": "nagyobbnak ${inclusive == true ? 'or equal to ' : ''} kell lennie, mint {value}"
+ },
+ "it": {
+  "NotNull": "non deve essere null",
+  "NotEmpty": "non deve essere vuoto",
+  "Size": "la dimensione deve essere compresa tra {min} e {max}",
+  "Min": "deve essere superiore o uguale a {value}",
+  "Max": "deve essere inferiore o uguale a {value}",
+  "PositiveOrZero": "deve essere superiore o uguale a 0",
+  "Digits": "valore numerico fuori dai limiti (previsto <{integer} digits>.<{fraction} digits>)",
+  "DecimalMax": "deve essere inferiore a ${inclusive == true ? 'o uguale a ' : ''}{value}",
+  "DecimalMin": "deve essere superiore a ${inclusive == true ? 'o uguale a ' : ''}{value}"
+ },
+ "ja": {
+  "NotNull": "null は許可されていません",
+  "NotEmpty": "空要素は許可されていません",
+  "Size": "{min} から {max} の間のサイズにしてください",
+  "Min": "{value} 以上の値にしてください",
+  "Max": "{value} 以下の値にしてください",
+  "PositiveOrZero": "0 以上の値にしてください",
+  "Digits": "値は次の範囲にしてください (<整数 {integer} 桁>.<小数点以下 {fraction} 桁>)",
+  "DecimalMax": "{value} ${inclusive == true ? '以下の値にしてください' : 'より小さな値にしてください'}",
+  "DecimalMin": "{value} ${inclusive == true ? '以上の値にしてください' : 'より大きな値にしてください'}"
+ },
+ "ko": {
+  "NotNull": "널이어서는 안됩니다",
+  "NotEmpty": "비어 있을 수 없습니다",
+  "Size": "크기가 {min}에서 {max} 사이여야 합니다",
+  "Min": "{value} 이상이어야 합니다",
+  "Max": "{value} 이하여야 합니다",
+  "PositiveOrZero": "0 이상이어야 합니다",
+  "Digits": "숫자 값이 한계를 초과합니다(<{integer} 자리>.<{fraction} 자리> 예상)",
+  "DecimalMax": "다음 값 이하여야 합니다${inclusive == true ? ' ' : ''}{value}",
+  "DecimalMin": "다음 값 이상이어야 합니다${inclusive == true ? ' ' : ''}{value}"
+ },
+ "mn_MN": {
+  "NotNull": "null байж болохгүй",
+  "NotEmpty": "Хоосон байж болохгүй",
+  "Size": "Хэмжээ {min}-с {max} хооронд байна",
+  "Min": "{value}-аас их буюу тэнцүү байх ёстой",
+  "Max": "{value}-аас бага буюу тэнцүү байх ёстой",
+  "Digits": "Тоон хязгаараас хэтэрсэн байна (<{integer} digits>.<{fraction} digits> хооронд байна)",
+  "DecimalMax": "{value}-аас бага буюу тэнцүү байх ёстой",
+  "DecimalMin": "{value}-аас их буюу тэнцүү байх ёстой"
+ },
+ "nl": {
+  "NotNull": "mag niet null zijn",
+  "NotEmpty": "mag niet leeg zijn",
+  "Size": "grootte moet tussen {min} en {max} liggen",
+  "Min": "moet groter of gelijk aan {value} zijn",
+  "Max": "moet kleiner of gelijk aan {value} zijn",
+  "PositiveOrZero": "moet groter of gelijk zijn aan 0",
+  "Digits": "numerieke waarde ligt buiten het toegestane bereik (<{integer} cijfers>,<{fraction} cijfers> verwacht)",
+  "DecimalMax": "moet kleiner dan ${inclusive == true ? 'of gelijk aan ' : ''}{value} zijn",
+  "DecimalMin": "moet groter dan ${inclusive == true ? 'of gelijk aan ' : ''}{value} zijn"
+ },
+ "pl": {
+  "NotNull": "nie może mieć wartości null",
+  "NotEmpty": "nie może być puste",
+  "Size": "wielkość musi należeć do zakresu od {min} do {max}",
+  "Min": "musi być równe lub większe od {value}",
+  "Max": "musi być równe lub mniejsze od {value}",
+  "PositiveOrZero": "musi być równe lub większe od 0",
+  "Digits": "wartość liczbowa spoza zakresu (oczekiwano <liczba cyfr: {integer}>,<liczba cyfr: {fraction}>)",
+  "DecimalMax": "musi być ${inclusive == true ? 'równe lub ' : ''}mniejsze od {value}",
+  "DecimalMin": "musi być ${inclusive == true ? 'równe lub ' : ''}większe od {value}"
+ },
+ "pt": {
+  "NotNull": "não deve ser nulo",
+  "NotEmpty": "não deve estar vazio",
+  "Size": "tamanho deve ser entre {min} e {max}",
+  "Min": "deve ser maior que ou igual a {value}",
+  "Max": "deve ser menor que ou igual a {value}",
+  "PositiveOrZero": "deve ser maior ou igual a 0",
+  "Digits": "valor númerico fora do limite (<{integer} dígito>.<{fraction} dígitos> esperar)",
+  "DecimalMax": "deve ser menor que ${inclusive == true ? 'ou igual a ' : ''}{value}",
+  "DecimalMin": "deve ser maior que ${inclusive == true ? 'ou igual a ' : ''}{value}"
+ },
+ "pt_BR": {
+  "Min": "deve ser maior que ou igual à {value}",
+  "Max": "deve ser menor que ou igual à {value}"
+ },
+ "pt_PT": {
+  "Size": "tamanho deve estar entre {min} e {max}"
+ },
+ "ro": {
+  "NotNull": "nu trebuie să fie null",
+  "NotEmpty": "nu trebuie să fie gol",
+  "Size": "dimensiunea trebuie să fie între {min} şi {max}",
+  "Min": "trebuie să fie mai mare sau egal decât {value}",
+  "Max": "trebuie să fie mai mic sau egal decât {value}",
+  "PositiveOrZero": "trebuie să fie mai mare sau egal decât 0",
+  "Digits": "valoare numerică în afara limitelor (<{integer} digiţi>.<{fraction} digiţi> aşteptat)",
+  "DecimalMax": "trebuie să fie mai mic decât ${inclusive == true ? 'sau egal cu ' : ''}{value}",
+  "DecimalMin": "trebuie să fie mai mare decât ${inclusive == true ? 'sau egal cu ' : ''}{value}"
+ },
+ "ru": {
+  "NotNull": "не должно равняться null",
+  "NotEmpty": "не должно быть пустым",
+  "Size": "размер должен находиться в диапазоне от {min} до {max}",
+  "Min": "должно быть не меньше {value}",
+  "Max": "должно быть не больше {value}",
+  "PositiveOrZero": "должно быть больше или равно 0",
+  "Digits": "число вне допустимого диапазона (ожидалось <{integer} разрядов>.<{fraction} разрядов>)",
+  "DecimalMax": "должно быть меньше, чем ${inclusive == true ? 'или равно ' : ''}{value}",
+  "DecimalMin": "должно быть больше, чем ${inclusive == true ? 'или равно ' : ''}{value}"
+ },
+ "sk": {
+  "NotNull": "nemôže byť null",
+  "NotEmpty": "nemôže byť prázdne",
+  "Size": "veľkosť musí byť medzi {min} a {max}",
+  "Min": "musí byť väčšie alebo rovné {value}",
+  "Max": "musí byť menšie alebo rovné {value}",
+  "Digits": "číselná hodnota je mimo rozsahu (očakávané <{integer} číslic>.<{fraction} číslic>)",
+  "DecimalMax": "musí byť menšie ${inclusive == true ? 'alebo rovné' : 'ako'} {value}",
+  "DecimalMin": "musí byť väčšie ${inclusive == true ? 'alebo rovné' : 'ako'} {value}"
+ },
+ "tr": {
+  "NotNull": "boş değer olamaz",
+  "NotEmpty": "boş değer olamaz",
+  "Size": "boyut '{min}' ile '{max}' arasında olmalı",
+  "Min": "'{value}' değerinden büyük yada eşit olmalı",
+  "Max": "'{value}' değerinden küçük yada eşit olmalı",
+  "Digits": "sınırların dışında sayısal değer (beklenen <{integer} basamak>.<{fraction} basamak>)",
+  "DecimalMax": "'{value}' değerinden küçük yada eşit olmalı",
+  "DecimalMin": "'{value}' değerinden büyük yada eşit olmalı"
+ },
+ "uk": {
+  "NotNull": "не може бути відсутнім, має бути задано",
+  "NotEmpty": "не може бути порожнім",
+  "Size": "розмір має бути між {min} та {max}",
+  "Min": "має бути більше або рівне {value}",
+  "Max": "має бути менше або рівне {value}",
+  "PositiveOrZero": "має бути більше або рівне 0",
+  "Digits": "числове значення поза межами (очікувано <{integer} цифр>.<{fraction} цифр>)",
+  "DecimalMax": "має бути менше ${inclusive == true ? 'або рівне ' : ''}{value}",
+  "DecimalMin": "має бути більше ${inclusive == true ? 'або рівне ' : ''}{value}"
+ },
+ "zh": {
+  "NotNull": "不得为 null",
+  "NotEmpty": "不得为空",
+  "Size": "大小必须在 {min} 和 {max} 之间",
+  "Min": "必须大于或等于 {value}",
+  "Max": "必须小于或等于 {value}",
+  "PositiveOrZero": "必须大于或等于 0",
+  "Digits": "数字值超出了边界（期望 <{integer} digits>.<{fraction} digits>）",
+  "DecimalMax": "必须小于 ${inclusive == true ? 'or equal to ' : ''}{value}",
+  "DecimalMin": "必须大于 ${inclusive == true ? 'or equal to ' : ''}{value}"
+ },
+ "zh_CN": {
+  "NotNull": "不能为null",
+  "NotEmpty": "不能为空",
+  "Size": "个数必须在{min}和{max}之间",
+  "Min": "最小不能小于{value}",
+  "Max": "最大不能超过{value}",
+  "PositiveOrZero": "必须是正数或零",
+  "Digits": "数字的值超出了允许范围(只允许在{integer}位整数和{fraction}位小数范围内)",
+  "DecimalMax": "必须小于${inclusive == true ? '或等于' : ''}{value}",
+  "DecimalMin": "必须大于${inclusive == true ? '或等于' : ''}{value}"
+ },
+ "zh_TW": {
+  "NotNull": "不得是空值",
+  "NotEmpty": "不得是空的",
+  "Size": "大小必須在 {min} 和 {max} 之間",
+  "Min": "必須大於或等於 {value}",
+  "Max": "必須小於或等於 {value}",
+  "PositiveOrZero": "必須大於或等於 0",
+  "Digits": "數值超出範圍（預期為 <{integer} digits>.<{fraction} digits>）",
+  "DecimalMax": "必須小於 ${inclusive == true ? 'or equal to ' : ''}{value}",
+  "DecimalMin": "必須大於 ${inclusive == true ? 'or equal to ' : ''}{value}"
+ }
+}

@@ -1,0 +1,257 @@
+{
+ "BASE_AUSENTE": {
+  "code": "VSN-001",
+  "title": "Base de cálculo do Simples ausente",
+  "detail": "A base de cálculo do Simples Nacional é obrigatória e não foi informada."
+ },
+ "BASE_INVALIDA": {
+  "code": "VSN-002",
+  "title": "Base de cálculo do Simples inválida (negativa/fora do formato)",
+  "detail": "A base de cálculo informada é negativa ou não está no formato 13v2 (até 13 dígitos inteiros e até 2 casas decimais, sem notação científica)."
+ },
+ "IS_INVALIDO": {
+  "code": "VSN-003",
+  "title": "Valor do Imposto Seletivo inválido (negativo/fora do formato)",
+  "detail": "O valor do Imposto Seletivo (vIS) informado é negativo ou não está no formato 13v2 (até 13 dígitos inteiros e até 2 casas decimais, sem notação científica)."
+ },
+ "ALIQUOTA_CBS_AUSENTE": {
+  "code": "VSN-004",
+  "title": "Alíquota pCBSSN ausente",
+  "detail": "A alíquota efetiva de CBS do Simples Nacional (pCBSSN) é exigida para o cálculo do item e não foi informada."
+ },
+ "ALIQUOTA_CBS_INVALIDA": {
+  "code": "VSN-005",
+  "title": "Alíquota pCBSSN inválida (negativa/fora do formato)",
+  "detail": "A alíquota efetiva de CBS do Simples Nacional (pCBSSN) informada é negativa ou não está no formato aceito (até 3 dígitos inteiros e até 34 casas decimais, sem notação científica)."
+ },
+ "ALIQUOTA_IBS_AUSENTE": {
+  "code": "VSN-006",
+  "title": "Alíquota pIBSSN ausente",
+  "detail": "A alíquota efetiva de IBS do Simples Nacional (pIBSSN) é exigida para o cálculo do item e não foi informada."
+ },
+ "ALIQUOTA_IBS_INVALIDA": {
+  "code": "VSN-007",
+  "title": "Alíquota pIBSSN inválida (negativa/fora do formato)",
+  "detail": "A alíquota efetiva de IBS do Simples Nacional (pIBSSN) informada é negativa ou não está no formato aceito (até 3 dígitos inteiros e até 34 casas decimais, sem notação científica)."
+ },
+ "NUMERO_AUSENTE": {
+  "code": "VSN-010",
+  "title": "Número do item ausente",
+  "detail": "O número (identificador) do item é obrigatório e não foi informado."
+ },
+ "ITENS_VAZIOS": {
+  "code": "VSN-011",
+  "title": "Lista de itens vazia",
+  "detail": "A lista de itens da operação é obrigatória e não pode estar vazia."
+ },
+ "DATA_INVALIDA": {
+  "code": "VSN-012",
+  "title": "Data do fato gerador ausente/inválida",
+  "detail": "A data do fato gerador é obrigatória e deve estar no formato de data (YYYY-MM-DD)."
+ },
+ "DADO_GLOBAL_AUSENTE": {
+  "code": "VSN-013",
+  "title": "Dado global obrigatório ausente",
+  "detail": "Um campo global obrigatório da operação (id ou versao) não foi informado."
+ },
+ "TPDOC_AUSENTE": {
+  "code": "VSN-014",
+  "title": "Tipo de documento fiscal (tpDoc) ausente",
+  "detail": "O tipo de documento fiscal (tpDoc) é obrigatório e não foi informado."
+ },
+ "TPDOC_NAO_SUPORTADO": {
+  "code": "VSN-015",
+  "title": "Tipo de documento fiscal (tpDoc) não suportado",
+  "detail": "O tipo de documento fiscal (tpDoc) informado não está habilitado para o cálculo do Simples Nacional na data do fato gerador. A habilitação de documentos é parametrizada em banco de dados (tabela de tipos de DFe do cálculo do Simples), conforme as NTs publicadas."
+ },
+ "CRT_INVALIDO": {
+  "code": "VSN-016",
+  "title": "Código de Regime Tributário (CRT) ausente/inválido",
+  "detail": "O Código de Regime Tributário (CRT) é obrigatório e deve ser 1, 2, 3 ou 4."
+ },
+ "TPREGIMEIBSCBS_INVALIDO": {
+  "code": "VSN-017",
+  "title": "Tipo de regime do IBS/CBS (tpRegimeIBSCBS) inválido",
+  "detail": "O tipo de regime de apuração do IBS/CBS (tpRegimeIBSCBS), quando informado, deve ser 1 ou 2."
+ },
+ "TPREGIMEIBSCBS_INCOMPATIVEL": {
+  "code": "VSN-018",
+  "title": "tpRegimeIBSCBS incompatível com o CRT",
+  "detail": "A combinação de CRT e tpRegimeIBSCBS informada é incoerente (regras C21a-10/20/30 da NT 2026.005): CRT 1, 2 ou 4 não admite tpRegimeIBSCBS=2; CRT 3 não admite tpRegimeIBSCBS=1; CRT 4 não admite tpRegimeIBSCBS algum."
+ },
+ "OPERACAO_FORA_ESCOPO": {
+  "code": "VSN-019",
+  "title": "Operação fora do escopo do cálculo do Simples Nacional",
+  "detail": "A operação não é calculada por este endpoint: optante pelo regime regular do IBS/CBS (tpRegimeIBSCBS=1), MEI (CRT=4) ou regime normal puro (CRT=3 sem tpRegimeIBSCBS=2)."
+ },
+ "CCLASSTRIB_AUSENTE": {
+  "code": "VSN-020",
+  "title": "Código de Classificação Tributária (cClassTrib) ausente",
+  "detail": "O código de classificação tributária do IBS/CBS (cClassTrib) é obrigatório e não foi informado."
+ },
+ "CCLASSTRIB_DESCONHECIDO": {
+  "code": "VSN-021",
+  "title": "cClassTrib desconhecido ou fora de vigência",
+  "detail": "O cClassTrib informado não existe ou não está vigente na data do fato gerador: o Tipo de Receita Bruta do Simples Nacional (tpRBSN) não pôde ser determinado."
+ },
+ "CCLASSTRIB_INCOMPATIVEL_TPDOC": {
+  "code": "VSN-022",
+  "title": "cClassTrib incompatível com o tpDoc",
+  "detail": "O cClassTrib informado não é admissível para o tipo de documento fiscal (tpDoc) da operação."
+ },
+ "CATIVSN_INCOMPATIVEL_CCLASSTRIB": {
+  "code": "VSN-023",
+  "title": "Código de Atividade do Simples Nacional incompatível com cClassTrib",
+  "detail": "O código de atividade cAtivSN='90' (Operações não Tributáveis) é incompatível com cClassTrib cujo tpRBSN esteja entre 1 e 5 (regra UB14-90 da NT 2026.005)."
+ },
+ "TPENTEGOV_INVALIDO": {
+  "code": "VSN-024",
+  "title": "Tipo de ente governamental (tpEnteGov) inválido",
+  "detail": "O tipo de ente governamental (tpEnteGov), quando informado, deve ser 1 (União), 2 (Estado), 3 (Distrito Federal) ou 4 (Município). O campo é da operação — espelha a tag gCompraGov/tpEnteGov da identificação da nota (grupo B/ide do leiaute do DF-e) — e sua invalidade rejeita a operação inteira."
+ },
+ "COMPRA_GOV_SEM_VIGENCIA": {
+  "code": "VSN-025",
+  "title": "Parametrização de compra governamental indisponível para a data",
+  "detail": "A data do fato gerador está fora de todas as vigências do parâmetro de transição de alíquotas de compra governamental do Simples Nacional (NT 2026.005, seção 5.3.3; arts. 372 e 473 da LC 214/2025). Como o tpEnteGov é dado da operação, a falha rejeita a operação inteira."
+ },
+ "PARAMETRIZACAO_INDISPONIVEL": {
+  "code": "VSN-026",
+  "title": "Parametrização do cálculo do Simples Nacional indisponível para a data",
+  "detail": "Não há linha vigente, na data do fato gerador, em uma tabela de parametrização do cálculo do Simples Nacional (efeito do tipo de receita bruta ou matriz de regime de apuração). O cálculo nunca assume comportamento implícito: a parametrização deve ser corrigida por script de migração."
+ },
+ "CCLASSTRIB_NAO_IMPLEMENTADO": {
+  "code": "VSN-027",
+  "title": "cClassTrib sem tratamento implementado no cálculo do Simples Nacional",
+  "detail": "A classificação tributária (cClassTrib) informada está vinculada, na data do fato gerador, a tratamento tributário marcado como ainda não implementado na Calculadora (indicador de ajuste do tratamento tributário). O item é reportado com o estado NAO_IMPLEMENTADO, sem cálculo e fora dos totais; a funcionalidade está prevista no roadmap e será disponibilizada em versão futura."
+ },
+ "NI_CONTRIBUINTE_INVALIDO": {
+  "code": "VSN-028",
+  "title": "Identificação do contribuinte (niContribuinte) ausente ou inválida",
+  "detail": "A identificação do contribuinte emitente (niContribuinte) é obrigatória no cálculo assistido e deve ser um CNPJ alfanumérico válido: 14 caracteres (12 caracteres [A-Z0-9] e 2 dígitos verificadores), aceito com ou sem máscara. É por ela e pelo período de apuração da data do fato gerador que as alíquotas efetivas são obtidas na Tabela de Alíquotas Efetivas do Simples Nacional (NT 2026.005, seção 5.3.3). A falha rejeita a operação inteira."
+ },
+ "ALIQUOTAS_EFETIVAS_INDISPONIVEIS": {
+  "code": "VSN-029",
+  "title": "Alíquotas efetivas do Simples Nacional indisponíveis para o contribuinte no período de apuração",
+  "detail": "Não há registro na Tabela de Alíquotas Efetivas do Simples Nacional para o contribuinte (niContribuinte) no período de apuração (AAAAMM) derivado da data do fato gerador. Sem as alíquotas efetivas o cálculo assistido não pode ser realizado; a operação inteira é rejeitada. Alternativa: o endpoint clássico, informando as alíquotas por item."
+ },
+ "OPSIMPNAC_INVALIDO": {
+  "code": "VSN-030",
+  "title": "Situação perante o Simples Nacional (opSimpNac) ausente ou inválida",
+  "detail": "Na NFS-e, a situação do prestador perante o Simples Nacional (opSimpNac, DPS prest/regTrib) é obrigatória e deve ser 1 (não optante), 2 (MEI), 3 (ME/EPP) ou 4 (opção pendente)."
+ },
+ "REGAPIBSCBSSN_INVALIDO": {
+  "code": "VSN-031",
+  "title": "Regime de apuração do IBS e da CBS no Simples (regApIBSCBSSN) incoerente ou inválido",
+  "detail": "O regApIBSCBSSN (DPS prest/regTrib) deve ser 1 (IBS e CBS pelo Simples), 2 (CBS pelo Simples e IBS pelo regime regular) ou 3 (os dois pelo regime regular). É obrigatório com opSimpNac 3 ou 4 (regra 313 da NFS-e) e não pode ser informado com opSimpNac 1 ou 2."
+ },
+ "REGAPTRIBSN_INVALIDO": {
+  "code": "VSN-032",
+  "title": "Regime de apuração dos tributos no Simples (regApTribSN) incoerente ou inválido",
+  "detail": "O regApTribSN (DPS prest/regTrib) deve ser 1 (tributos federais e ISS pelo Simples), 2 (federais pelo Simples e ISS fora dele) ou 3 (federais e ISS fora). É obrigatório com opSimpNac 3 ou 4 (regra E0166, estendida pela NT 009) e não pode ser informado com opSimpNac 1 ou 2 (E0162)."
+ },
+ "CAMPO_REGIME_PROIBIDO": {
+  "code": "VSN-033",
+  "title": "Campo de regime não pertence ao documento",
+  "detail": "O regime do emitente é informado no vocabulário do próprio documento: CRT e tpRegimeIBSCBS nos documentos com CRT (NF-e, NFC-e, CT-e, CT-e OS, BP-e, BP-e TM e NFCom); opSimpNac, regApIBSCBSSN e regApTribSN na NFS-e. Campo do outro vocabulário não pode ser informado."
+ },
+ "QUANTIDADE_ITENS_INVALIDA": {
+  "code": "VSN-034",
+  "title": "Número de itens não admitido pelo documento",
+  "detail": "O documento admite um número máximo de itens (parametrizado em banco). A NFS-e tem exatamente 1 item: a DPS tem um só serviço, com um cTribNac e um cClassTrib."
+ },
+ "IS_NAO_ADMITIDO": {
+  "code": "VSN-035",
+  "title": "Imposto Seletivo não admitido pelo documento",
+  "detail": "O documento não tem Imposto Seletivo (NFS-e): o valorImpostoSeletivo deve estar ausente ou ser zero."
+ },
+ "TRIBISSQN_INVALIDO": {
+  "code": "VSN-036",
+  "title": "Tributação do ISSQN (tribISSQN) ausente ou inválida",
+  "detail": "Na NFS-e, a tributação do ISSQN (tribISSQN) é obrigatória quando a atividade tem ISS no Simples e o regime calcula tributos, e deve ser 1 (operação tributável), 2 (imunidade), 3 (exportação de serviço) ou 4 (não incidência)."
+ },
+ "TPRETISSQN_INVALIDO": {
+  "code": "VSN-037",
+  "title": "Retenção do ISSQN (tpRetISSQN) ausente ou inválida",
+  "detail": "Na NFS-e, o tipo de retenção do ISSQN (tpRetISSQN) é obrigatório quando tribISSQN = 1, nas atividades com ISS no Simples, e deve ser 1 (não retido), 2 (retido pelo tomador) ou 3 (retido pelo intermediário)."
+ },
+ "TPBM_INVALIDO": {
+  "code": "VSN-038",
+  "title": "Tipo de benefício municipal (tpBM) inválido",
+  "detail": "Na NFS-e, o tipo de benefício municipal do ISS (tpBM), quando informado, deve ser 1 (isenção), 2 (redução da base em %), 3 (redução da base em R$) ou 4 (alíquota diferenciada). Ausente = sem benefício municipal."
+ },
+ "ALIQUOTAS_EFETIVAS_AUSENTES": {
+  "code": "VSN-039",
+  "title": "Alíquotas efetivas do contribuinte (aliquotasEfetivas) ausentes",
+  "detail": "No cálculo não assistido, a linha de alíquotas efetivas do contribuinte no período (aliquotasEfetivas) é obrigatória, exceto quando o regime não calcula tributos (SOMENTE_RECEITA). A falha rejeita a operação inteira."
+ },
+ "FATOR_R_AUSENTE": {
+  "code": "VSN-040",
+  "title": "Fator \"r\" (fatorR) ausente",
+  "detail": "O fatorR da linha de alíquotas é exigido quando o item tem atividade sujeita ao fator \"r\" (a 09): é ele que decide entre o Anexo III (fator r igual ou superior a 28%) e o Anexo V."
+ },
+ "NCM_NBS_SIMULTANEOS": {
+  "code": "VSN-041",
+  "title": "NCM e NBS simultâneos",
+  "detail": "Informe NCM ou NBS, nunca ambos."
+ },
+ "NCM_INCOMPLETO": {
+  "code": "VSN-042",
+  "title": "NCM incompleto",
+  "detail": "A classificação tributária exige um NCM completo com 8 caracteres."
+ },
+ "NBS_INCOMPLETO": {
+  "code": "VSN-043",
+  "title": "NBS incompleto",
+  "detail": "A classificação tributária exige um NBS completo com 9 caracteres."
+ },
+ "NOMENCLATURA_OBRIGATORIA": {
+  "code": "VSN-044",
+  "title": "Nomenclatura obrigatória",
+  "detail": "Informe NCM ou NBS completo conforme exigido pela classificação tributária."
+ },
+ "NOMENCLATURA_INCOMPATIVEL": {
+  "code": "VSN-045",
+  "title": "Nomenclatura incompatível com o documento",
+  "detail": "A nomenclatura informada é incompatível com o tipo de documento fiscal ou a classificação tributária."
+ },
+ "NOMENCLATURA_NAO_PERMITIDA": {
+  "code": "VSN-046",
+  "title": "Nomenclatura não permitida",
+  "detail": "A nomenclatura informada não é permitida para o tipo de documento fiscal."
+ },
+ "NCM_NAO_APLICAVEL": {
+  "code": "VSN-047",
+  "title": "NCM não aplicável",
+  "detail": "O NCM informado não está vinculado à classificação tributária."
+ },
+ "NBS_NAO_APLICAVEL": {
+  "code": "VSN-048",
+  "title": "NBS não aplicável",
+  "detail": "O NBS informado não está vinculado à classificação tributária."
+ },
+ "NCM_NAO_ENCONTRADO": {
+  "code": "VSN-049",
+  "title": "NCM desconhecido",
+  "detail": "O NCM informado não existe ou não está vigente na data."
+ },
+ "NBS_NAO_ENCONTRADO": {
+  "code": "VSN-050",
+  "title": "NBS desconhecido",
+  "detail": "O NBS informado não existe ou não está vigente na data."
+ },
+ "NOMENCLATURA_FORMATO_INVALIDO": {
+  "code": "VSN-051",
+  "title": "Formato de nomenclatura inválido",
+  "detail": "NCM deve conter 8 ou NBS deve conter 9 dígitos ASCII, sem espaços ou símbolos."
+ },
+ "DESCONHECIDO": {
+  "code": "VSN-000",
+  "title": "Erro de validação não categorizado",
+  "detail": "O tipo de validação aplicado não possui uma categoria específica."
+ },
+ "FALHA_TECNICA": {
+  "code": "VSN-999",
+  "title": "Falha técnica no cálculo do item",
+  "detail": "Ocorreu uma falha técnica inesperada durante o cálculo do item."
+ }
+}

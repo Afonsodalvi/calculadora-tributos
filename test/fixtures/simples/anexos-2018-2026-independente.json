@@ -1,0 +1,73 @@
+{
+  "fonte": "LC 123/2006, Anexos I a V (redação da LC 155/2016, vigente de 2018 a 2026) e Anexos I a V na redação da LC 214/2025 (Anexos XVIII a XXII da LC 214, vigentes a partir de 01/01/2027). Percentuais de repartição em % da alíquota efetiva.",
+  "limites": [180000, 360000, 720000, 1800000, 3600000, 4800000],
+  "sublimite": 3600000,
+  "limite": 4800000,
+  "periodos": [
+    {
+      "id": "2018-2026",
+      "inicio": "2018-01",
+      "fim": "2026-12",
+      "tributos": ["IRPJ", "CSLL", "COFINS", "PIS", "CPP", "ICMS", "IPI", "ISS"],
+      "anexos": {
+        "I": {
+          "nome": "Comércio",
+          "faixas": [
+            { "aliquota": "4.00", "deduzir": "0", "reparticao": { "IRPJ": "5.50", "CSLL": "3.50", "COFINS": "12.74", "PIS": "2.76", "CPP": "41.50", "ICMS": "34.00" } },
+            { "aliquota": "7.30", "deduzir": "5940", "reparticao": { "IRPJ": "5.50", "CSLL": "3.50", "COFINS": "12.74", "PIS": "2.76", "CPP": "41.50", "ICMS": "34.00" } },
+            { "aliquota": "9.50", "deduzir": "13860", "reparticao": { "IRPJ": "5.50", "CSLL": "3.50", "COFINS": "12.74", "PIS": "2.76", "CPP": "42.00", "ICMS": "33.50" } },
+            { "aliquota": "10.70", "deduzir": "22500", "reparticao": { "IRPJ": "5.50", "CSLL": "3.50", "COFINS": "12.74", "PIS": "2.76", "CPP": "42.00", "ICMS": "33.50" } },
+            { "aliquota": "14.30", "deduzir": "87300", "reparticao": { "IRPJ": "5.50", "CSLL": "3.50", "COFINS": "12.74", "PIS": "2.76", "CPP": "42.00", "ICMS": "33.50" } },
+            { "aliquota": "19.00", "deduzir": "378000", "reparticao": { "IRPJ": "13.50", "CSLL": "10.00", "COFINS": "28.27", "PIS": "6.13", "CPP": "42.10" } }
+          ]
+        },
+        "II": {
+          "nome": "Indústria",
+          "faixas": [
+            { "aliquota": "4.50", "deduzir": "0", "reparticao": { "IRPJ": "5.50", "CSLL": "3.50", "COFINS": "11.51", "PIS": "2.49", "CPP": "37.50", "IPI": "7.50", "ICMS": "32.00" } },
+            { "aliquota": "7.80", "deduzir": "5940", "reparticao": { "IRPJ": "5.50", "CSLL": "3.50", "COFINS": "11.51", "PIS": "2.49", "CPP": "37.50", "IPI": "7.50", "ICMS": "32.00" } },
+            { "aliquota": "10.00", "deduzir": "13860", "reparticao": { "IRPJ": "5.50", "CSLL": "3.50", "COFINS": "11.51", "PIS": "2.49", "CPP": "37.50", "IPI": "7.50", "ICMS": "32.00" } },
+            { "aliquota": "11.20", "deduzir": "22500", "reparticao": { "IRPJ": "5.50", "CSLL": "3.50", "COFINS": "11.51", "PIS": "2.49", "CPP": "37.50", "IPI": "7.50", "ICMS": "32.00" } },
+            { "aliquota": "14.70", "deduzir": "85500", "reparticao": { "IRPJ": "5.50", "CSLL": "3.50", "COFINS": "11.51", "PIS": "2.49", "CPP": "37.50", "IPI": "7.50", "ICMS": "32.00" } },
+            { "aliquota": "30.00", "deduzir": "720000", "reparticao": { "IRPJ": "8.50", "CSLL": "7.50", "COFINS": "20.96", "PIS": "4.54", "CPP": "23.50", "IPI": "35.00" } }
+          ]
+        },
+        "III": {
+          "nome": "Serviços (Anexo III)",
+          "faixas": [
+            { "aliquota": "6.00", "deduzir": "0", "reparticao": { "IRPJ": "4.00", "CSLL": "3.50", "COFINS": "12.82", "PIS": "2.78", "CPP": "43.40", "ISS": "33.50" } },
+            { "aliquota": "11.20", "deduzir": "9360", "reparticao": { "IRPJ": "4.00", "CSLL": "3.50", "COFINS": "14.05", "PIS": "3.05", "CPP": "43.40", "ISS": "32.00" } },
+            { "aliquota": "13.50", "deduzir": "17640", "reparticao": { "IRPJ": "4.00", "CSLL": "3.50", "COFINS": "13.64", "PIS": "2.96", "CPP": "43.40", "ISS": "32.50" } },
+            { "aliquota": "16.00", "deduzir": "35640", "reparticao": { "IRPJ": "4.00", "CSLL": "3.50", "COFINS": "13.64", "PIS": "2.96", "CPP": "43.40", "ISS": "32.50" } },
+            { "aliquota": "21.00", "deduzir": "125640", "reparticao": { "IRPJ": "4.00", "CSLL": "3.50", "COFINS": "12.82", "PIS": "2.78", "CPP": "43.40", "ISS": "33.50" },
+              "tetoIss": { "iss": "5.00", "excedente": { "IRPJ": "6.02", "CSLL": "5.26", "COFINS": "19.28", "PIS": "4.18", "CPP": "65.26" } } },
+            { "aliquota": "33.00", "deduzir": "648000", "reparticao": { "IRPJ": "35.00", "CSLL": "15.00", "COFINS": "16.03", "PIS": "3.47", "CPP": "30.50" } }
+          ]
+        },
+        "IV": {
+          "nome": "Serviços (Anexo IV, CPP fora do DAS)",
+          "faixas": [
+            { "aliquota": "4.50", "deduzir": "0", "reparticao": { "IRPJ": "18.80", "CSLL": "15.20", "COFINS": "17.67", "PIS": "3.83", "ISS": "44.50" } },
+            { "aliquota": "9.00", "deduzir": "8100", "reparticao": { "IRPJ": "19.80", "CSLL": "15.20", "COFINS": "20.55", "PIS": "4.45", "ISS": "40.00" } },
+            { "aliquota": "10.20", "deduzir": "12420", "reparticao": { "IRPJ": "20.80", "CSLL": "15.20", "COFINS": "19.73", "PIS": "4.27", "ISS": "40.00" } },
+            { "aliquota": "14.00", "deduzir": "39780", "reparticao": { "IRPJ": "17.80", "CSLL": "19.20", "COFINS": "18.90", "PIS": "4.10", "ISS": "40.00" } },
+            { "aliquota": "22.00", "deduzir": "183780", "reparticao": { "IRPJ": "18.80", "CSLL": "19.20", "COFINS": "18.08", "PIS": "3.92", "ISS": "40.00" },
+              "tetoIss": { "iss": "5.00", "excedente": { "IRPJ": "31.33", "CSLL": "32.00", "COFINS": "30.13", "PIS": "6.54" } } },
+            { "aliquota": "33.00", "deduzir": "828000", "reparticao": { "IRPJ": "53.50", "CSLL": "21.50", "COFINS": "20.55", "PIS": "4.45" } }
+          ]
+        },
+        "V": {
+          "nome": "Serviços (Anexo V)",
+          "faixas": [
+            { "aliquota": "15.50", "deduzir": "0", "reparticao": { "IRPJ": "25.00", "CSLL": "15.00", "COFINS": "14.10", "PIS": "3.05", "CPP": "28.85", "ISS": "14.00" } },
+            { "aliquota": "18.00", "deduzir": "4500", "reparticao": { "IRPJ": "23.00", "CSLL": "15.00", "COFINS": "14.10", "PIS": "3.05", "CPP": "27.85", "ISS": "17.00" } },
+            { "aliquota": "19.50", "deduzir": "9900", "reparticao": { "IRPJ": "24.00", "CSLL": "15.00", "COFINS": "14.92", "PIS": "3.23", "CPP": "23.85", "ISS": "19.00" } },
+            { "aliquota": "20.50", "deduzir": "17100", "reparticao": { "IRPJ": "21.00", "CSLL": "15.00", "COFINS": "15.74", "PIS": "3.41", "CPP": "23.85", "ISS": "21.00" } },
+            { "aliquota": "23.00", "deduzir": "62100", "reparticao": { "IRPJ": "23.00", "CSLL": "12.50", "COFINS": "14.10", "PIS": "3.05", "CPP": "23.85", "ISS": "23.50" } },
+            { "aliquota": "30.50", "deduzir": "540000", "reparticao": { "IRPJ": "35.00", "CSLL": "15.50", "COFINS": "16.44", "PIS": "3.56", "CPP": "29.50" } }
+          ]
+        }
+      }
+    }
+  ]
+}
